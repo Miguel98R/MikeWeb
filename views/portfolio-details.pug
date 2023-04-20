@@ -1,0 +1,136 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(content='width=device-width,initial-scale=1', name='viewport')
+    title Portfolio Details - iPortfolio Bootstrap Template
+    meta(content, name='description')
+    meta(content, name='keywords')
+    link(href='/public/img/favicon.png', rel='icon')
+    link(href='/public/img/apple-touch-icon.png', rel='apple-touch-icon')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i', rel='stylesheet')
+    link(href='/public/vendor/aos/aos.css', rel='stylesheet')
+    link(href='/public/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/public/vendor/bootstrap-icons/bootstrap-icons.css', rel='stylesheet')
+    link(href='/public/vendor/boxicons/css/boxicons.min.css', rel='stylesheet')
+    link(href='/public/vendor/glightbox/css/glightbox.min.css', rel='stylesheet')
+    link(href='/public/vendor/swiper/swiper-bundle.min.css', rel='stylesheet')
+    link(href='/public/css/style.css', rel='stylesheet')
+  body
+    i.bi.bi-list.mobile-nav-toggle.d-xl-none
+    header#header
+      .d-flex.flex-column
+        .profile
+          img.img-fluid.rounded-circle(src='/public/img/profile-img.jpg', alt)
+          h1.text-light
+            a(href='index ') Alex Smith
+          .social-links.mt-3.text-center
+            a.twitter(href='#')
+              i.bx.bxl-twitter
+            |  
+            a.facebook(href='#')
+              i.bx.bxl-facebook
+            |  
+            a.instagram(href='#')
+              i.bx.bxl-instagram
+            |  
+            a.google-plus(href='#')
+              i.bx.bxl-skype
+            |  
+            a.linkedin(href='#')
+              i.bx.bxl-linkedin
+        nav#navbar.nav-menu.navbar
+          ul
+            li
+              a.nav-link.scrollto.active(href='#hero')
+                i.bx.bx-home
+                |  
+                span Home
+            li
+              a.nav-link.scrollto(href='#about')
+                i.bx.bx-user
+                |  
+                span About
+            li
+              a.nav-link.scrollto(href='#resume')
+                i.bx.bx-file-blank
+                |  
+                span Resume
+            li
+              a.nav-link.scrollto(href='#portfolio')
+                i.bx.bx-book-content
+                |  
+                span Portfolio
+            li
+              a.nav-link.scrollto(href='#services')
+                i.bx.bx-server
+                |  
+                span Services
+            li
+              a.nav-link.scrollto(href='#contact')
+                i.bx.bx-envelope
+                |  
+                span Contact
+    main#main
+      section#breadcrumbs.breadcrumbs
+        .container
+          .d-flex.justify-content-between.align-items-center
+            h2 Portfoio Details
+            ol
+              li
+                a(href='index ') Home
+              li Portfoio Details
+      section#portfolio-details.portfolio-details
+        .container
+          .row.gy-4
+            .col-lg-8
+              .portfolio-details-slider.swiper
+                .swiper-wrapper.align-items-center
+                  .swiper-slide
+                    img(src='/public/img/portfolio/portfolio-details-1.jpg', alt)
+                  .swiper-slide
+                    img(src='/public/img/portfolio/portfolio-details-2.jpg', alt)
+                  .swiper-slide
+                    img(src='/public/img/portfolio/portfolio-details-3.jpg', alt)
+                .swiper-pagination
+            .col-lg-4
+              .portfolio-info
+                h3 Project information
+                ul
+                  li
+                    strong Category
+                    | : Web design
+                  li
+                    strong Client
+                    | : ASU Company
+                  li
+                    strong Project date
+                    | : 01 March, 2020
+                  li
+                    strong Project URL
+                    | : 
+                    a(href='#') www.example.com
+              .portfolio-description
+                h2 This is an example of portfolio detail
+                p Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+    footer#footer
+      .container
+        .copyright
+          | © Copyright 
+          strong
+            span iPortfolio
+        .credits
+          | Designed by 
+          a(href='https://bootstrapmade.com/') BootstrapMade
+    a.back-to-top.d-flex.align-items-center.justify-content-center(href='#')
+      i.bi.bi-arrow-up-short
+    script(src='/public/vendor/purecounter/purecounter_vanilla.js')
+    script(src='/public/vendor/aos/aos.js')
+    script(src='/public/vendor/bootstrap/js/bootstrap.bundle.min.js')
+    script(src='/public/vendor/glightbox/js/glightbox.min.js')
+    script(src='/public/vendor/isotope-layout/isotope.pkgd.min.js')
+    script(src='/public/vendor/swiper/swiper-bundle.min.js')
+    script(src='/public/vendor/typed.js/typed.min.js')
+    script(src='/public/vendor/waypoints/noframework.waypoints.js')
+    script(src='/public/vendor/php-email-form/validate.js')
+    script(src='/public/js/main.js')
