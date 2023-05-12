@@ -3,13 +3,12 @@ const morgan = require('morgan')
 const path = require('path')
 const bodyParser = require('body-parser')
 
-const db = require('./db')
 const app = express()
 
 //configuraciones 
 
-app.set('port',2000)
-app.set('appName','HtmlToPugTemplate')
+app.set('port',3001)
+app.set('appName','mikeweb')
 
 app.set('views', path.join(__dirname, 'views'))
 
