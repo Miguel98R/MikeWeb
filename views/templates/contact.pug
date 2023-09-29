@@ -1,0 +1,45 @@
+#contact
+    include color-selector
+    .contact-header
+        | Contácta
+        span.color Me
+        .contact-header-caption
+            span.color Ponte
+            | En contacto.
+    .contact-content
+        //.contact-form
+             .form-header Message Me
+             form#myForm(action='#')
+                 .input-line
+                     input#name.input-name(type='text', placeholder='Name')
+                     |
+                     input#email.input-name(type='email', placeholder='Email')
+                 input#subject.input-subject(type='text', placeholder='subject')
+                 |
+                 textarea#body.input-textarea(placeholder='message')
+                 |
+                 button#submit(type='button', value='send') Submit
+        .contact-info
+            .contact-info-header Información de contacto
+            .contact-info-content
+                .contect-info-content-line
+                    img.icon(src='/public/images/icon-name.png', alt='name-icon')
+                    .contact-info-icon-text
+                        h6 Nombre
+                        p José Miguel Rosas Jimenez
+                .contect-info-content-line
+                    img.icon(src='/public/images/icon-location.png', alt='location-icon')
+                    .contact-info-icon-text
+                        h6 Ubicación
+                        p Pachuca de soto, Hidalgo, México
+                .contect-info-content-line
+                    img.icon(src='/public/images/icon-phone.png', alt='phone-icon')
+                    .contact-info-icon-text
+                        h6 Whatsapp
+                        p +52 7714349366
+                .contect-info-content-line
+                    img.icon(src='/public/images/icon-email.png', alt='email-icon')
+                    .contact-info-icon-text
+                        h6 Email
+                        p mikerosas.dev98@gmail.com
+    include footer

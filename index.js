@@ -8,7 +8,7 @@ const app = express()
 //configuraciones 
 
 app.set('port',3001)
-app.set('appName','mikeweb')
+app.set('appName','Mike Rosas Dev - Web')
 
 app.set('views', path.join(__dirname, 'views'))
 
@@ -25,7 +25,6 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 
 //rutas
 app.use(require('./viewEngine/routes'))
-app.use('/api', require('./routes/_api'))
 
 //Inicializando el servidor
 app.listen(app.get('port'), () => {

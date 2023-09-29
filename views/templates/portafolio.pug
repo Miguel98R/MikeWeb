@@ -1,94 +1,74 @@
-section#portfolio.portfolio.section-bg
-    .container
-        .section-title
-            h2 Portfolio
-            p Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
-        .row(data-aos='fade-up')
-            .col-lg-12.d-flex.justify-content-center
-                ul#portfolio-flters
-                    li.filter-active(data-filter='*') All
-                    li(data-filter='.filter-app') App
-                    li(data-filter='.filter-card') Card
-                    li(data-filter='.filter-web') Web
-        .row.portfolio-container(data-aos='fade-up', data-aos-delay='100')
-            .col-lg-4.col-md-6.portfolio-item.filter-app
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-1.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-1.jpg', data-gallery='portfolioGallery', title='App 1')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-web
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-2.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-2.jpg', data-gallery='portfolioGallery', title='Web 3')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-app
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-3.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-3.jpg', data-gallery='portfolioGallery', title='App 2')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-card
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-4.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-4.jpg', data-gallery='portfolioGallery', title='Card 2')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-web
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-5.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-5.jpg', data-gallery='portfolioGallery', title='Web 2')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-app
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-6.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-6.jpg', data-gallery='portfolioGallery', title='App 3')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-card
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-7.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-7.jpg', data-gallery='portfolioGallery', title='Card 1')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-card
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-8.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-8.jpg', data-gallery='portfolioGallery', title='Card 3')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
-            .col-lg-4.col-md-6.portfolio-item.filter-web
-                .portfolio-wrap
-                    img.img-fluid(src='/public/img/portfolio/portfolio-9.jpg', alt)
-                    .portfolio-links
-                        a.portfolio-lightbox(href='/public/img/portfolio/portfolio-9.jpg', data-gallery='portfolioGallery', title='Web 3')
-                            i.bx.bx-plus
-                        |
-                        a(href='portfolio-details ', title='More Details')
-                            i.bx.bx-link
+#portfolio
+    include color-selector
+
+    .portfolio-header
+        span.color Mis
+        | Proyectos
+        span.header-caption
+            | Algunos de mis
+            span.color Trabajos
+    #portfolio-content
+        .portfolio.portfolio-fourth
+            .portfolio-image
+                img(src='/public/images/cultura.png', alt='portfolio-fourth')
+            .portfolio-text
+                h2 Web Cultura de Jesús
+                p Diseñé y desarrollé una página web completa para la Iglesia Cultura de Jesús, ofreciendo información sobre áreas, congresos, horarios, ubicaciones y peticiones de oración
+                .button
+                    a(href='https://culturadejesus.com.mx' target="_blank")
+                        button
+                            span.index
+                                | Ver Página
+                                i.gg-arrow-right
+        .portfolio.portfolio-five
+            .portfolio-image
+                img(src='/public/images/mike_web.png', alt='portfolio-fourth')
+            .portfolio-text
+                h2 Web Mike Rosas Dev
+                p Diseñé y desarrollé mi sitio web personal, un portafolio que ofrece información acerca de mí, mis proyectos y experiencia profesional.
+                .button
+                    a(href='https://mikerosasdev.com' target="_blank")
+                        button
+                            span.index
+                                | Ver Página
+                                i.gg-arrow-right
+
+        .portfolio.portfolio-first
+            .portfolio-image
+                img(src='/public/images/toothlabmx_logo.jpeg', alt='portfolio-first')
+            .portfolio-text
+                h2 ToothLabMX
+                p Software para gestionar laboratorios dentales con funciones como crear órdenes, administrar dentistas y productos, historial de órdenes, estadísticas y más.
+                .button
+                    a(href='https://github.com/Miguel98R/ToothLabMX_2' target="_blank")
+                        button
+                            span.index
+                                | Ver repositorio
+                                i.gg-arrow-right
+        .portfolio.portfolio-second
+            .portfolio-image
+                img(src='/public/images/project2pug.png', alt='portfolio-second')
+            .portfolio-text
+                h2 Project2Pug
+                p Transformador de plantillas HTML a Pug js para optimizar como motor de vista web.
+                .button
+                    a(href='https://github.com/Miguel98R/project2Pug')
+                        button
+                            span.index
+                                | Ver repositorio
+                                i.gg-arrow-right
+        .portfolio.portfolio-third
+            .portfolio-image
+                img(src='/public/images/wave_logo.jpeg', alt='portfolio-third')
+            .portfolio-text
+                h2 WaveModulator
+                p Es un proyecto en Python que ejemplifica técnicas de modulación digital con ondas sinusoidales, incluyendo ASK, FSK, PSK y QAM con distintos órdenes de modulación.
+                .button
+                    a(href='#')
+                        button
+                            span.index
+                                | Ver repositorio
+                                i.gg-arrow-right
+
+
+    include footer

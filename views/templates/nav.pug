@@ -1,37 +1,25 @@
-nav#navbar.nav-menu.navbar.p-0.m-0
-    ul
-        li
-            a.nav-link.scrollto.active(href='#hero')
-                i.bx.bx-home
-                |
-                span Inicio
-        li
-            a.nav-link.scrollto(href='#about')
-                i.bx.bx-user
-                |
-                span Acerca de mi
-        li
-            a.nav-link.scrollto(href='#skills')
-                i.bx.bx-code
-                |
-                span Skills
-        li
-            a.nav-link.scrollto(href='#resume')
-                i.bx.bx-file-blank
-                |
-                span Experiencia
-        //li
-            a.nav-link.scrollto(href='#portfolio')
-                i.bx.bx-book-content
-                |
-                span Portfolio
-        li
-            a.nav-link.scrollto(href='#services')
-                i.bx.bx-server
-                |
-                span Servicios
-        //li
-            a.nav-link.scrollto(href='#contact')
-                i.bx.bx-envelope
-                |
-                span Contacto
+#navigation-content
+    .logo
+        a(href='/')
+            img(src='/public/images/logo_mike.png', alt='logo')
+    .navigation-close
+        span.close-first
+        |
+        span.close-second
+    .navigation-links
+        a#home-link(data-text='HOME') HOME
+        |
+        a#about-link( data-text='ACERCA DE MI') ACERCA DE MI
+        |
+        a#portfolio-link( data-text='PORTFOLIO') PORTFOLIO
+        |
+        a#contact-link( data-text='CONTACTO') CONTACTO
+#navigation-bar
+    a(href='/')
+        img(src='/public/images/logo_mike.png', alt='logo')
+    .menubar
+        span.first-span
+        |
+        span.second-span
+        |
+        span.third-span
