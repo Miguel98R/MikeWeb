@@ -60,7 +60,7 @@ html {
     font-family: poppins;
     background-color: #202020;
     color: whitesmoke;
-    font-size: 70px;
+    font-size: 80px;
     width: 100%;
 }
 
@@ -297,14 +297,14 @@ body {
 
 .header-content .firstline {
     z-index: 2;
-    font-weight: 700;
     font-family: poppins;
-    font-size: 65px;
+
+
 }
 
 .header-content .secondline {
     z-index: 2;
-    font-size: 30px;
+    font-size: 35px;
     padding-top: 20px;
     font-weight: 500;
     color: rgb(255, 255, 255, .8);
@@ -394,7 +394,7 @@ body {
     justify-content: center;
     transform: translate(-50%, -50%);
     align-items: center;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 400;
     font-family: monoton;
     color: rgb(255, 255, 255, .1);
@@ -408,7 +408,7 @@ body {
 .navigation-links a:hover::before {
     content: attr(data-text);
     opacity: 1;
-    letter-spacing: 50px;
+    letter-spacing: 30px;
 
 }
 
@@ -1076,19 +1076,19 @@ button:hover .index {
 }
 
 .portfolio-image img {
-    height: 400px;
+    max-height: 400px;
     width: 100%;
     position: relative;
 }
 
 .portfolio-image {
-    height: 400px;
+    max-height: 400px;
     width: 40%;
 }
 
 .portfolio-image img::before {
     content: "";
-    height: 100%;
+    max-height: 100%;
     width: 100%;
     background: #c70039;
     opacity: .1;
@@ -1302,7 +1302,7 @@ button:hover .index {
 }
 
 .contact-info {
-    width: 40%;
+    width: 45%;
     height: 500px;
     background: url(../images/contact.jpg);
     background-position: center;
@@ -1424,7 +1424,7 @@ form button:hover {
     font-family: poppins;
     font-weight: 400;
     color: whitesmoke;
-    padding: 30px;
+    padding: 10px;
 }
 
 .contect-info-content-line {
@@ -1475,7 +1475,7 @@ form button:hover {
 .footer .footer-text {
     position: relative;
     display: inline;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
     opacity: 1;
 }
@@ -1662,7 +1662,7 @@ For devices with smaller width like mobile phone
     }
 
     #breaker {
-        height: 50vh;
+        height: 100vh;
         width: 200%;
         background-color: #c70039;
         opacity: 1;
@@ -1870,13 +1870,13 @@ For devices with smaller width like mobile phone
     }
 
     .portfolio-image img {
-        height: 300px;
+        max-height: 300px;
         width: 100%;
     }
 
     .portfolio-image {
-        height: 300px;
-        width: 90%;
+        max-height: 300px;
+        width: 85%;
     }
 
     #navigation-bar img {
@@ -2095,7 +2095,7 @@ For devices with smaller width like mobile phone
         font-family: poppins;
         font-weight: 400;
         color: whitesmoke;
-        padding: 20px;
+        padding: 10px;
     }
 
     .contect-info-content-line {
@@ -2185,7 +2185,7 @@ for tabs and large phones
     }
 
     #breaker {
-        height: 50vh;
+        height: 100vh;
         width: 200%;
         background-color: #c70039;
         opacity: 1;
@@ -2411,13 +2411,13 @@ for tabs and large phones
     }
 
     .portfolio-image img {
-        height: 380px;
+        max-height: 380px;
         width: 100%;
         position: relative;
     }
 
     .portfolio-image {
-        height: 380px;
+        max-height: 380px;
         width: 70%;
     }
 
@@ -2637,7 +2637,7 @@ for tabs and large phones
         font-family: poppins;
         font-weight: 400;
         color: whitesmoke;
-        padding: 20px;
+        padding: 10px;
     }
 
     .contect-info-content-line {
@@ -2663,7 +2663,7 @@ for tabs and large phones
 @media all and (max-width: 9000px) and (min-width: 1441px) {
 
     .portfolio-image img {
-        height: 530px;
+        max-height: 530px;
         width: 92%;
         position: relative;
         border-radius: 20px;
@@ -2671,7 +2671,7 @@ for tabs and large phones
     }
 
     .portfolio-image {
-        height: 500px;
+        max-height: 500px;
         width: 40%;
     }
 

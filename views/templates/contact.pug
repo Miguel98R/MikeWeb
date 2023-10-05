@@ -7,18 +7,18 @@
             span.color Ponte
             | En contacto.
     .contact-content
-        //.contact-form
-             .form-header Message Me
-             form#myForm(action='#')
-                 .input-line
-                     input#name.input-name(type='text', placeholder='Name')
-                     |
-                     input#email.input-name(type='email', placeholder='Email')
-                 input#subject.input-subject(type='text', placeholder='subject')
-                 |
-                 textarea#body.input-textarea(placeholder='message')
-                 |
-                 button#submit(type='button', value='send') Submit
+        .contact-form
+            .form-header Mensajeame
+            form#myForm(action='/api/mail/sendMail' method="POST")
+                .input-line
+                    input#name.input-name(type='text', name="name" placeholder='Nombre')
+                    |
+                    input#email.input-name(type='email', name="email"  placeholder='Email')
+                input#subject.input-subject(type='text',name="subject"   placeholder='Asunto')
+                |
+                textarea#body.input-textarea(name="message"   placeholder='Mensaje')
+                |
+                button#submit(type='submit') Enviar
         .contact-info
             .contact-info-header Información de contacto
             .contact-info-content
