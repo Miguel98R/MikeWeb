@@ -370,6 +370,7 @@ body {
     justify-content: center;
     flex-direction: column;
     font-family: poppins;
+    color: white;
 }
 
 .navigation-links a {
@@ -383,6 +384,7 @@ body {
 
 .navigation-links a:hover {
     opacity: 1;
+    color: red;
 }
 
 .navigation-links a::before {
@@ -409,6 +411,7 @@ body {
     content: attr(data-text);
     opacity: 1;
     letter-spacing: 30px;
+
 
 }
 
