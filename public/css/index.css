@@ -1473,7 +1473,10 @@ form button:hover {
     font-family: poppins;
     align-items: center;
     justify-content: center;
+    position: fixed; /* Fijar posición */
+    bottom: 0; /* Colocar en la parte inferior */
 }
+
 
 .footer .footer-text {
     position: relative;
