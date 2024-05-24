@@ -8,7 +8,7 @@ const app = express()
 //configuraciones
 
 
-app.set('port', 3001)
+app.set('port', 3070)
 app.set('appName', 'Mike Rosas Dev - Web')
 
 app.set('views', path.join(__dirname, 'views'))

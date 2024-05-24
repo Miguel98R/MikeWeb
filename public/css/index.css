@@ -49,6 +49,9 @@ html {
 
 }
 
+
+
+
 #loader {
     display: flex;
     align-items: center;
@@ -71,6 +74,7 @@ body {
     width: 100%;
     background: #171717;
 }
+
 
 #header {
     background: #171717;
@@ -1046,6 +1050,24 @@ body {
     transition: all .4s ease;
 }
 
+.button_portfolies {
+    font-size: 16px;
+    opacity: .8;
+    font-family: poppins;
+    font-weight: 200;
+    padding: 10px 20px;
+    background: transparent;
+    color: #c70039;
+    transition: all .4s ease;
+    outline: none;
+    margin: 20px;
+    border: 1.5px solid #c70039;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: all .4s ease;
+}
+
 .portfolio-text button::before {
     content: "";
     position: absolute;
@@ -1295,7 +1317,7 @@ button:hover .index {
 }
 
 .contact-content {
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: auto;
     display: flex;
@@ -1470,21 +1492,19 @@ form button:hover {
     color: whitesmoke;
     display: flex;
     flex-direction: row;
-    font-family: poppins;
+    font-family: Poppins, sans-serif;
     align-items: center;
     justify-content: center;
-    position: fixed; /* Fijar posición */
-    bottom: 0; /* Colocar en la parte inferior */
+    position: relative; /* Cambiado a relativo */
 }
 
-
 .footer .footer-text {
-    position: relative;
     display: inline;
     font-size: 15px;
     font-weight: 400;
     opacity: 1;
 }
+
 
 .color-changer {
     height: auto;
@@ -1969,7 +1989,7 @@ For devices with smaller width like mobile phone
     }
 
     .contact-content {
-        width: 90%;
+        width: 100%;
         margin: auto;
         height: auto;
         display: flex;
@@ -2511,7 +2531,7 @@ for tabs and large phones
     }
 
     .contact-content {
-        width: 90%;
+        width: 100%;
         margin: auto;
         height: auto;
         display: flex;
@@ -2871,7 +2891,7 @@ for tabs and large phones
     }
 
     .contact-content {
-        width: 90%;
+        width: 100%;
         margin: auto;
         height: auto;
         display: flex;

@@ -6,7 +6,7 @@
         .contact-header-caption
             span.color Ponte
             | En contacto.
-    .contact-content
+    .contact-content.py-5
         //.contact-form
             .form-header Mensajeame
             form#myForm(action='/api/mail/sendMail' method="POST")
@@ -19,9 +19,9 @@
                 textarea#body.input-textarea(name="message"   placeholder='Mensaje')
                 |
                 button#submit(type='submit') Enviar
-        .contact-info.py-2
+        .contact-info
             .contact-info-header Información de contacto
-            .contact-info-content
+            .contact-info-content.text-center
                 .contect-info-content-line
                     img.icon(src='/public/images/icon-name.png', alt='name-icon')
                     .contact-info-icon-text
@@ -36,10 +36,12 @@
                     img.icon(src='/public/images/icon-phone.png', alt='phone-icon')
                     .contact-info-icon-text
                         h6 Whatsapp
-                        p +52 7714349366
+                        p.text-white
+                            a.text-white(href='https://wa.me/527714349366?text=Hola%20deseo%20contratar%20un%20servicio%20de%20desarrollo' target='_blank') +52 771 434 9366
+
                 .contect-info-content-line
                     img.icon(src='/public/images/icon-email.png', alt='email-icon')
                     .contact-info-icon-text
                         h6 Email
                         p mikerosas.dev98@gmail.com
-    include footer
+    //include footer
