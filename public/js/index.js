@@ -182,4 +182,11 @@ $(function () {
     $('a').hover(cursorhover, cursor);
     $('.navigation-close').hover(cursorhover, cursor);
 
+    $('.owl-carousel').owlCarousel({
+        center: true,
+        loop:true,
+        margin:2,
+
+    });
+
 })

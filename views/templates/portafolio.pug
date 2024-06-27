@@ -1,13 +1,55 @@
 #portfolio
     include color-selector
+    .portfolio-header
+        span.color Colabo
+        | raciónes
+        span.header-caption
+            | He colaborado con
+            span.mx-1.color estas empresas
+    #colaborations_content
+        #brands.owl-carousel.text-center
+            div.text-center
+                .card.text-center(style="background-color: transparent; width: 400px; height: 300px;")
+                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
+                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/leganux.png', alt='portfolio-fourth')
+                    .card-footer.text-center(style="background-color: transparent; border: 1px solid #C70039;")
+                        h5.color Leganux.net
+            div.text-center
+                .card.text-center(style="background-color: transparent; width: 400px; height: 300px;")
+                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
+                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/sevendental.png', alt='portfolio-fourth')
+                    .card-footer.text-center(style="background-color: transparent; border: 1px solid #C70039;")
+                        h5.color Laboratorio Seven Dental
+            div.text-center
+                .card.text-center(style="background-color: transparent; width: 400px; height: 300px;")
+                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
+                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/logo_abba_fondo.png', alt='portfolio-fourth')
+                    .card-footer.text-center(style="background-color: transparent; border: 1px solid #C70039;")
+                        h5.color Abba items store
+
+            div.text-center
+                .card.text-center(style="background-color: transparent; width: 400px; height: 300px;")
+                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
+                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/fuego_mex.png', alt='portfolio-fourth')
+                    .card-footer.text-center(style="background-color: transparent; border: 1px solid #C70039;")
+                        h5.color Fuego Mexicano
+
+            div.text-center
+                .card.text-center(style="background-color: transparent; width: 400px; height: 300px;")
+                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
+                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/cultura_jesus.png', alt='portfolio-fourth')
+                    .card-footer.text-center(style="background-color: transparent; border: 1px solid #C70039;")
+                        h5.color Iglesia Cultura de Jesus
+
+
 
 
     .portfolio-header
         span.color Mis
         | Proyectos
         span.header-caption
-            | Algunos de mis
-            span.color Trabajos
+            | Algunos de mis Trabajos
+            span.mx-1.color y colaboraciones
     #portfolio-content
         .container.p-4
             .row.text-center.py-1
@@ -51,10 +93,10 @@
                             p.text-white Diseñé y desarrollé una página web completa para la Iglesia Cultura de Jesús, ofreciendo información sobre áreas, congresos, horarios, ubicaciones y peticiones de oración
                         .card-footer
                             .button_portfolies
-                                    a(href='https://culturadejesus.com.mx' target="_blank")
-                                        button.btn.text-white
-                                            span.index Ver Página
-                                            i.gg-arrow-right
+                                a(href='https://culturadejesus.com.mx' target="_blank")
+                                    button.btn.text-white
+                                        span.index Ver Página
+                                        i.gg-arrow-right
 
                 .col-12.col-sm-12.col-md-6.col-lg-6
                     .card.bg-black(style="height: 100%;")
@@ -133,6 +175,25 @@
                                         span.index
                                             | Ver repositorio
                                             i.gg-arrow-right
-
+            .row.text-center.py-1
+                .col-12.col-sm-12.col-md-6.col-lg-6
+                    .card.bg-black(style="height: 100%;")
+                        .card-img-top
+                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/offcanva_mike.png',  alt='portfolio-fourth')
+                        .card-body
+                            h2.text-danger  OffCanva Mike
+                            p.text-white offcanva_mike es un complemento de jQuery para crear fácilmente menús fuera del lienzo en diferentes direcciones (izquierda, derecha, arriba, abajo).
+                        .card-footer
+                            .button_portfolies
+                                a(href='https://mikeleganux1998.github.io/offcanva_mike/' target="_blank")
+                                    button.btn.text-white
+                                        span.index
+                                            | Ver Demo
+                                            i.gg-arrow-right
+                                a(href='https://github.com/mikeleganux1998/offcanva_mike' target="_blank")
+                                    button.btn.text-white
+                                        span.index
+                                            | Ver repositorio
+                                            i.gg-arrow-right
 
     include footer
