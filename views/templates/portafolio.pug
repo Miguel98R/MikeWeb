@@ -1,199 +1,25 @@
 #portfolio
     include color-selector
     .portfolio-header
-        span.color Colabo
-        | raciónes
+        span.color Colaboraciones
+        |
         span.header-caption
             | He colaborado con
             span.mx-1.color estas empresas
+
     #colaborations_content
         #brands.owl-carousel.owl-theme.text-center
-            div.text-center
-                .card.text-center.border-0(style="background-color: transparent; width: 400px; height: 300px;")
-                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
-                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/leganux.png', alt='portfolio-fourth')
-                    .card-footer.text-center(style="background-color: transparent;")
-                        h5.color Leganux.net
-            div.text-center
-                .card.text-center.border-0(style="background-color: transparent; width: 400px; height: 300px;")
-                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
-                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/sevendental.png', alt='portfolio-fourth')
-                    .card-footer.text-center(style="background-color: transparent;")
-                        h5.color Laboratorio Seven Dental
-            div.text-center
-                .card.text-center.border-0(style="background-color: transparent; width: 400px; height: 300px;")
-                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
-                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/logo_abba_fondo.png', alt='portfolio-fourth')
-                    .card-footer.text-center(style="background-color: transparent;")
-                        h5.color Abba items store
-
-            div.text-center
-                .card.text-center.border-0(style="background-color: transparent; width: 400px; height: 300px;")
-                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
-                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/fuego_mex.png', alt='portfolio-fourth')
-                    .card-footer.text-center(style="background-color: transparent;")
-                        h5.color Fuego Mexicano
-
-            div.text-center
-                .card.text-center.border-0(style="background-color: transparent; width: 400px; height: 300px;")
-                    .card-body.text-center(style="display: flex; justify-content: center; align-items: center; height: calc(100% - 10px);")
-                        img.img-fluid(style="max-width:190px; max-height:190px; margin: 0 auto;" src='/public/images/cultura_jesus.png', alt='portfolio-fourth')
-                    .card-footer.text-center(style="background-color: transparent;")
-                        h5.color Iglesia Cultura de Jesus
-
-
-
+            // Contenedor vacío para las colaboraciones
 
     .portfolio-header
-        span.color Mis
-        | Proyectos
+        span.color Mis Proyectos
+        |
         span.header-caption
-            | Algunos de mis Trabajos
-            span.mx-1.color y colaboraciones
+            | Algunos de mis Trabajos y colaboraciones
+
     #portfolio-content
         .container.p-4
             .row.text-center.py-1
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;"  src='/public/images/msj.png', alt='portfolio-fourth')
-                        .card-body
-
-                            h2.text-danger Plataforma MyScentJourney
-                            p.text-white En este proyecto colaboré tanto en backend como en frontend. El proyecto es un e-commerce de perfumes en el cual se puede comprar por botella o decantación. Además, cuenta con un cotizador y también ofrece venta por preventa y lista de espera. En la parte de la lógica del negocio también ayudé en la gestión de lotes de las botellas, registro de stock y muchas otras tareas más.
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://myscentjourney.com', target="_blank")
-                                    button.btn.text-white
-                                        span.index Ver Página
-                                        i.gg-arrow-right
-
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/fuegomex.png', alt='portfolio-fourth')
-                        .card-body
-                            h2.text-danger  E-commerce y web Fuego Mexicano
-                            p.text-white Diseñé y desarrollé una página web completa para el Pastor Héctor Andrade, ofreciendo venta de merchandising, blog, agenda de eventos y peticiones de invitaciones.
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://fuegomexicano.com', target="_blank")
-
-                                    button.btn.text-white
-                                        span.index Ver Página
-                                        i.gg-arrow-right
-            .row.text-center.py-1
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/cj.png', alt='portfolio-fourth')
-                        .card-body
-
-                            h2.text-danger Web Cultura de Jesús
-                            p.text-white Diseñé y desarrollé una página web completa para la Iglesia Cultura de Jesús, ofreciendo información sobre áreas, congresos, horarios, ubicaciones y peticiones de oración
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://culturadejesus.com.mx' target="_blank")
-                                    button.btn.text-white
-                                        span.index Ver Página
-                                        i.gg-arrow-right
-
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/mike_web.png',  alt='portfolio-fourth')
-                        .card-body
-                            h2.text-danger  Web Mike Rosas Dev
-                            p.text-white Diseñé y desarrollé mi sitio web personal, un portafolio que ofrece información acerca de mí, mis proyectos y experiencia profesional.
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://mikerosasdev.com' target="_blank")
-
-                                    button.btn.text-white
-                                        span.index Ver Página
-                                        i.gg-arrow-right
-
-
-            .row.text-center.py-1
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:370px;" src='/public/images/abba_web.png',  alt='portfolio-fourth')
-                        .card-body
-                            h2.text-danger  Abba Items Store
-                            p.text-white Diseñé y desarrollé la landing page para Abba Items Store, una empresa 100% mexicana que ofrece lo último en moda y bisutería, incluyendo aretes, anillos y artículos de moda de temporada.
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://abbaitemsstore.mikerosasdev.com' target="_blank")
-                                    button.btn.text-white
-                                        span.index Ver Página
-                                        i.gg-arrow-right
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/toothlabmx_logo.jpeg',  alt='portfolio-fourth')
-                        .card-body
-
-                            h2.text-danger ToothLabMX
-                            p.text-white Software para gestionar laboratorios dentales con funciones como crear órdenes, administrar dentistas y productos, historial de órdenes, estadísticas y más.
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://github.com/Miguel98R/ToothLabMX_2' target="_blank")
-                                    button.btn.text-white
-                                        span.index
-                                            | Ver repositorio
-                                            i.gg-arrow-right
-
-
-            .row.text-center.py-1
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/project2pug.png',  alt='portfolio-fourth')
-                        .card-body
-                            h2.text-danger  Project2Pug
-                            p.text-white Transformador de plantillas HTML a Pug js para optimizar como motor de vista web.
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://github.com/Miguel98R/project2Pug' target="_blank")
-                                    button.btn.text-white
-                                        span.index
-                                            | Ver repositorio
-                                            i.gg-arrow-right
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/wave_logo.jpeg',  alt='portfolio-fourth')
-                        .card-body
-
-                            h2.text-danger WaveModulator
-                            p.text-white Es un proyecto en Python que ejemplifica técnicas de modulación digital con ondas sinusoidales, incluyendo ASK, FSK, PSK y QAM con distintos órdenes de modulación.
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://github.com/Miguel98R/WaveModulator' target="_blank")
-                                    button.btn.text-white
-                                        span.index
-                                            | Ver repositorio
-                                            i.gg-arrow-right
-            .row.text-center.py-1
-                .col-12.col-sm-12.col-md-6.col-lg-6
-                    .card.bg-black(style="height: 100%;")
-                        .card-img-top
-                            img.m-2.img-fluid(style="max-height:310px;" src='/public/images/offcanva_mike.png',  alt='portfolio-fourth')
-                        .card-body
-                            h2.text-danger  OffCanva Mike
-                            p.text-white offcanva_mike es un complemento de jQuery para crear fácilmente menús fuera del lienzo en diferentes direcciones (izquierda, derecha, arriba, abajo).
-                        .card-footer
-                            .button_portfolies
-                                a(href='https://mikeleganux1998.github.io/offcanva_mike/' target="_blank")
-                                    button.btn.text-white
-                                        span.index
-                                            | Ver Demo
-                                            i.gg-arrow-right
-                                a(href='https://github.com/mikeleganux1998/offcanva_mike' target="_blank")
-                                    button.btn.text-white
-                                        span.index
-                                            | Ver repositorio
-                                            i.gg-arrow-right
+                // Contenedor vacío para los proyectos
 
     include footer

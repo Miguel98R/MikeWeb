@@ -182,28 +182,193 @@ $(function () {
     $('a').hover(cursorhover, cursor);
     $('.navigation-close').hover(cursorhover, cursor);
 
-    $('.owl-carousel').owlCarousel({
+    setTimeout(function () {
+        $('.owl-carousel').owlCarousel({
 
-        loop:true,
-        margin:15,
-        nav:false,
-        responsiveClass:true,
-        responsive:{
-            0:{
-                items:2,
+            loop:true,
+            margin:15,
+            nav:false,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:2,
 
-            },
-            600:{
-                items:3,
+                },
+                600:{
+                    items:3,
 
-            },
-            1000:{
-                items:4,
+                },
+                1000:{
+                    items:5,
 
 
+                }
             }
-        }
 
+        });
+
+    },2000)
+
+    // Datos para las colaboraciones
+    var collaborations = [
+        {
+            image: '/public/images/logo_colorado_cafe.png'
+        },
+        {
+            image: '/public/images/leganux.png'
+        },
+        {
+            image: '/public/images/sevendental.png'
+        },
+        {
+            image: '/public/images/logo_abba_fondo.png'
+        },
+        {
+            image: '/public/images/fuego_mex.png'
+        },
+        {
+            image: '/public/images/cultura_jesus.png'
+        }
+        // Agrega más objetos según sea necesario
+    ];
+
+
+
+    // Añadir colaboraciones al carousel
+    collaborations.forEach(function(collaboration) {
+        var card = $('<div>').addClass('text-center')
+            .append($('<div>').addClass('card text-center border-0')
+                .css({
+                    'background-color': 'transparent',
+                    'width': '400px',
+                    'height': '300px'
+                })
+                .append($('<div>').addClass('card-body text-center')
+                    .css({
+                        'display': 'flex',
+                        'justify-content': 'center',
+                        'align-items': 'center',
+                        'height': 'calc(100% - 10px)'
+                    })
+                    .append($('<img>').addClass('img-fluid')
+                        .attr('src', collaboration.image)
+                        .attr('alt', 'portfolio-fourth')
+                        .css({
+                            'max-width': '130px',
+                            'max-height': '130px',
+                            'margin': '0 auto'
+                        })
+                    )
+                )
+                .append($('<div>').addClass('card-footer text-center')
+                    .css('background-color', 'transparent')
+                    // Sin enlace en el botón
+                    .append($('<button>').addClass('btn text-white')
+                        .append($('<i>').addClass('gg-arrow-right'))
+                    )
+                )
+            );
+
+        $('#brands.owl-carousel').append(card);
     });
+
+
+    // Datos para los proyectos
+    var projects = [
+        {
+            title: 'Desarrollo de Sitio Web para Café El Colorado',
+            image: '/public/images/web_colorado_cafe.png',
+            description: 'Este proyecto consistió en el desarrollo integral de un sitio web para Café El Colorado, un café 100% mexicano ubicado en Guerrero. Me encargué de implementar partes dinámicas del sitio, formularios de contacto y un sistema para gestionar distribuidores. Mi enfoque fue asegurar que el sitio web reflejara la identidad y valores del café, proporcionando una plataforma funcional y atractiva para sus clientes.',
+            link: 'https://cafeelcolorado.com.mx'
+        },
+        {
+            title: 'Plataforma MyScentJourney',
+            image: '/public/images/msj.png',
+            description: 'En este proyecto colaboré tanto en backend como en frontend. El proyecto es un e-commerce de perfumes en el cual se puede comprar por botella o decantación. Además, cuenta con un cotizador y también ofrece venta por preventa y lista de espera. En la parte de la lógica del negocio también ayudé en la gestión de lotes de las botellas, registro de stock y muchas otras tareas más.',
+            link: 'https://myscentjourney.com'
+        },
+        {
+            title: 'E-commerce y web Fuego Mexicano',
+            image: '/public/images/fuegomex.png',
+            description: 'Diseñé y desarrollé una página web completa para el Pastor Héctor Andrade, ofreciendo venta de merchandising, blog, agenda de eventos y peticiones de invitaciones.',
+            link: 'https://fuegomexicano.com'
+        },
+        {
+            title: 'Web Cultura de Jesús',
+            image: '/public/images/cj.png',
+            description: 'Diseñé y desarrollé una página web completa para la Iglesia Cultura de Jesús, ofreciendo información sobre áreas, congresos, horarios, ubicaciones y peticiones de oración.',
+            link: 'https://culturadejesus.com.mx'
+        },
+        {
+            title: 'Web Mike Rosas Dev',
+            image: '/public/images/mike_web.png',
+            description: 'Diseñé y desarrollé mi sitio web personal, un portafolio que ofrece información acerca de mí, mis proyectos y experiencia profesional.',
+            link: 'https://mikerosasdev.com'
+        },
+        {
+            title: 'Abba Items Store',
+            image: '/public/images/abba_web.png',
+            description: 'Diseñé y desarrollé la landing page para Abba Items Store, una empresa 100% mexicana que ofrece lo último en moda y bisutería, incluyendo aretes, anillos y artículos de moda de temporada.',
+            link: 'https://abbaitemsstore.mikerosasdev.com'
+        },
+        {
+            title: 'ToothLabMX',
+            image: '/public/images/toothlabmx_logo.jpeg',
+            description: 'Software para gestionar laboratorios dentales con funciones como crear órdenes, administrar dentistas y productos, historial de órdenes, estadísticas y más.',
+            link: 'https://github.com/Miguel98R/ToothLabMX_2'
+        },
+        {
+            title: 'Project2Pug',
+            image: '/public/images/project2pug.png',
+            description: 'Transformador de plantillas HTML a Pug js para optimizar como motor de vista web.',
+            link: 'https://github.com/Miguel98R/project2Pug'
+        },
+        {
+            title: 'WaveModulator',
+            image: '/public/images/wave_logo.jpeg',
+            description: 'Proyecto en Python que ejemplifica técnicas de modulación digital con ondas sinusoidales, incluyendo ASK, FSK, PSK y QAM con distintos órdenes de modulación.',
+            link: 'https://github.com/Miguel98R/WaveModulator'
+        },
+        {
+            title: 'OffCanva Mike',
+            image: '/public/images/offcanva_mike.png',
+            description: 'OffCanva Mike es un complemento de jQuery para crear fácilmente menús fuera del lienzo en diferentes direcciones (izquierda, derecha, arriba, abajo).',
+            link: 'https://mikeleganux1998.github.io/offcanva_mike/'
+        }
+        // Agrega más objetos según sea necesario
+    ];
+
+
+    // Añadir proyectos al contenido
+    projects.forEach(function(project) {
+        var card = $('<div>').addClass('col-12 col-sm-12 col-md-6 col-lg-6')
+            .append($('<div>').addClass('card bg-black')
+                .css('height', '100%')
+                .append($('<div>').addClass('card-img-top')
+                    .append($('<img>').addClass('m-2 img-fluid')
+                        .attr('src', project.image)
+                        .attr('style', 'max-height:310px;')
+                        .attr('alt', 'portfolio-fourth')
+                    )
+                )
+                .append($('<div>').addClass('card-body')
+                    .append($('<h2>').addClass('text-danger').text(project.title))
+                    .append($('<p>').addClass('text-white').text(project.description))
+                )
+                .append($('<div>').addClass('card-footer')
+                    .append($('<div>').addClass('button_portfolies')
+                        .append($('<a>').attr('href', project.link).attr('target', '_blank')
+                            .append($('<button>').addClass('btn text-white')
+                                .append($('<span>').addClass('index').text('Ver Página'))
+                                .append($('<i>').addClass('gg-arrow-right'))
+                            )
+                        )
+                    )
+                )
+            );
+
+        $('#portfolio-content .container .row').append(card);
+    });
+
 
 })
