@@ -182,6 +182,7 @@ $(function () {
     $('a').hover(cursorhover, cursor);
     $('.navigation-close').hover(cursorhover, cursor);
 
+    //oaw
     setTimeout(function () {
         $('.owl-carousel').owlCarousel({
 
