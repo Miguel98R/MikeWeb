@@ -258,8 +258,8 @@ $(function () {
                         .attr('src', collaboration.image)
                         .attr('alt', 'portfolio-fourth')
                         .css({
-                            'max-width': '140px',
-                            'max-height': '140px',
+                            'max-width': '130px',
+                            'max-height': '130px',
                             'margin': '0 auto'
                         })
                     )
