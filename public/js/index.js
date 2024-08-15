@@ -185,28 +185,23 @@ $(function () {
     //oaw
     setTimeout(function () {
         $('.owl-carousel').owlCarousel({
-
-            loop:true,
-            margin:15,
-            nav:false,
-            responsiveClass:true,
-            responsive:{
-                0:{
-                    items:2,
-
+            loop: true,
+            margin: 10,
+            nav: false,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1
                 },
-                600:{
-                    items:3,
-
+                600: {
+                    items: 3
                 },
-                1000:{
-                    items:5,
-
-
+                1000: {
+                    items: 4
                 }
             }
-
         });
+
 
     },2000)
 
@@ -245,7 +240,7 @@ $(function () {
                 .css({
                     'background-color': '#350D18',
                     'width': '400px',
-                    'height': '200px'
+                    'height': '230px'
                 })
                 .append($('<div>').addClass('card-body border-0 text-center')
                     .css({
@@ -258,8 +253,8 @@ $(function () {
                         .attr('src', collaboration.image)
                         .attr('alt', 'portfolio-fourth')
                         .css({
-                            'max-width': '130px',
-                            'max-height': '130px',
+                            'max-width': '150px',
+                            'max-height': '150px',
                             'margin': '0 auto'
                         })
                     )

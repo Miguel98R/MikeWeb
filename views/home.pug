@@ -2,6 +2,27 @@ doctype html
 html(lang='es')
     include templates/head
     include templates/styles
+    style.
+        .owl-carousel .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Ajusta el ancho y alto del contenedor de los items si es necesario */
+        }
+
+        .owl-carousel .item img {
+            max-width: 100%; /* Asegura que la imagen no se desborde */
+            height: auto; /* Mantiene la relación de aspecto */
+            object-fit: contain; /* Ajusta el contenido dentro del contenedor sin recortar */
+
+        }
+
+        .owl-carousel .item {
+            box-sizing: border-box;
+        }
+
+
+
     body
         #all
             .cursor
