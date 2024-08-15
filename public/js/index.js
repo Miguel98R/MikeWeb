@@ -225,6 +225,9 @@ $(function () {
             image: '/public/images/logo_abba_fondo.png'
         },
         {
+            image: '/public/images/logo_inmobiliaria.png'
+        },
+        {
             image: '/public/images/fuego_mex.png'
         },
         {
@@ -240,11 +243,11 @@ $(function () {
         var card = $('<div>').addClass('text-center')
             .append($('<div>').addClass('card text-center border-0')
                 .css({
-                    'background-color': 'transparent',
+                    'background-color': '#350D18',
                     'width': '400px',
-                    'height': '300px'
+                    'height': '200px'
                 })
-                .append($('<div>').addClass('card-body text-center')
+                .append($('<div>').addClass('card-body border-0 text-center')
                     .css({
                         'display': 'flex',
                         'justify-content': 'center',
@@ -255,13 +258,13 @@ $(function () {
                         .attr('src', collaboration.image)
                         .attr('alt', 'portfolio-fourth')
                         .css({
-                            'max-width': '130px',
-                            'max-height': '130px',
+                            'max-width': '140px',
+                            'max-height': '140px',
                             'margin': '0 auto'
                         })
                     )
                 )
-                .append($('<div>').addClass('card-footer text-center')
+                .append($('<div>').addClass('card-footer border-0 text-center')
                     .css('background-color', 'transparent')
                     // Sin enlace en el botón
                     .append($('<button>').addClass('btn text-white')
@@ -276,6 +279,18 @@ $(function () {
 
     // Datos para los proyectos
     var projects = [
+        {
+            title: 'Desarrollo de Plataforma para Ventas Digitales del Congreso DDLV',
+            image: '/public/images/captura_ddlv_digital.png',
+            description: 'Este proyecto involucró la creación de una plataforma de ventas digitales para el Congreso DDLV. Mi responsabilidad fue desarrollar una solución completa que incluyera la gestión de ventas en línea, la integración de métodos de pago y la automatización de procesos administrativos. La plataforma fue diseñada para ser intuitiva y fácil de usar, garantizando una experiencia fluida para los usuarios.',
+            link: 'https://ddlvdigital.culturadejesus.com'
+        },
+        {
+            title: 'Desarrollo de Sitio Web para Real State Inmobiliaria GM',
+            image: '/public/images/realstategm.png',
+            description: 'En este proyecto, desarrollé un sitio web completo para Real State Inmobiliaria GM, una empresa inmobiliaria. El sitio incluye un panel de administración donde los usuarios pueden gestionar propiedades y contactos de clientes de manera eficiente. Mi enfoque fue crear una herramienta funcional y fácil de usar, que reflejara la profesionalidad de la empresa y facilitara la gestión interna de la inmobiliaria.',
+            link: 'https://www.realstategm.com'
+        },
         {
             title: 'Desarrollo de Sitio Web para Café El Colorado',
             image: '/public/images/web_colorado_cafe.png',
@@ -298,7 +313,7 @@ $(function () {
             title: 'Web Cultura de Jesús',
             image: '/public/images/cj.png',
             description: 'Diseñé y desarrollé una página web completa para la Iglesia Cultura de Jesús, ofreciendo información sobre áreas, congresos, horarios, ubicaciones y peticiones de oración.',
-            link: 'https://culturadejesus.com.mx'
+            link: 'https://culturadejesus.com'
         },
         {
             title: 'Web Mike Rosas Dev',
