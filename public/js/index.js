@@ -203,7 +203,7 @@ $(function () {
         });
 
 
-    },2000)
+    }, 2000)
 
     // Datos para las colaboraciones
     var collaborations = [
@@ -220,8 +220,10 @@ $(function () {
             image: '/public/images/logo_abba_fondo.png'
         },
         {
-            image: '/public/images/logo_inmobiliaria.png'
+            image: '/public/images/logo_concatur.png'
         },
+
+        
         {
             image: '/public/images/fuego_mex.png'
         },
@@ -232,9 +234,8 @@ $(function () {
     ];
 
 
-
     // Añadir colaboraciones al carousel
-    collaborations.forEach(function(collaboration) {
+    collaborations.forEach(function (collaboration) {
         var card = $('<div>').addClass('text-center')
             .append($('<div>').addClass('card text-center border-0')
                 .css({
@@ -279,13 +280,18 @@ $(function () {
             image: '/public/images/captura_ddlv_digital.png',
             description: 'Este proyecto involucró la creación de una plataforma de ventas digitales para el Congreso DDLV. Mi responsabilidad fue desarrollar una solución completa que incluyera la gestión de ventas en línea, la integración de métodos de pago y la automatización de procesos administrativos. La plataforma fue diseñada para ser intuitiva y fácil de usar, garantizando una experiencia fluida para los usuarios.',
             link: 'https://ddlvdigital.culturadejesus.com'
+        }, {
+            title: 'Desarrollo de Sitio Web para Café El Colorado',
+            image: '/public/images/concatur_web.png',
+            description: 'Este proyecto consistió en el desarrollo integral de un sitio web para CONCATUR,Empresa dedicada a la consultoría y capacitación en comercio,turismo e inocuidad.',
+            link: 'https://concatur.com.mx'
         },
-        {
-            title: 'Desarrollo de Sitio Web para Real State Inmobiliaria GM',
-            image: '/public/images/realstategm.png',
-            description: 'En este proyecto, desarrollé un sitio web completo para Real State Inmobiliaria GM, una empresa inmobiliaria. El sitio incluye un panel de administración donde los usuarios pueden gestionar propiedades y contactos de clientes de manera eficiente. Mi enfoque fue crear una herramienta funcional y fácil de usar, que reflejara la profesionalidad de la empresa y facilitara la gestión interna de la inmobiliaria.',
-            link: 'https://www.realstategm.com'
-        },
+        /* {
+             title: 'Desarrollo de Sitio Web para Real State Inmobiliaria GM',
+             image: '/public/images/realstategm.png',
+             description: 'En este proyecto, desarrollé un sitio web completo para Real State Inmobiliaria GM, una empresa inmobiliaria. El sitio incluye un panel de administración donde los usuarios pueden gestionar propiedades y contactos de clientes de manera eficiente. Mi enfoque fue crear una herramienta funcional y fácil de usar, que reflejara la profesionalidad de la empresa y facilitara la gestión interna de la inmobiliaria.',
+             link: 'https://www.realstategm.com'
+         },*/
         {
             title: 'Desarrollo de Sitio Web para Café El Colorado',
             image: '/public/images/web_colorado_cafe.png',
@@ -351,7 +357,7 @@ $(function () {
 
 
     // Añadir proyectos al contenido
-    projects.forEach(function(project) {
+    projects.forEach(function (project) {
         var card = $('<div>').addClass('col-12 col-sm-12 col-md-6 col-lg-6')
             .append($('<div>').addClass('card bg-black')
                 .css('height', '100%')
