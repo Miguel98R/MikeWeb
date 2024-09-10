@@ -223,7 +223,7 @@ $(function () {
             image: '/public/images/logo_concatur.png'
         },
 
-        
+
         {
             image: '/public/images/fuego_mex.png'
         },
@@ -281,9 +281,9 @@ $(function () {
             description: 'Este proyecto involucró la creación de una plataforma de ventas digitales para el Congreso DDLV. Mi responsabilidad fue desarrollar una solución completa que incluyera la gestión de ventas en línea, la integración de métodos de pago y la automatización de procesos administrativos. La plataforma fue diseñada para ser intuitiva y fácil de usar, garantizando una experiencia fluida para los usuarios.',
             link: 'https://ddlvdigital.culturadejesus.com'
         }, {
-            title: 'Desarrollo de Sitio Web para Café El Colorado',
+            title: 'Desarrollo de Sitio Web para CONCATUR',
             image: '/public/images/concatur_web.png',
-            description: 'Este proyecto consistió en el desarrollo integral de un sitio web para CONCATUR,Empresa dedicada a la consultoría y capacitación en comercio,turismo e inocuidad.',
+            description: 'Este proyecto consistió en el desarrollo integral de un sitio web para CONCATUR. Empresa dedicada a la consultoría y capacitación en comercio,turismo e inocuidad.',
             link: 'https://concatur.com.mx'
         },
         /* {
