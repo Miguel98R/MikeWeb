@@ -498,6 +498,13 @@ body {
     overflow: hidden;
 }
 
+#avisoPrivacidad {
+    background-color: #101010;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
 @keyframes scale {
     0% {
         transform: scale(.6);

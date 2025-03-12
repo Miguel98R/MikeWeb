@@ -9,6 +9,10 @@ router.get("/home", (req, res) => {
     res.render("home");
 });
 
+router.get("/aviso-de-privacidad", (req, res) => {
+    res.render("avisoPrivacidad");
+});
+
 router.get("/email_success", (req, res) => {
     res.render("email_success");
 });

@@ -1,0 +1,63 @@
+doctype html
+html(lang='es')
+    include templates/head
+    include templates/styles
+    style.
+        .owl-carousel .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Ajusta el ancho y alto del contenedor de los items si es necesario */
+        }
+
+        .owl-carousel .item img {
+            max-width: 100%; /* Asegura que la imagen no se desborde */
+            height: auto; /* Mantiene la relación de aspecto */
+            object-fit: contain; /* Ajusta el contenido dentro del contenedor sin recortar */
+        }
+
+        .owl-carousel .item {
+            box-sizing: border-box;
+        }
+
+    body
+        #all
+            .cursor
+            #loader.text-center
+                span.color José Miguel
+                | Rosas Jiménez
+            #breaker
+            #breaker-two
+            #avisoPrivacidad
+                .logo
+                    a(href='/')
+                        img(src='/public/images/logo_mike.png', alt='logo')
+                .container.text-white
+                    .about-header
+                        | Aviso
+                        span.color De
+                        | Privacidad
+                        span.header-caption
+                            |
+                            span.color
+                    p
+                        | En cumplimiento con las leyes y normativas sobre protección de datos personales, te informamos que:
+                    p
+                        | Recopilamos información personal que puede incluir, pero no se limita a, tu nombre, dirección de correo electrónico, número de teléfono, dirección IP y otros datos necesarios para la provisión de nuestros servicios.
+                    p
+                        | Esta información se utiliza para mejorar tu experiencia en nuestra plataforma, procesar tus solicitudes, ofrecer soporte y comunicarnos contigo de manera efectiva. No compartimos tu información personal con terceros, salvo cuando sea necesario para cumplir con la ley o para realizar la prestación de los servicios solicitados.
+                    p
+                        | Implementamos medidas de seguridad para proteger la información personal que recolectamos, y nos comprometemos a no usarla con fines distintos a aquellos para los que fue recolectada, de acuerdo con nuestra política de privacidad.
+                    p
+                        | Tienes derecho a acceder, corregir, eliminar o limitar el uso de tus datos personales en cualquier momento. Para ejercer estos derechos o si tienes alguna pregunta sobre cómo manejamos tu información, puedes ponerte en contacto con nosotros a través de los canales disponibles en nuestro sitio web.
+                    p
+                        | Al utilizar nuestra plataforma, aceptas la recopilación y el tratamiento de tus datos personales bajo los términos de esta política de privacidad.
+                    p
+                        | Si en algún momento decidimos actualizar nuestra política de privacidad, lo haremos de manera transparente y te notificaremos sobre dichos cambios.
+                    .btn-container
+                        a(href="/", class="btn-regresar")
+                            i(class="fa fa-arrow-left")
+                            | Regresar al inicio
+
+        include templates/footer
+        include templates/scripts
