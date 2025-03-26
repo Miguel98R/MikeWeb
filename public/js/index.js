@@ -276,10 +276,10 @@ $(function () {
     // Datos para los proyectos
     var projects = [
         {
-            title: 'Desarrollo de Plataforma para Ventas Digitales del Congreso DDLV',
-            image: '/public/images/captura_ddlv_digital.png',
-            description: 'Este proyecto involucró la creación de una plataforma de ventas digitales para el Congreso DDLV. Mi responsabilidad fue desarrollar una solución completa que incluyera la gestión de ventas en línea, la integración de métodos de pago y la automatización de procesos administrativos. La plataforma fue diseñada para ser intuitiva y fácil de usar, garantizando una experiencia fluida para los usuarios.',
-            link: 'https://ddlvdigital.culturadejesus.com'
+            title: 'DDLV GLOBAL 2025',
+            image: '/public/images/ddlv_captura.png',
+            description: 'Pagina oficial del DDLV GLOBAL 2025',
+            link: 'https://ddlvglobal.com/'
         }, {
             title: 'Desarrollo de Sitio Web para CONCATUR',
             image: '/public/images/concatur_web.png',
