@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    background-color: #050505; /* Asegura fondo negro tech */
+}
+
+body {
+    @apply bg-tech-black text-white antialiased;
+}
+
+/* Scrollbar personalizada estilo "Hacker" */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8b5cf6; /* Se pone morada al interactuar */
+}

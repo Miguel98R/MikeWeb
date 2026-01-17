@@ -1,0 +1,44 @@
+{
+  "basics": {
+    "name": "Tu Nombre",
+    "role": "System Developer & Architect",
+    "bio": "Desarrollador apasionado por arquitecturas escalables y código limpio. Especializado en el ecosistema JavaScript/TypeScript.",
+    "email": "tu@email.com",
+    "whatsapp": "https://wa.me/1234567890",
+    "linkedin": "https://linkedin.com/in/tu-perfil",
+    "github": "https://github.com/tu-usuario",
+    "gitlab": "https://gitlab.com/tu-usuario",
+    "facebook": "https://facebook.com/tu-perfil"
+  },
+  "services": [
+    {
+      "title": "Desarrollo Web Full Stack",
+      "description": "Aplicaciones SPA/SSR rápidas y SEO-friendly con Nuxt y Vue.",
+      "icon": "mdi:monitor-dashboard"
+    },
+    {
+      "title": "Arquitectura de Sistemas",
+      "description": "Diseño de bases de datos y APIs robustas y escalables.",
+      "icon": "mdi:server-network"
+    },
+    {
+      "title": "Integraciones API",
+      "description": "Conexión de servicios externos, pasarelas de pago y CRMs.",
+      "icon": "mdi:api"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2025",
+      "url": "#"
+    },
+    {
+      "title": "Vue.js & Nuxt Master Class",
+      "issuer": "Udemy",
+      "date": "2024",
+      "url": "#"
+    }
+  ]
+}
