@@ -2,6 +2,16 @@
 export default defineNuxtConfig({
     devtools: { enabled: false },
 
+    devServer: {
+        port:3070
+    },
+    vite: {
+        server: {
+            allowedHosts: true
+        },
+
+    },
+
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/icon',
