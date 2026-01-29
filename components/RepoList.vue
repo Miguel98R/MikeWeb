@@ -1,14 +1,8 @@
 <script setup>
 import profile from '~/data/profile.json'
+import { useGitStats } from '~/composables/useGitStats'
 
-// Nota: Idealmente esto vendría de tu composable useGitStats.ts
-// Aquí simulamos la respuesta para la UI
-const repos = ref([
-  { id: 1, name: 'sistema-ventas-pos', desc: 'Sistema de punto de venta con Nuxt y Node.', tech: 'Vue', url: '#', provider: 'github' },
-  { id: 2, name: 'api-gateway-microservices', desc: 'Gateway para orquestar microservicios.', tech: 'TypeScript', url: '#', provider: 'gitlab' },
-  { id: 3, name: 'docker-dev-env', desc: 'Entornos de desarrollo automatizados.', tech: 'Shell', url: '#', provider: 'github' },
-  { id: 4, name: 'inventory-manager', desc: 'Gestión de inventarios en tiempo real.', tech: 'NestJS', url: '#', provider: 'gitlab' },
-])
+const { repos, loading, error } = useGitStats()
 </script>
 
 <template>
@@ -17,15 +11,15 @@ const repos = ref([
       <div class="flex justify-between items-end mb-12">
         <h3 class="text-3xl font-bold flex items-center gap-3">
           <span class="w-2 h-8 bg-tech-purple block"></span>
-          Repositorios
+         Algunos Repositorios
         </h3>
         <div class="flex gap-4 text-sm font-mono">
           <a :href="profile.basics.github" target="_blank" class="hover:text-tech-purple transition-colors flex items-center gap-1">
-            <Icon name="mdi:github" /> GitHub
+            <Icon name="mdi:github" /> GitHub One
           </a>
           <span class="text-gray-700">|</span>
           <a :href="profile.basics.gitlab" target="_blank" class="hover:text-tech-red transition-colors flex items-center gap-1">
-            <Icon name="mdi:gitlab" /> GitLab
+            <Icon name="mdi:gitlab" /> GitHub Two
           </a>
         </div>
       </div>

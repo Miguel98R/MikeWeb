@@ -1,44 +1,171 @@
 {
   "basics": {
-    "name": "Tu Nombre",
-    "role": "System Developer & Architect",
-    "bio": "Desarrollador apasionado por arquitecturas escalables y código limpio. Especializado en el ecosistema JavaScript/TypeScript.",
-    "email": "tu@email.com",
-    "whatsapp": "https://wa.me/1234567890",
-    "linkedin": "https://linkedin.com/in/tu-perfil",
-    "github": "https://github.com/tu-usuario",
-    "gitlab": "https://gitlab.com/tu-usuario",
-    "facebook": "https://facebook.com/tu-perfil"
+    "name": "Jose Miguel Rosas Jimenez",
+    "location": "Pachuca de Soto, Hidalgo, México",
+    "role": "Tech Lead | Software Architect | Full Stack Developer",
+    "bio": "Desarrollador Full Stack, Tech Lead y Software Architect con más de 5 años de experiencia liderando equipos técnicos, diseñando arquitecturas escalables y desarrollando soluciones web y móviles orientadas a producción. Especializado en backend robusto, frontend bien estructurado, aplicaciones móviles multiplataforma y despliegues en la nube con AWS, aplicando buenas prácticas, CI/CD y mejora continua.",
+    "email": "mailto:mikerosas.dev98@email.com",
+    "whatsapp": "https://wa.me/527714349366",
+    "linkedin": "https://www.linkedin.com/in/josemiguelrosas",
+    "github": "https://github.com/Miguel98R",
+    "gitlab": "https://github.com/mikeleganux1998",
+    "website": "https://mikerosasdev.com"
   },
+  "skills": {
+    "backend": ["Node.js", "NestJS", "Express.js", "TypeScript", "REST APIs", "JWT", "Bcrypt"],
+    "frontend": ["Vue.js", "NuxtJS", "ReactJS", "Next.js", "Bootstrap", "Pug.js"],
+    "mobile": ["Flutter"],
+    "databases": ["MongoDB", "PostgreSQL", "MySQL", "SQL Server", "Redis"],
+    "devops_cloud": [
+      "Docker",
+      "Nginx",
+      "AWS (EC2, ECS, S3, IAM, App Runner, SNS, Polly, Transcribe)",
+      "GitLab CI/CD",
+      "Linux"
+    ],
+    "tools": ["Git (GitHub / GitLab)", "Bun", "Postman"],
+    "methodologies": ["Scrum", "Kanban", "Clean Code", "SOLID"]
+  },
+  "experience": [
+    {
+      "company": "GRUPO NORTE 70",
+      "role": "Tech Lead | Software Architect",
+      "startDate": "2025-05",
+      "endDate": "Present",
+      "description": "Liderazgo de equipos full stack, definición de arquitecturas escalables, CI/CD con GitLab, mentoring técnico, code reviews y despliegues productivos en AWS."
+    },
+    {
+      "company": "Grupo Tecnológico Sorah",
+      "role": "Full Stack Developer",
+      "startDate": "2024-09",
+      "endDate": "Present",
+      "description": "Desarrollo de aplicaciones web full stack con Node.js y NestJS, optimización de sistemas y trabajo colaborativo."
+    },
+    {
+      "company": "MikeDev",
+      "role": "CEO & Full Stack Developer",
+      "startDate": "2019-07",
+      "endDate": "Present",
+      "description": "Fundador y desarrollador principal de soluciones web empresariales usando NestJS, Vue.js, AWS, Docker y bases de datos relacionales y no relacionales."
+    },
+    {
+      "company": "Leganux",
+      "role": "Tech Researcher",
+      "startDate": "2023-09",
+      "endDate": "2024-08",
+      "description": "Investigación tecnológica, análisis de tendencias y desarrollo de prototipos."
+    },
+    {
+      "company": "Leganux",
+      "role": "Full Stack Developer",
+      "startDate": "2022-08",
+      "endDate": "2024-08",
+      "description": "Desarrollo backend y frontend, gestión de servidores Linux y despliegues en AWS."
+    }
+  ],
   "services": [
     {
-      "title": "Desarrollo Web Full Stack",
-      "description": "Aplicaciones SPA/SSR rápidas y SEO-friendly con Nuxt y Vue.",
-      "icon": "mdi:monitor-dashboard"
+      "title": "Arquitectura de Software",
+      "description": "Diseño de arquitecturas escalables y mantenibles para aplicaciones web y móviles. Definición de patrones, separación de responsabilidades, elección de stack y estrategias de crecimiento.",
+      "footer": "System Design · Escalabilidad · Clean Architecture"
     },
     {
-      "title": "Arquitectura de Sistemas",
-      "description": "Diseño de bases de datos y APIs robustas y escalables.",
-      "icon": "mdi:server-network"
+      "title": "Desarrollo Backend",
+      "description": "Construcción de APIs robustas y seguras con Node.js y NestJS. Autenticación JWT, control de roles, integraciones externas, Redis para cache y bases de datos relacionales y NoSQL.",
+      "footer": "NestJS · APIs · Seguridad · Redis"
     },
     {
-      "title": "Integraciones API",
-      "description": "Conexión de servicios externos, pasarelas de pago y CRMs.",
-      "icon": "mdi:api"
+      "title": "Desarrollo Frontend",
+      "description": "Interfaces modernas, rápidas y bien estructuradas usando Vue, Nuxt, Bootstrap y Pug. Enfoque en performance, UX y mantenibilidad del código.",
+      "footer": "Nuxt · Vue · UX · Performance"
+    },
+    {
+      "title": "Aplicaciones Full Stack",
+      "description": "Desarrollo de soluciones end-to-end desde el backend hasta el frontend, listas para producción, con buenas prácticas, Clean Code y arquitectura sólida.",
+      "footer": "End-to-End · Clean Code · Producción"
+    },
+    {
+      "title": "DevOps & Cloud (AWS)",
+      "description": "Despliegue y administración de aplicaciones en AWS usando EC2, ECS, S3, App Runner y CI/CD con GitLab. Dockerización, configuración de Nginx y entornos Linux.",
+      "footer": "AWS · Docker · CI/CD · Linux"
+    },
+    {
+      "title": "Mentoría Técnica & Liderazgo",
+      "description": "Acompañamiento a equipos de desarrollo, code reviews, definición de estándares, mentoring técnico y apoyo en toma de decisiones tecnológicas.",
+      "footer": "Tech Lead · Code Review · Mentoring"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Centro Universitario Hidalguense A.C",
+      "degree": "Licenciatura en Ingeniería en Sistemas Computacionales",
+      "startDate": "2018-10",
+      "endDate": "2023-11"
     }
   ],
   "certifications": [
     {
-      "title": "AWS Certified Solutions Architect",
+      "title": "AWS Partner: Technical Accredited – Training Badge",
       "issuer": "Amazon Web Services",
-      "date": "2025",
-      "url": "#"
+      "date": "dic. 2025",
+      "url": "https://www.credly.com/badges/238ca898-3f9c-4a11-8453-7ab78a9a5fc7/linked_in_profile",
+      "skills": ["AWS", "Cloud Architecture"]
     },
     {
-      "title": "Vue.js & Nuxt Master Class",
+      "title": "AWS Partner: Generative AI Sales – Training Badge",
+      "issuer": "Amazon Web Services",
+      "date": "dic. 2025",
+      "url": "https://www.credly.com/badges/f3640995-3237-4097-9e71-9b05c9c0db73/linked_in_profile",
+      "skills": ["IA Generativa", "AWS"]
+    },
+    {
+      "title": "Job Roles in the Cloud (LATAM)",
+      "issuer": "Amazon Web Services",
+      "date": "dic. 2025",
+      "url": "blob:https://skillbuilder.aws/842a9378-0fac-449c-9fd4-9d84ab02d374",
+      "skills": ["AWS", "Cloud Roles"]
+    },
+    {
+      "title": "Principios SOLID y Clean Code",
       "issuer": "Udemy",
-      "date": "2024",
-      "url": "#"
+      "date": "jun. 2025",
+      "url": "https://www.udemy.com/certificate/UC-e4df8208-db4d-4c70-80d3-346d653c0cd2/",
+      "skills": ["SOLID", "Clean Code", "Arquitectura de Software"]
+    },
+    {
+      "title": "Curso de IA Web: Nuevo Modelo de Google para JavaScript",
+      "issuer": "Udemy",
+      "date": "oct. 2025",
+      "url": "https://www.udemy.com/certificate/UC-e730df3c-e6b7-4785-9605-11ac95394da1/",
+      "skills": ["IA", "Google AI", "JavaScript"]
+    },
+    {
+      "title": "Gemini Certified Educator",
+      "issuer": "Google for Education",
+      "date": "sept. 2025",
+      "url": "https://edu.google.accredible.com/edf56a0f-7bca-4643-ba9f-e40d709a4a73#acc.3HYcdgeG",
+      "skills": ["IA", "Gemini", "AI Tools"]
+    },
+    {
+      "title": "WhatsApp API, Node.js y ChatGPT Bots",
+      "issuer": "Udemy",
+      "date": "oct. 2024",
+      "url": "https://www.udemy.com/certificate/UC-cabbf2bb-3313-4824-a193-083e89690a03/",
+      "skills": ["Node.js", "Chatbots", "Integraciones"]
+    },
+    {
+      "title": "JavaScript Algorithms and Data Structures",
+      "issuer": "freeCodeCamp",
+      "date": "jul. 2023",
+      "url": "https://www.freecodecamp.org/certification/fccf959119f-59e1-4c4f-b5e8-a3aa9d987037/javascript-algorithms-and-data-structures",
+      "skills": ["JavaScript", "Algoritmos"]
+    },
+    {
+      "title": "JavaScript Essentials 1\n",
+      "issuer": "Cisco",
+      "date": "jun. 2023",
+      "url": "https://www.credly.com/badges/3dc67727-cd91-425d-8a44-e2ad62fa98f1/linked_in_profile",
+      "skills": ["JavaScript"]
     }
   ]
 }

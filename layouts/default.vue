@@ -17,14 +17,17 @@ const isMenuOpen = ref(false)
 
         <NuxtLink to="/" class="text-xl font-bold tracking-tighter flex items-center gap-2 group">
           <span class="text-tech-purple font-mono group-hover:text-tech-red transition-colors">&lt;</span>
-          <span>{{ profile.basics.name.split(' ')[0] }}</span>
+          <span>MikeRosasDev</span>
           <span class="text-tech-purple font-mono group-hover:text-tech-red transition-colors">/&gt;</span>
         </NuxtLink>
 
         <nav class="hidden md:flex gap-8 text-sm font-medium text-tech-gray">
-          <a href="#proyectos" class="hover:text-white hover:scale-105 transition-all">Proyectos</a>
           <a href="#servicios" class="hover:text-white hover:scale-105 transition-all">Servicios</a>
-          <a :href="profile.basics.email" class="text-white bg-white/5 px-4 py-2 rounded border border-white/10 hover:border-tech-red hover:text-tech-red transition-all">
+          <a href="#skills" class="hover:text-white hover:scale-105 transition-all"> Skills</a>
+          <a href="#experiencia" class="hover:text-white hover:scale-105 transition-all">Experiencia</a>
+          <a href="#proyectos" class="hover:text-white hover:scale-105 transition-all">Proyectos</a>
+          <a href="#certificaciones" class="hover:text-white hover:scale-105 transition-all">Certificaciones</a>
+          <a :href="profile.basics.email" class="hover:text-white hover:scale-105 transition-all">
             Contáctame
           </a>
         </nav>
@@ -36,9 +39,14 @@ const isMenuOpen = ref(false)
 
       <div v-if="isMenuOpen" class="md:hidden bg-tech-black border-b border-white/10 p-4 absolute w-full">
         <div class="flex flex-col gap-4 text-center">
-          <a href="#proyectos" @click="isMenuOpen = false" class="text-gray-300">Proyectos</a>
-          <a href="#servicios" @click="isMenuOpen = false" class="text-gray-300">Servicios</a>
-          <a :href="profile.basics.email" class="text-tech-red">Contactar</a>
+          <a href="#servicios" class="hover:text-white hover:scale-105 transition-all">Servicios</a>
+          <a href="#skills" class="hover:text-white hover:scale-105 transition-all"> Skills</a>
+          <a href="#experiencia" class="hover:text-white hover:scale-105 transition-all">Experiencia</a>
+          <a href="#proyectos" class="hover:text-white hover:scale-105 transition-all">Proyectos</a>
+          <a href="#certificaciones" class="hover:text-white hover:scale-105 transition-all">Certificaciones</a>
+          <a :href="profile.basics.email" class="hover:text-white hover:scale-105 transition-all">
+            Contáctame
+          </a>
         </div>
       </div>
     </header>

@@ -3,7 +3,7 @@ import profile from '~/data/profile.json'
 </script>
 
 <template>
-  <section class="py-24 px-6 bg-tech-black border-t border-white/5">
+  <section id="certificaciones" class="py-24 px-6 bg-tech-black border-t border-white/5">
     <div class="max-w-4xl mx-auto text-center">
       <h3 class="text-2xl font-bold mb-10 text-white">Certificaciones & Logros</h3>
 

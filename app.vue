@@ -9,18 +9,7 @@
 </template>
 
 <script setup>
-useHead({
-  titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | System Architect` : 'Portafolio Profesional';
-  },
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { name: 'theme-color', content: '#050505' } // Coincide con tu bg-tech-black
-  ],
-  link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-  ]
-})
+
 </script>
 
 <style>
