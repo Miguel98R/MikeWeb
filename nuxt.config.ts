@@ -1,7 +1,12 @@
 // nuxt.config.ts
 export default defineNuxtConfig({
     devtools: { enabled: false },
-
+    postcss: {
+        plugins: {
+            tailwindcss: {},
+            autoprefixer: {},
+        },
+    },
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/icon',
