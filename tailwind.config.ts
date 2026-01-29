@@ -6,8 +6,10 @@ export default <Config>{
         './components/**/*.{vue,js,ts}',
         './layouts/**/*.vue',
         './pages/**/*.vue',
-        './app.vue',
+        './composables/**/*.{js,ts}',
         './plugins/**/*.{js,ts}',
+        './app.vue',
+        './error.vue'
     ],
     theme: {
         extend: {
