@@ -8,7 +8,8 @@ const skillGroups = [
   { key: 'databases', title: 'Databases' },
   { key: 'devops_cloud', title: 'DevOps & Cloud' },
   { key: 'tools', title: 'Tools' },
-  { key: 'methodologies', title: 'Methodologies' }
+  { key: 'methodologies', title: 'Methodologies' } ,
+  { key: 'ai_technologies', title: 'Tecnologías de IA y Construcción de ChatBots Inteligentes' }
 ]
 </script>
 

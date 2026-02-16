@@ -3,7 +3,7 @@
     "name": "Jose Miguel Rosas Jimenez",
     "location": "Pachuca de Soto, Hidalgo, México",
     "role": "Tech Lead | Software Architect | Full Stack Developer",
-    "bio": "Desarrollador Full Stack, Tech Lead y Software Architect con más de 5 años de experiencia liderando equipos técnicos, diseñando arquitecturas escalables y desarrollando soluciones web y móviles orientadas a producción. Especializado en backend robusto, frontend bien estructurado, aplicaciones móviles multiplataforma y despliegues en la nube con AWS, aplicando buenas prácticas, CI/CD y mejora continua.",
+    "bio": "Desarrollador Full Stack, Tech Lead y Software Architect con más de 5 años de experiencia liderando equipos técnicos, diseñando arquitecturas escalables y desarrollando soluciones web y móviles orientadas a producción. Especializado en backend robusto, integración de Agentes de IA y Chatbots inteligentes, aplicaciones móviles multiplataforma y despliegues en la nube con AWS.",
     "email": "mailto:mikerosas.dev98@email.com",
     "whatsapp": "https://wa.me/527714349366",
     "linkedin": "https://www.linkedin.com/in/josemiguelrosas",
@@ -12,10 +12,43 @@
     "website": "https://mikerosasdev.com"
   },
   "skills": {
-    "backend": ["Node.js", "NestJS", "Express.js", "TypeScript", "REST APIs", "JWT", "Bcrypt"],
-    "frontend": ["Vue.js", "NuxtJS", "ReactJS", "Next.js", "Bootstrap", "Pug.js"],
-    "mobile": ["Flutter"],
-    "databases": ["MongoDB", "PostgreSQL", "MySQL", "SQL Server", "Redis"],
+    "backend": [
+      "Node.js",
+      "NestJS",
+      "Express.js",
+      "TypeScript",
+      "REST APIs",
+      "JWT",
+      "Bcrypt"
+    ],
+    "frontend": [
+      "Vue.js",
+      "NuxtJS",
+      "ReactJS",
+      "Next.js",
+      "Bootstrap",
+      "Pug.js"
+    ],
+    "mobile": [
+      "Flutter"
+    ],
+    "ai_technologies": [
+      "WhatsApp Cloud API",
+      "Telegram Bot",
+      "OpenAI API (GPT-4 / Assistants API)",
+      "Google Gemini SDK / Vertex AI",
+      "RAG (Vector Databases / Pinecone)",
+      "AI Agents Architecture",
+      "Prompt Engineering"
+    ],
+    "databases": [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "SQL Server",
+      "Redis"
+    ],
     "devops_cloud": [
       "Docker",
       "Nginx",
@@ -23,8 +56,17 @@
       "GitLab CI/CD",
       "Linux"
     ],
-    "tools": ["Git (GitHub / GitLab)", "Bun", "Postman"],
-    "methodologies": ["Scrum", "Kanban", "Clean Code", "SOLID"]
+    "tools": [
+      "Git (GitHub / GitLab)",
+      "Bun",
+      "Postman"
+    ],
+    "methodologies": [
+      "Scrum",
+      "Kanban",
+      "Clean Code",
+      "SOLID"
+    ]
   },
   "experience": [
     {
@@ -70,6 +112,11 @@
       "footer": "System Design · Escalabilidad · Clean Architecture"
     },
     {
+      "title": "Chatbots & Agentes de IA",
+      "description": "Desarrollo de asistentes virtuales avanzados y agentes autónomos capaces de razonar y ejecutar tareas. Integración de LLMs (Gemini, GPT) con datos empresariales (RAG) para automatización en WhatsApp y Web.",
+      "footer": "AI Agents · RAG · LLMs · Automatización"
+    },
+    {
       "title": "Desarrollo Backend",
       "description": "Construcción de APIs robustas y seguras con Node.js y NestJS. Autenticación JWT, control de roles, integraciones externas, Redis para cache y bases de datos relacionales y NoSQL.",
       "footer": "NestJS · APIs · Seguridad · Redis"
@@ -104,6 +151,13 @@
     }
   ],
   "certifications": [
+    {
+      "title": "CRUD Operations in MongoDB",
+      "issuer": "Mongo DB",
+      "date": "feb. 2025",
+      "url": "https://www.credly.com/badges/d19d49b1-0dfb-4439-b198-3098285bf9cc/linked_in_profile",
+      "skills": ["Ad-Hoc Queries", "CRUD", "Data Administration"]
+    },
     {
       "title": "AWS Partner: Technical Accredited – Training Badge",
       "issuer": "Amazon Web Services",

@@ -35,7 +35,7 @@ import profile from '~/data/profile.json'
              class="px-8 py-3 bg-tech-purple text-white font-bold rounded-sm hover:bg-opacity-80 hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all duration-300">
             Ver Proyectos
           </a>
-          <a href="/cv.pdf" download
+          <a href="/public/CV_Jose_Miguel_Rosas_Jimenez.pdf" download
              class="px-8 py-3 border border-tech-red text-tech-red font-bold rounded-sm hover:bg-tech-red hover:text-black transition-all duration-300 flex items-center gap-2">
             <Icon name="mdi:download" /> CV
           </a>
