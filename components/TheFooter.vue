@@ -58,9 +58,14 @@ import profile from '~/data/profile.json'
         </a>
       </div>
 
-      <p class="text-xs text-zinc-600 font-mono">
-        © {{ new Date().getFullYear() }} {{ profile.basics.name }} · MikeRosasDev
-      </p>
+      <div class="flex flex-col gap-2 items-center text-xs text-zinc-600 font-mono">
+        <p>
+          © {{ new Date().getFullYear() }} {{ profile.basics.name }} · MikeRosasDev
+        </p>
+        <NuxtLink to="/aviso-de-privacidad" class="hover:text-tech-purple transition-colors underline">
+          Aviso de Privacidad
+        </NuxtLink>
+      </div>
     </div>
   </footer>
 </template>
