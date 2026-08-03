@@ -27,10 +27,11 @@ export default defineNuxtConfig({
 
     app: {
         head: {
+            title: 'MikeRosasDev · Tech Lead & Software Architect',
             titleTemplate: (title) =>
-                title
+                title && title !== 'MikeRosasDev · Tech Lead & Software Architect'
                     ? `${title} · Jose Miguel Rosas`
-                    : 'Jose Miguel Rosas · Tech Lead & Software Architect',
+                    : 'MikeRosasDev · Tech Lead & Software Architect',
 
             meta: [
                 { charset: 'utf-8' },

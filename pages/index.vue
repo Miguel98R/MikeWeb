@@ -13,4 +13,7 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'MikeRosasDev · Tech Lead & Software Architect'
+})
 </script>
