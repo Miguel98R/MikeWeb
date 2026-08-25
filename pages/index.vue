@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-tech-black text-white selection:bg-tech-purple selection:text-white">
+  <main class="bg-transparent text-white selection:bg-tech-purple selection:text-white">
     <TheHero />
 
     <TheServices />
@@ -7,6 +7,7 @@
     <TheExperience />
     <RepoList />
     <Certifications />
+    <TheCollaborations />
 
     <TheFooter />
   </main>

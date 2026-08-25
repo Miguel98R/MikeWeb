@@ -1,55 +1,159 @@
-<script setup>
+<script setup lang="ts">
 import profile from '~/data/profile.json'
 
-const skillGroups = [
-  { key: 'backend', title: 'Backend' },
-  { key: 'frontend', title: 'Frontend' },
-  { key: 'mobile', title: 'Mobile' },
-  { key: 'databases', title: 'Databases' },
-  { key: 'devops_cloud', title: 'DevOps & Cloud' },
-  { key: 'tools', title: 'Tools' },
-  { key: 'methodologies', title: 'Methodologies' } ,
-  { key: 'ai_technologies', title: 'Tecnologías de IA y Construcción de ChatBots Inteligentes' }
+interface SkillGroup {
+  key: string
+  title: string
+  icon: string
+  color: string
+  accentBg: string
+  accentBorder: string
+}
+
+const skillGroups: SkillGroup[] = [
+  {
+    key: 'backend',
+    title: 'Backend',
+    icon: 'mdi:server',
+    color: 'text-emerald-400',
+    accentBg: 'bg-emerald-500/10',
+    accentBorder: 'border-emerald-500/30'
+  },
+  {
+    key: 'frontend',
+    title: 'Frontend',
+    icon: 'mdi:monitor-dashboard',
+    color: 'text-cyan-400',
+    accentBg: 'bg-cyan-500/10',
+    accentBorder: 'border-cyan-500/30'
+  },
+  {
+    key: 'ai_technologies',
+    title: 'IA & ChatBots',
+    icon: 'mdi:robot-excited-outline',
+    color: 'text-purple-400',
+    accentBg: 'bg-purple-500/10',
+    accentBorder: 'border-purple-500/30'
+  },
+  {
+    key: 'devops_cloud',
+    title: 'DevOps & Cloud',
+    icon: 'mdi:cloud-cog-outline',
+    color: 'text-amber-400',
+    accentBg: 'bg-amber-500/10',
+    accentBorder: 'border-amber-500/30'
+  },
+  {
+    key: 'databases',
+    title: 'Bases de Datos',
+    icon: 'mdi:database',
+    color: 'text-blue-400',
+    accentBg: 'bg-blue-500/10',
+    accentBorder: 'border-blue-500/30'
+  },
+  {
+    key: 'mobile',
+    title: 'Mobile',
+    icon: 'mdi:cellphone-link',
+    color: 'text-teal-400',
+    accentBg: 'bg-teal-500/10',
+    accentBorder: 'border-teal-500/30'
+  },
+  {
+    key: 'tools',
+    title: 'Herramientas',
+    icon: 'mdi:tools',
+    color: 'text-tech-red',
+    accentBg: 'bg-tech-red/10',
+    accentBorder: 'border-tech-red/30'
+  },
+  {
+    key: 'methodologies',
+    title: 'Metodologías',
+    icon: 'mdi:compass-outline',
+    color: 'text-indigo-400',
+    accentBg: 'bg-indigo-500/10',
+    accentBorder: 'border-indigo-500/30'
+  }
 ]
+
+const getSkills = (key: string) => {
+  return (profile.skills as Record<string, string[]>)[key] || []
+}
 </script>
 
 <template>
-  <section id="skills" class="py-28 px-6 bg-tech-black relative">
-    <div class="max-w-6xl mx-auto">
+  <section id="skills" class="py-28 px-6 bg-transparent relative overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute -top-32 left-1/4 w-96 h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
+    <div class="max-w-6xl mx-auto relative z-10">
       <!-- Header -->
       <div class="mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
+          <Icon name="mdi:code-tags" size="16" />
+          <span>TECH_STACK & EXPERTISE</span>
+        </div>
         <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-4">
           <span class="w-2 h-10 bg-tech-purple block"></span>
           Skills Técnicos
         </h3>
-        <p class="text-tech-gray mt-4 max-w-2xl">
-          Stack sólido enfocado en arquitectura, rendimiento y software listo para producción.
+        <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
+          Stack tecnológico probado en producción, enfocado en robustez, escalabilidad, buenas prácticas y arquitectura de software.
         </p>
       </div>
 
-      <!-- Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Skills Cards Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <div
-            v-for="(group, index) in skillGroups"
-            :key="group.key"
-            v-motion-slide-visible-once-bottom
-            :delay="index * 100"
-            class="border border-white/10 bg-tech-surface/60 rounded-lg p-6 hover:border-tech-purple/40 transition-all"
+          v-for="(group, index) in skillGroups"
+          :key="group.key"
+          v-motion-slide-visible-once-bottom
+          :delay="index * 60"
+          class="group relative rounded-2xl border border-white/10 bg-tech-surface/75 hover:bg-tech-surface backdrop-blur-md p-6 transition-all duration-300 hover:border-tech-purple/50 hover:shadow-[0_0_35px_rgba(139,92,246,0.18)] hover:-translate-y-1.5 flex flex-col justify-between"
         >
-          <h4 class="text-lg font-bold text-white mb-4">
-            {{ group.title }}
-          </h4>
+          <!-- Hover subtle gradient -->
+          <div
+            class="absolute inset-0 rounded-2xl bg-gradient-to-br from-tech-purple/10 via-transparent to-tech-red/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          />
 
-          <ul class="flex flex-wrap gap-2">
-            <li
-                v-for="(skill, i) in profile.skills[group.key]"
+          <div class="relative z-10">
+            <!-- Group Header with Icon and count badge -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-xl flex items-center justify-center border transition-transform group-hover:scale-110 shadow-inner"
+                  :class="[group.accentBg, group.accentBorder, group.color]"
+                >
+                  <Icon :name="group.icon" size="22" />
+                </div>
+                <h4 class="text-base font-bold text-white group-hover:text-tech-purple transition-colors">
+                  {{ group.title }}
+                </h4>
+              </div>
+
+              <span class="text-[10px] font-mono text-zinc-500 bg-white/[0.03] border border-white/10 px-2 py-0.5 rounded-full">
+                {{ getSkills(group.key).length }}
+              </span>
+            </div>
+
+            <!-- Skills List Chips -->
+            <ul class="flex flex-wrap gap-2 mb-2">
+              <li
+                v-for="(skill, i) in getSkills(group.key)"
                 :key="i"
-                class="px-3 py-1 text-xs font-mono rounded border border-white/10 text-tech-gray hover:text-white hover:border-tech-purple transition-colors"
-            >
-              {{ skill }}
-            </li>
-          </ul>
+                class="px-2.5 py-1 text-xs font-mono rounded-lg border border-white/10 bg-white/[0.02] text-gray-300 hover:text-white hover:border-tech-purple/60 hover:bg-tech-purple/10 hover:shadow-[0_0_12px_rgba(139,92,246,0.25)] transition-all cursor-default"
+              >
+                {{ skill }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Bottom micro-indicator -->
+          <div class="relative z-10 pt-3 mt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+            <span>Producción</span>
+            <span class="text-tech-purple">✓ 100%</span>
+          </div>
         </div>
       </div>
 

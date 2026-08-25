@@ -20,7 +20,7 @@ export const useGitStats = () => {
         error.value = null
 
         try {
-            repos.value = [
+            const allRepos: Repo[] = [
                 {
                     id: 1,
                     name: 'store-nomina',
@@ -112,6 +112,8 @@ export const useGitStats = () => {
                     visibility: 'public'
                 }
             ]
+
+            repos.value = allRepos.filter(repo => repo.visibility === 'public')
         } catch (e) {
             error.value = 'No se pudieron cargar los repositorios'
         } finally {

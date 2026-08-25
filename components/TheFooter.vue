@@ -3,7 +3,7 @@ import profile from '~/data/profile.json'
 </script>
 
 <template>
-  <footer class="py-14 border-t border-white/10 bg-black text-center">
+  <footer id="contacto" class="py-14 border-t border-white/10 bg-black text-center">
     <div class="max-w-4xl mx-auto px-6">
 
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">

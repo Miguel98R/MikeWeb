@@ -4,7 +4,7 @@
     "location": "Pachuca de Soto, Hidalgo, México",
     "role": "Tech Lead | Software Architect | Full Stack Developer",
     "bio": "Desarrollador Full Stack, Tech Lead y Software Architect con más de 5 años de experiencia liderando equipos técnicos, diseñando arquitecturas escalables y desarrollando soluciones web y móviles orientadas a producción. Especializado en backend robusto, integración de Agentes de IA y Chatbots inteligentes, aplicaciones móviles multiplataforma y despliegues en la nube con AWS.",
-    "email": "mailto:mikerosas.dev98@email.com",
+    "email": "mailto:mikerosas.dev98@gmail.com",
     "whatsapp": "https://wa.me/527714349366",
     "linkedin": "https://www.linkedin.com/in/josemiguelrosas",
     "github": "https://github.com/Miguel98R",
@@ -220,6 +220,141 @@
       "date": "jun. 2023",
       "url": "https://www.credly.com/badges/3dc67727-cd91-425d-8a44-e2ad62fa98f1/linked_in_profile",
       "skills": ["JavaScript"]
+    }
+  ],
+  "collaborations": [
+    {
+      "id": "sevendental",
+      "name": "SevenDental",
+      "sector": "Laboratorio Dental · Hidalgo",
+      "logo": "/images/clients/sevendental.png",
+      "logoIcon": "mdi:tooth-outline",
+      "badge": "Hidalgo, México",
+      "color": "from-cyan-500/20 to-blue-600/20",
+      "accentColor": "text-cyan-400",
+      "tagline": "Laboratorio dental especializado en diseño y manufactura clínica",
+      "description": "Laboratorio dental especializado ubicado en el Estado de Hidalgo, enfocado en el diseño, manufactura y control de prótesis, piezas dentales y soluciones odontológicas especializadas para clínicas y profesionales de la salud bucodental.",
+      "services": [
+        "Desarrollo de plataforma web y sistema de control de órdenes de trabajo de laboratorio dental.",
+        "Módulo de gestión de insumos clínicos, trazabilidad de piezas y estados de manufactura.",
+        "Sistema de presupuestos, cotizaciones y entregas de piezas odontológicas.",
+        "Integración de notificaciones automatizadas vía WhatsApp para confirmación y seguimiento de órdenes."
+      ],
+      "technologies": ["Vue.js", "Node.js", "NestJS", "PostgreSQL", "WhatsApp API", "AWS"]
+    },
+    {
+      "id": "concatur",
+      "name": "Concatur",
+      "sector": "Capacitación Empresarial · Nacional",
+      "logo": "/images/clients/concatur.png",
+      "logoIcon": "mdi:school-outline",
+      "badge": "Cobertura Nacional",
+      "color": "from-amber-500/20 to-orange-600/20",
+      "accentColor": "text-amber-400",
+      "tagline": "Capacitación y desarrollo corporativo en diferentes estados del país",
+      "description": "Empresa especializada en programas integrales de capacitación corporativa, formación de talento y consultoría para el fortalecimiento operativo de empresas en múltiples estados de la República Mexicana.",
+      "services": [
+        "Plataforma web para gestión de programas de capacitación, cursos y certificaciones empresariales.",
+        "Sistema de registro, cotizaciones de talleres y seguimiento de empresas participantes.",
+        "Portal para generación de constancias digitales, reportes de asistencia y evaluación de impacto.",
+        "Arquitectura escalable en la nube para soporte de operaciones concurrentes multiestado."
+      ],
+      "technologies": ["Nuxt 3", "TypeScript", "NestJS", "Tailwind CSS", "Docker", "PostgreSQL"]
+    },
+    {
+      "id": "norte70",
+      "name": "Grupo Norte 70",
+      "sector": "Desarrollo de Software & Tech · Nacional",
+      "logo": "/images/clients/norte70.png",
+      "logoIcon": "mdi:laptop-code",
+      "badge": "Cobertura Nacional",
+      "color": "from-purple-500/20 to-indigo-600/20",
+      "accentColor": "text-purple-400",
+      "tagline": "Firma de desarrollo de software y consultoría tecnológica",
+      "description": "Empresa de desarrollo de software, arquitectura digital y consultoría tecnológica con despliegue de proyectos y soluciones avanzadas en diferentes estados de la República Mexicana.",
+      "services": [
+        "Definición de arquitectura de software escalable y liderazgo técnico de equipos de ingeniería.",
+        "Automatización de pipelines CI/CD con GitLab y despliegues productivos en AWS (ECS, EC2, S3).",
+        "Desarrollo de ecosistemas digitales a la medida y plataformas web de alta concurrencia.",
+        "Integración de Chatbots con Inteligencia Artificial para automatización y optimización operativa."
+      ],
+      "technologies": ["NestJS", "AWS (ECS/S3)", "GitLab CI/CD", "Nuxt", "Redis", "AI Chatbots"]
+    },
+    {
+      "id": "sorah",
+      "name": "Grupo Tecnológico Sorah",
+      "sector": "Desarrollo de Software & ERP · Nacional",
+      "logo": "/images/clients/sorah.png",
+      "logoIcon": "mdi:code-json",
+      "badge": "Cobertura Nacional",
+      "color": "from-emerald-500/20 to-teal-600/20",
+      "accentColor": "text-emerald-400",
+      "tagline": "Fábrica de software empresarial y sistemas de nómina/ERP",
+      "description": "Empresa de tecnología especializada en desarrollo de software empresarial a la medida, sistemas ERP y herramientas avanzadas de recursos humanos y nómina para corporativos en diferentes estados del país.",
+      "services": [
+        "Desarrollo del motor backend de nómina empresarial y dispersión masiva de pagos con TypeScript y NestJS.",
+        "Frontend administrativo con Vue.js para control de personal, préstamos, deducciones e incidencias.",
+        "Diseño de arquitectura modular de microservicios y optimización de rendimiento de bases de datos.",
+        "Módulos de timbrado fiscal y generación automatizada de comprobantes de pago."
+      ],
+      "technologies": ["Node.js", "NestJS", "TypeScript", "Vue.js", "PostgreSQL", "Docker"]
+    },
+    {
+      "id": "gobierno-hidalgo",
+      "name": "Gobierno del Estado de Hidalgo",
+      "sector": "Sector Público · Gobierno Estatal",
+      "logo": "/images/clients/gobierno_hidalgo.png",
+      "logoIcon": "mdi:shield-account",
+      "badge": "Hidalgo, México",
+      "color": "from-red-500/20 to-rose-600/20",
+      "accentColor": "text-red-400",
+      "tagline": "Modernización y digitalización de servicios públicos e institucionales",
+      "description": "Gobierno del Estado de Hidalgo, enfocado en la modernización de servicios institucionales, digitalización de trámites ciudadanos, seguridad de la información y transparencia gubernamental.",
+      "services": [
+        "Desarrollo e integración de plataformas web para digitalización de trámites estatales.",
+        "Sistemas seguros de autenticación, validación documental y trazabilidad institucional.",
+        "Aseguramiento de altos estándares de seguridad informática y protección de datos sensibles.",
+        "Configuración y optimización de servidores Linux con Nginx para soportar alta concurrencia ciudadana."
+      ],
+      "technologies": ["Vue.js", "Node.js", "REST APIs", "PostgreSQL", "Nginx", "Linux Servers"]
+    },
+    {
+      "id": "sipcec",
+      "name": "SIPCEC",
+      "sector": "Salud Ocupacional · Internacional",
+      "logo": "/images/clients/sipcec.png",
+      "logoIcon": "mdi:heart-pulse",
+      "badge": "Internacional",
+      "color": "from-rose-500/20 to-pink-600/20",
+      "accentColor": "text-rose-400",
+      "tagline": "Sociedad internacional de prevención, calidad y salud ocupacional",
+      "description": "Sociedad internacional especializada en programas integrales de prevención de riesgos laborales, medicina ocupacional y control de enfermedades crónicas a nivel internacional (iniciativa RedVive+).",
+      "services": [
+        "Desarrollo integral de la plataforma web y ecosistema digital internacional 'RedVive+'.",
+        "Sistema de control de exámenes médicos periódicos, expedientes clínicos y dictámenes laborales.",
+        "Portal de autoservicio para empresas afiliadas con estadísticas e indicadores de salud en tiempo real.",
+        "Despliegue y mantenimiento de infraestructura en entornos optimizados con Bun y Nuxt."
+      ],
+      "technologies": ["Nuxt 3", "Vue 3", "Bun", "Tailwind CSS", "NestJS / Express", "PostgreSQL"]
+    },
+    {
+      "id": "tiendas-ahorro",
+      "name": "Tiendas del Ahorro",
+      "sector": "Retail & Supermercados · Chiapas",
+      "logo": "/images/clients/tiendas_ahorro.png",
+      "logoIcon": "mdi:cart-outline",
+      "badge": "Chiapas, México",
+      "color": "from-yellow-500/20 to-amber-600/20",
+      "accentColor": "text-yellow-400",
+      "tagline": "Cadena de comercio y tiendas de autoservicio de Chiapas",
+      "description": "Importante cadena comercial y de tiendas de autoservicio originaria del estado de Chiapas, comprometida con el abastecimiento accesible de productos de primera necesidad y consumo masivo en múltiples sucursales.",
+      "services": [
+        "Sistema centralizado de inventarios multialmacén y control de rotación de stock para sucursales.",
+        "Módulo de punto de venta (POS) y conciliación de cortes de caja en tiempo real.",
+        "Plataforma de gestión de listas de precios, descuentos y promociones dinámicas.",
+        "Monitoreo de rendimiento y soporte técnico en servidores de tiendas locales y nube."
+      ],
+      "technologies": ["Vue.js", "Node.js", "Express", "MongoDB", "Socket.io", "Linux"]
     }
   ]
 }
