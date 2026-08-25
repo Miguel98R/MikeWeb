@@ -19,7 +19,7 @@ const { repos, loading, error } = useGitStats()
           </a>
           <span class="text-gray-700">|</span>
           <a :href="profile.basics.gitlab" target="_blank" class="hover:text-tech-red transition-colors flex items-center gap-1">
-            <Icon name="mdi:gitlab" /> GitHub Two
+            <Icon name="mdi:github" /> GitHub Two
           </a>
         </div>
       </div>
