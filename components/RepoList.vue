@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import profile from '~/data/profile.json'
+import { useLanguage } from '~/composables/useLanguage'
 import { useGitStats } from '~/composables/useGitStats'
 
+const { profile, t } = useLanguage()
 const { repos } = useGitStats()
 
 const getLangColor = (tech: string) => {
@@ -33,14 +34,14 @@ const getTechTags = (tech: string) => {
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
             <Icon name="mdi:git" size="16" />
-            <span>OPEN_SOURCE & REPOSITORIES</span>
+            <span>{{ t.projects.tag }}</span>
           </div>
           <h3 class="text-3xl md:text-4xl font-bold flex items-center gap-4 text-white">
             <span class="w-2 h-10 bg-tech-purple block"></span>
-            Algunos Repositorios
+            {{ t.projects.title }}
           </h3>
           <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
-            Proyectos de código abierto, herramientas y librerías públicas disponibles en GitHub.
+            {{ t.projects.subtitle }}
           </p>
         </div>
 
@@ -53,7 +54,7 @@ const getTechTags = (tech: string) => {
             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-tech-purple/50 hover:bg-tech-purple/10 text-xs font-mono text-gray-300 hover:text-white transition-all shadow-sm"
           >
             <Icon name="mdi:github" size="18" class="text-white" />
-            <span>GitHub Principal</span>
+            <span>{{ t.projects.mainGithub }}</span>
             <Icon name="mdi:arrow-top-right" size="13" class="text-tech-purple" />
           </a>
           <a
@@ -63,7 +64,7 @@ const getTechTags = (tech: string) => {
             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-tech-red/50 hover:bg-tech-red/10 text-xs font-mono text-gray-300 hover:text-white transition-all shadow-sm"
           >
             <Icon name="mdi:github" size="18" class="text-white" />
-            <span>GitHub Dev</span>
+            <span>{{ t.projects.devGithub }}</span>
             <Icon name="mdi:arrow-top-right" size="13" class="text-tech-red" />
           </a>
         </div>
@@ -95,46 +96,38 @@ const getTechTags = (tech: string) => {
 
               <span class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
                 <Icon name="mdi:lock-open-outline" size="12" />
-                Público
+                {{ repo.visibility === 'public' ? t.projects.public : t.projects.private }}
               </span>
             </div>
 
             <!-- Repo Name -->
-            <h4 class="text-lg sm:text-xl font-bold font-mono text-white group-hover:text-tech-purple transition-colors mb-2.5 break-words">
-              {{ repo.name }}
+            <h4 class="text-lg font-bold text-white group-hover:text-tech-purple transition-colors mb-2 font-mono flex items-center gap-2">
+              <span>{{ repo.name }}</span>
             </h4>
 
             <!-- Description -->
             <p class="text-gray-300 text-sm leading-relaxed mb-6 font-light">
               {{ repo.desc }}
             </p>
-
-            <!-- Tech Tags Chips -->
-            <div class="flex flex-wrap gap-1.5 mb-5">
-              <span
-                v-for="(tag, tIdx) in getTechTags(repo.tech)"
-                :key="tIdx"
-                class="inline-flex items-center gap-1 text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] border border-white/5 text-gray-300 group-hover:border-tech-purple/30 transition-colors"
-              >
-                <span class="w-1.5 h-1.5 rounded-full" :class="getLangColor(tag)" />
-                {{ tag }}
-              </span>
-            </div>
           </div>
 
-          <!-- Bottom Row: Code Link Action -->
-          <div class="relative z-10 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-mono text-tech-purple group-hover:text-white transition-colors">
-            <span class="text-tech-gray flex items-center gap-1.5 group-hover:text-gray-200 transition-colors">
-              <Icon name="mdi:github" size="16" />
-              Ver Repositorio
-            </span>
-            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform font-bold text-tech-purple">
-              Explorar
-              <Icon name="mdi:arrow-top-right" size="14" />
-            </span>
+          <!-- Bottom Meta & Tags -->
+          <div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full" :class="getLangColor(repo.tech)" />
+              <span class="text-xs font-mono text-tech-gray">
+                {{ repo.tech }}
+              </span>
+            </div>
+
+            <div class="flex items-center gap-1 text-xs font-mono text-tech-purple group-hover:text-white transition-colors">
+              <span>{{ t.projects.viewOnGithub }}</span>
+              <Icon name="mdi:arrow-right" size="14" class="group-hover:translate-x-1 transition-transform" />
+            </div>
           </div>
         </a>
       </div>
+
     </div>
   </section>
 </template>

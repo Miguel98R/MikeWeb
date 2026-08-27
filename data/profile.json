@@ -70,6 +70,13 @@
   },
   "experience": [
     {
+      "company": "SIPCEC",
+      "role": "Director de Tecnología e IA",
+      "startDate": "2026-08",
+      "endDate": "Present",
+      "description": "Dirección técnica del área de Salud Digital e Inteligencia Artificial. Liderazgo en arquitectura de software, desarrollo de soluciones tecnológicas e integración de IA aplicada a la salud ocupacional."
+    },
+    {
       "company": "GRUPO NORTE 70",
       "role": "Tech Lead | Software Architect",
       "startDate": "2025-05",
@@ -92,17 +99,17 @@
     },
     {
       "company": "Leganux",
-      "role": "Tech Researcher",
-      "startDate": "2023-09",
-      "endDate": "2024-08",
-      "description": "Investigación tecnológica, análisis de tendencias y desarrollo de prototipos."
-    },
-    {
-      "company": "Leganux",
-      "role": "Full Stack Developer",
+      "role": "Full Stack Developer & Tech Researcher",
       "startDate": "2022-08",
       "endDate": "2024-08",
-      "description": "Desarrollo backend y frontend, gestión de servidores Linux y despliegues en AWS."
+      "description": "Desarrollo backend y frontend, investigación tecnológica y desarrollo de prototipos, gestión de servidores Linux y despliegues en AWS."
+    },
+    {
+      "company": "FMB Solutions",
+      "role": "Desarrollador Web Jr",
+      "startDate": "2019-06",
+      "endDate": "2019-12",
+      "description": "Desarrollo frontend y backend con React.js y Node.js, y gestión de bases de datos relacionales con SQL Server."
     }
   ],
   "services": [

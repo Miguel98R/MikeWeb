@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import profile from '~/data/profile.json'
+import { computed } from 'vue'
+import { useLanguage } from '~/composables/useLanguage'
 
-interface Certification {
-  title: string
-  issuer: string
-  date: string
-  url: string
-  skills?: string[]
-}
+const { profile, t } = useLanguage()
 
-const certifications = profile.certifications as Certification[]
+const certifications = computed(() => profile.value.certifications || [])
 
 const getIssuerIcon = (issuer: string) => {
   const norm = issuer.toLowerCase()
@@ -44,14 +39,14 @@ const getIssuerColor = (issuer: string) => {
       <div class="mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-red border border-tech-red/30 rounded-full bg-tech-red/5">
           <Icon name="mdi:certificate-outline" size="16" />
-          <span>CREDENTIALS & ACHIEVEMENTS</span>
+          <span>{{ t.certifications.tag }}</span>
         </div>
         <h3 class="text-3xl md:text-4xl font-bold flex items-center gap-4 text-white">
           <span class="w-2 h-10 bg-tech-red block"></span>
-          Certificaciones & Logros
+          {{ t.certifications.title }}
         </h3>
         <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
-          Credenciales y certificaciones oficiales que avalan conocimientos en arquitectura, desarrollo, IA y mejores prácticas.
+          {{ t.certifications.subtitle }}
         </p>
       </div>
 
@@ -99,40 +94,21 @@ const getIssuerColor = (issuer: string) => {
               <span
                 v-for="(skill, sIdx) in cert.skills"
                 :key="sIdx"
-                class="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/5 text-gray-300"
+                class="text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/5 text-gray-300 group-hover:text-white transition-colors"
               >
                 {{ skill }}
               </span>
             </div>
           </div>
 
-          <!-- Bottom Row: Verify Credential Button -->
-          <div class="relative z-10 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-mono text-tech-purple group-hover:text-white transition-colors">
-            <span class="flex items-center gap-1.5 text-tech-gray group-hover:text-tech-purple transition-colors">
-              <Icon name="mdi:shield-check-outline" size="16" class="text-emerald-400" />
-              Credencial Oficial
-            </span>
-            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-              Verificar
-              <Icon name="mdi:arrow-top-right" size="14" />
-            </span>
+          <!-- Bottom: Verify Link -->
+          <div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-tech-purple group-hover:text-white transition-colors">
+            <span>{{ t.certifications.viewCredential }}</span>
+            <Icon name="mdi:arrow-top-right" size="14" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </a>
       </div>
 
-      <!-- Footer Button: LinkedIn All Certifications -->
-      <div class="mt-12 text-center">
-        <a
-          :href="profile.basics.linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-tech-purple/10 hover:border-tech-purple/60 text-sm font-mono text-gray-200 hover:text-white transition-all shadow-lg hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] hover:-translate-y-0.5"
-        >
-          <Icon name="mdi:linkedin" size="20" class="text-blue-400" />
-          <span>Explorar todas las certificaciones en LinkedIn</span>
-          <Icon name="mdi:arrow-right" size="16" class="text-tech-purple" />
-        </a>
-      </div>
     </div>
   </section>
 </template>

@@ -1,5 +1,7 @@
-<script setup>
-import profile from '~/data/profile.json'
+<script setup lang="ts">
+import { useLanguage } from '~/composables/useLanguage'
+
+const { profile, t } = useLanguage()
 </script>
 
 <template>
@@ -7,11 +9,11 @@ import profile from '~/data/profile.json'
     <div class="max-w-4xl mx-auto px-6">
 
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-        ¿Hablamos de tu próximo proyecto?
+        {{ t.footer.title }}
       </h2>
 
       <p class="text-tech-gray mb-10 max-w-xl mx-auto">
-        Arquitectura, desarrollo y escalamiento de software listo para producción.
+        {{ t.footer.subtitle }}
       </p>
 
       <div class="flex justify-center gap-10 mb-10">
@@ -63,7 +65,7 @@ import profile from '~/data/profile.json'
           © {{ new Date().getFullYear() }} {{ profile.basics.name }} · MikeRosasDev
         </p>
         <NuxtLink to="/aviso-de-privacidad" class="hover:text-tech-purple transition-colors underline">
-          Aviso de Privacidad
+          {{ t.footer.privacy }}
         </NuxtLink>
       </div>
     </div>

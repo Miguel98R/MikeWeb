@@ -1,0 +1,367 @@
+{
+  "basics": {
+    "name": "Jose Miguel Rosas Jimenez",
+    "location": "Pachuca de Soto, Hidalgo, Mexico",
+    "role": "Tech Lead | Software Architect | Full Stack Developer",
+    "bio": "Full Stack Developer, Tech Lead, and Software Architect with over 5 years of experience leading engineering teams, designing scalable architectures, and developing production-grade web and mobile applications. Specialized in robust backends, AI Agents and intelligent Chatbots integration, cross-platform mobile apps, and cloud deployments on AWS.",
+    "email": "mailto:mikerosas.dev98@gmail.com",
+    "whatsapp": "https://wa.me/527714349366",
+    "linkedin": "https://www.linkedin.com/in/josemiguelrosas",
+    "github": "https://github.com/Miguel98R",
+    "gitlab": "https://github.com/mikerosasdev98",
+    "website": "https://mikerosasdev.com"
+  },
+  "skills": {
+    "backend": [
+      "Node.js",
+      "NestJS",
+      "Express.js",
+      "TypeScript",
+      "REST APIs",
+      "JWT",
+      "Bcrypt"
+    ],
+    "frontend": [
+      "Vue.js",
+      "NuxtJS",
+      "ReactJS",
+      "Next.js",
+      "Bootstrap",
+      "Pug.js"
+    ],
+    "mobile": [
+      "Flutter"
+    ],
+    "ai_technologies": [
+      "WhatsApp Cloud API",
+      "Telegram Bot",
+      "OpenAI API (GPT-4 / Assistants API)",
+      "Google Gemini SDK / Vertex AI",
+      "RAG (Vector Databases / Pinecone)",
+      "AI Agents Architecture",
+      "Prompt Engineering"
+    ],
+    "databases": [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "SQL Server",
+      "Redis"
+    ],
+    "devops_cloud": [
+      "Docker",
+      "Nginx",
+      "AWS (EC2, ECS, S3, IAM, App Runner, SNS, Polly, Transcribe)",
+      "GitLab CI/CD",
+      "Linux"
+    ],
+    "tools": [
+      "Git (GitHub / GitLab)",
+      "Bun",
+      "Postman"
+    ],
+    "methodologies": [
+      "Scrum",
+      "Kanban",
+      "Clean Code",
+      "SOLID"
+    ]
+  },
+  "experience": [
+    {
+      "company": "SIPCEC",
+      "role": "Director of Technology & AI",
+      "startDate": "2026-08",
+      "endDate": "Present",
+      "description": "Technical leadership of the Digital Health and Artificial Intelligence division. Architecture design, software engineering, and AI agents integration for occupational health ecosystems (RedVive+)."
+    },
+    {
+      "company": "GRUPO NORTE 70",
+      "role": "Tech Lead | Software Architect",
+      "startDate": "2025-05",
+      "endDate": "Present",
+      "description": "Engineering team leadership, scalable architecture design (Hexagonal) with Node.js and NestJS, CI/CD pipelines in AWS with Docker, technical mentoring, and strict Clean Code reviews."
+    },
+    {
+      "company": "Grupo Tecnológico Sorah",
+      "role": "Full Stack Developer",
+      "startDate": "2024-09",
+      "endDate": "Present",
+      "description": "Full stack enterprise web development with Node.js and NestJS, database performance tuning, and payroll microservices."
+    },
+    {
+      "company": "MikeDev",
+      "role": "CEO & Full Stack Developer",
+      "startDate": "2019-07",
+      "endDate": "Present",
+      "description": "Founder and lead developer of enterprise software solutions using NestJS, Vue.js, AWS, Docker, AI Agents, and relational / NoSQL databases."
+    },
+    {
+      "company": "Leganux",
+      "role": "Full Stack Developer & Tech Researcher",
+      "startDate": "2022-08",
+      "endDate": "2024-08",
+      "description": "Technology research, innovative prototype development, Linux server administration, and AWS cloud deployments."
+    },
+    {
+      "company": "FMB Solutions",
+      "role": "Junior Web Developer",
+      "startDate": "2019-06",
+      "endDate": "2019-12",
+      "description": "Frontend and backend web development using React.js and Node.js; relational database management with SQL Server."
+    }
+  ],
+  "services": [
+    {
+      "title": "Software Architecture",
+      "description": "Design of scalable, maintainable architectures for web and mobile systems. Design patterns, separation of concerns, stack selection, and growth strategies.",
+      "footer": "System Design · Scalability · Clean Architecture"
+    },
+    {
+      "title": "AI Agents & Chatbots",
+      "description": "Development of advanced virtual assistants and autonomous agents capable of reasoning and task execution. Integration of LLMs (Gemini, GPT) with enterprise data (RAG) for WhatsApp and Web.",
+      "footer": "AI Agents · RAG · LLMs · Automation"
+    },
+    {
+      "title": "Backend Development",
+      "description": "Building robust, secure APIs with Node.js and NestJS. JWT authentication, role-based access control, external integrations, Redis caching, and relational/NoSQL databases.",
+      "footer": "NestJS · APIs · Security · Redis"
+    },
+    {
+      "title": "Frontend Development",
+      "description": "Modern, responsive, high-performance interfaces built with Vue, Nuxt, Tailwind CSS, and Bootstrap. Focus on UX, speed, and clean code maintainability.",
+      "footer": "Nuxt · Vue · UX · Performance"
+    },
+    {
+      "title": "Full Stack Applications",
+      "description": "End-to-end software development from backend architecture to polished frontend interfaces, ready for production with Clean Code and solid standards.",
+      "footer": "End-to-End · Clean Code · Production"
+    },
+    {
+      "title": "DevOps & Cloud (AWS)",
+      "description": "Application deployment and infrastructure management on AWS (EC2, ECS, S3, App Runner) with GitLab CI/CD. Dockerization, Nginx reverse proxies, and Linux environments.",
+      "footer": "AWS · Docker · CI/CD · Linux"
+    },
+    {
+      "title": "Technical Mentoring & Leadership",
+      "description": "Engineering team mentorship, rigorous code reviews, coding standards definition, and guidance in key architectural decisions.",
+      "footer": "Tech Lead · Code Review · Mentoring"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Centro Universitario Hidalguense A.C.",
+      "degree": "Bachelor's Degree in Computer Systems Engineering",
+      "startDate": "2018-10",
+      "endDate": "2023-11"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "CRUD Operations in MongoDB",
+      "issuer": "MongoDB",
+      "date": "Feb 2026",
+      "url": "https://www.credly.com/badges/d19d49b1-0dfb-4439-b198-3098285bf9cc/linked_in_profile",
+      "skills": ["Ad-Hoc Queries", "CRUD", "Data Administration"]
+    },
+    {
+      "title": "AWS Partner: Technical Accredited – Training Badge",
+      "issuer": "Amazon Web Services",
+      "date": "Dec 2025",
+      "url": "https://www.credly.com/badges/238ca898-3f9c-4a11-8453-7ab78a9a5fc7/linked_in_profile",
+      "skills": ["AWS", "Cloud Architecture"]
+    },
+    {
+      "title": "AWS Partner: Generative AI Sales – Training Badge",
+      "issuer": "Amazon Web Services",
+      "date": "Dec 2025",
+      "url": "https://www.credly.com/badges/f3640995-3237-4097-9e71-9b05c9c0db73/linked_in_profile",
+      "skills": ["Generative AI", "AWS"]
+    },
+    {
+      "title": "Job Roles in the Cloud (LATAM)",
+      "issuer": "Amazon Web Services",
+      "date": "Dec 2025",
+      "url": "blob:https://skillbuilder.aws/842a9378-0fac-449c-9fd4-9d84ab02d374",
+      "skills": ["AWS", "Cloud Roles"]
+    },
+    {
+      "title": "SOLID Principles and Clean Code",
+      "issuer": "Udemy",
+      "date": "Jun 2025",
+      "url": "https://www.udemy.com/certificate/UC-e4df8208-db4d-4c70-80d3-346d653c0cd2/",
+      "skills": ["SOLID", "Clean Code", "Software Architecture"]
+    },
+    {
+      "title": "Web AI Course: Google's New Model for JavaScript",
+      "issuer": "Udemy",
+      "date": "Oct 2025",
+      "url": "https://www.udemy.com/certificate/UC-e730df3c-e6b7-4785-9605-11ac95394da1/",
+      "skills": ["AI", "Google AI", "JavaScript"]
+    },
+    {
+      "title": "Gemini Certified Educator",
+      "issuer": "Google for Education",
+      "date": "Sept 2025",
+      "url": "https://edu.google.accredible.com/edf56a0f-7bca-4643-ba9f-e40d709a4a73#acc.3HYcdgeG",
+      "skills": ["AI", "Gemini", "AI Tools"]
+    },
+    {
+      "title": "WhatsApp API, Node.js and ChatGPT Bots",
+      "issuer": "Udemy",
+      "date": "Oct 2024",
+      "url": "https://www.udemy.com/certificate/UC-cabbf2bb-3313-4824-a193-083e89690a03/",
+      "skills": ["Node.js", "Chatbots", "Integrations"]
+    },
+    {
+      "title": "JavaScript Algorithms and Data Structures",
+      "issuer": "freeCodeCamp",
+      "date": "Jul 2023",
+      "url": "https://www.freecodecamp.org/certification/fccf959119f-59e1-4c4f-b5e8-a3aa9d987037/javascript-algorithms-and-data-structures",
+      "skills": ["JavaScript", "Algorithms"]
+    },
+    {
+      "title": "JavaScript Essentials 1",
+      "issuer": "Cisco",
+      "date": "Jun 2023",
+      "url": "https://www.credly.com/badges/3dc67727-cd91-425d-8a44-e2ad62fa98f1/linked_in_profile",
+      "skills": ["JavaScript"]
+    }
+  ],
+  "collaborations": [
+    {
+      "id": "sevendental",
+      "name": "SevenDental",
+      "sector": "Dental Laboratory · Hidalgo",
+      "logo": "/images/clients/sevendental.png",
+      "logoIcon": "mdi:tooth-outline",
+      "badge": "Hidalgo, Mexico",
+      "color": "from-cyan-500/20 to-blue-600/20",
+      "accentColor": "text-cyan-400",
+      "tagline": "Dental laboratory specializing in clinical design and manufacturing",
+      "description": "Specialized dental laboratory in the State of Hidalgo, focused on designing, manufacturing, and quality control of prosthetics, dental pieces, and specialized solutions for clinics and oral healthcare professionals.",
+      "services": [
+        "Web platform and management system for dental laboratory work orders.",
+        "Clinical inventory tracking, piece traceability, and manufacturing stage control.",
+        "Estimates, quotes, and dental piece delivery logistics system.",
+        "Automated WhatsApp notification integration for order confirmations and tracking."
+      ],
+      "technologies": ["Vue.js", "Node.js", "NestJS", "PostgreSQL", "WhatsApp API", "AWS"]
+    },
+    {
+      "id": "concatur",
+      "name": "Concatur",
+      "sector": "Corporate Training · National",
+      "logo": "/images/clients/concatur.png",
+      "logoIcon": "mdi:school-outline",
+      "badge": "National Coverage",
+      "color": "from-amber-500/20 to-orange-600/20",
+      "accentColor": "text-amber-400",
+      "tagline": "Corporate training and talent development across Mexico",
+      "description": "Firm specialized in comprehensive corporate training programs, executive development, and operational consulting for enterprises across multiple Mexican states.",
+      "services": [
+        "Web platform for managing training programs, courses, and enterprise certifications.",
+        "Participant registration, workshop quoting, and company tracking system.",
+        "Digital certificates generation portal, attendance reporting, and impact evaluation.",
+        "Scalable cloud architecture to support high-concurrency multi-state operations."
+      ],
+      "technologies": ["Nuxt 3", "TypeScript", "NestJS", "Tailwind CSS", "Docker", "PostgreSQL"]
+    },
+    {
+      "id": "norte70",
+      "name": "Grupo Norte 70",
+      "sector": "Software Development & Tech · National",
+      "logo": "/images/clients/norte70.png",
+      "logoIcon": "mdi:laptop-code",
+      "badge": "National Coverage",
+      "color": "from-purple-500/20 to-indigo-600/20",
+      "accentColor": "text-purple-400",
+      "tagline": "Software engineering and technology consulting firm",
+      "description": "Software development, digital architecture, and tech consulting company deploying advanced solutions and platforms across multiple states in Mexico.",
+      "services": [
+        "Scalable software architecture definition and engineering team leadership.",
+        "CI/CD pipeline automation with GitLab and AWS production deployments (ECS, EC2, S3).",
+        "Custom digital ecosystem development and high-concurrency web platforms.",
+        "AI Chatbot integration for operational optimization and process automation."
+      ],
+      "technologies": ["NestJS", "AWS (ECS/S3)", "GitLab CI/CD", "Nuxt", "Redis", "AI Chatbots"]
+    },
+    {
+      "id": "sorah",
+      "name": "Grupo Tecnológico Sorah",
+      "sector": "Software Development & ERP · National",
+      "logo": "/images/clients/sorah.png",
+      "logoIcon": "mdi:code-json",
+      "badge": "National Coverage",
+      "color": "from-emerald-500/20 to-teal-600/20",
+      "accentColor": "text-emerald-400",
+      "tagline": "Enterprise software factory and payroll/ERP systems",
+      "description": "Technology firm specialized in custom enterprise software, ERP platforms, and advanced HR/payroll solutions for corporate groups nationwide.",
+      "services": [
+        "Development of the payroll backend engine and mass payment dispersion using TypeScript and NestJS.",
+        "Administrative Vue.js frontend for employee management, loans, deductions, and incidents.",
+        "Modular microservices architecture design and database performance tuning.",
+        "Electronic invoicing and automated digital payment receipt generation modules."
+      ],
+      "technologies": ["Node.js", "NestJS", "TypeScript", "Vue.js", "PostgreSQL", "Docker"]
+    },
+    {
+      "id": "gobierno-hidalgo",
+      "name": "Gobierno del Estado de Hidalgo",
+      "sector": "Public Sector · State Government",
+      "logo": "/images/clients/gobierno_hidalgo.png",
+      "logoIcon": "mdi:shield-account",
+      "badge": "Hidalgo, Mexico",
+      "color": "from-red-500/20 to-rose-600/20",
+      "accentColor": "text-red-400",
+      "tagline": "Modernization and digitalization of public and institutional services",
+      "description": "State Government of Hidalgo, focused on modernizing institutional services, digitizing citizen procedures, data security, and government transparency.",
+      "services": [
+        "Development and integration of web platforms for digitizing state government citizen procedures.",
+        "Secure authentication, document validation, and institutional traceability systems.",
+        "Enforcing cybersecurity best practices and sensitive data protection standards.",
+        "Linux/Nginx server optimization to handle high-volume citizen traffic."
+      ],
+      "technologies": ["Vue.js", "Node.js", "REST APIs", "PostgreSQL", "Nginx", "Linux Servers"]
+    },
+    {
+      "id": "sipcec",
+      "name": "SIPCEC",
+      "sector": "Occupational Health · International",
+      "logo": "/images/clients/sipcec.png",
+      "logoIcon": "mdi:heart-pulse",
+      "badge": "International",
+      "color": "from-rose-500/20 to-pink-600/20",
+      "accentColor": "text-rose-400",
+      "tagline": "International society for prevention, quality, and occupational health",
+      "description": "International society specialized in comprehensive occupational risk prevention, workplace medicine, and chronic disease management programs (RedVive+ initiative).",
+      "services": [
+        "Full-stack development of the international 'RedVive+' digital health platform and ecosystem.",
+        "Management system for periodic medical exams, clinical records, and occupational health diagnoses.",
+        "Self-service portal for affiliated corporations with real-time health metrics and KPI analytics.",
+        "Deployment and cloud maintenance in optimized Bun and Nuxt environments."
+      ],
+      "technologies": ["Nuxt 3", "Vue 3", "Bun", "Tailwind CSS", "NestJS / Express", "PostgreSQL"]
+    },
+    {
+      "id": "tiendas-ahorro",
+      "name": "Tiendas del Ahorro",
+      "sector": "Retail & Supermarkets · Chiapas",
+      "logo": "/images/clients/tiendas_ahorro.png",
+      "logoIcon": "mdi:cart-outline",
+      "badge": "Chiapas, Mexico",
+      "color": "from-yellow-500/20 to-amber-600/20",
+      "accentColor": "text-yellow-400",
+      "tagline": "Retail and grocery chain across Chiapas",
+      "description": "Major supermarket and retail store chain originating in Chiapas, committed to providing accessible daily goods and essentials across multiple store branches.",
+      "services": [
+        "Centralized multi-warehouse inventory system and stock rotation tracking.",
+        "Point of Sale (POS) module with real-time cashier balance reconciliation.",
+        "Dynamic price list, discount, and promotional campaign management platform.",
+        "Performance monitoring and technical support across on-premise store servers and cloud infrastructure."
+      ],
+      "technologies": ["Vue.js", "Node.js", "Express", "MongoDB", "Socket.io", "Linux"]
+    }
+  ]
+}

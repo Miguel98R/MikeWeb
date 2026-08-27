@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import profile from '~/data/profile.json'
+import { computed } from 'vue'
+import { useLanguage } from '~/composables/useLanguage'
 
-interface SkillGroup {
+const { profile, t } = useLanguage()
+
+interface SkillGroupConfig {
   key: string
-  title: string
   icon: string
   color: string
   accentBg: string
   accentBorder: string
 }
 
-const skillGroups: SkillGroup[] = [
+const skillGroupConfigs: SkillGroupConfig[] = [
   {
     key: 'backend',
-    title: 'Backend',
     icon: 'mdi:server',
     color: 'text-emerald-400',
     accentBg: 'bg-emerald-500/10',
@@ -21,7 +22,6 @@ const skillGroups: SkillGroup[] = [
   },
   {
     key: 'frontend',
-    title: 'Frontend',
     icon: 'mdi:monitor-dashboard',
     color: 'text-cyan-400',
     accentBg: 'bg-cyan-500/10',
@@ -29,7 +29,6 @@ const skillGroups: SkillGroup[] = [
   },
   {
     key: 'ai_technologies',
-    title: 'IA & ChatBots',
     icon: 'mdi:robot-excited-outline',
     color: 'text-purple-400',
     accentBg: 'bg-purple-500/10',
@@ -37,7 +36,6 @@ const skillGroups: SkillGroup[] = [
   },
   {
     key: 'devops_cloud',
-    title: 'DevOps & Cloud',
     icon: 'mdi:cloud-cog-outline',
     color: 'text-amber-400',
     accentBg: 'bg-amber-500/10',
@@ -45,7 +43,6 @@ const skillGroups: SkillGroup[] = [
   },
   {
     key: 'databases',
-    title: 'Bases de Datos',
     icon: 'mdi:database',
     color: 'text-blue-400',
     accentBg: 'bg-blue-500/10',
@@ -53,7 +50,6 @@ const skillGroups: SkillGroup[] = [
   },
   {
     key: 'mobile',
-    title: 'Mobile',
     icon: 'mdi:cellphone-link',
     color: 'text-teal-400',
     accentBg: 'bg-teal-500/10',
@@ -61,7 +57,6 @@ const skillGroups: SkillGroup[] = [
   },
   {
     key: 'tools',
-    title: 'Herramientas',
     icon: 'mdi:tools',
     color: 'text-tech-red',
     accentBg: 'bg-tech-red/10',
@@ -69,7 +64,6 @@ const skillGroups: SkillGroup[] = [
   },
   {
     key: 'methodologies',
-    title: 'Metodologías',
     icon: 'mdi:compass-outline',
     color: 'text-indigo-400',
     accentBg: 'bg-indigo-500/10',
@@ -77,8 +71,16 @@ const skillGroups: SkillGroup[] = [
   }
 ]
 
+const skillGroups = computed(() => {
+  const titles = t.value.skills.groupTitles as Record<string, string>
+  return skillGroupConfigs.map(g => ({
+    ...g,
+    title: titles[g.key] || g.key
+  }))
+})
+
 const getSkills = (key: string) => {
-  return (profile.skills as Record<string, string[]>)[key] || []
+  return (profile.value.skills as Record<string, string[]>)[key] || []
 }
 </script>
 
@@ -92,14 +94,14 @@ const getSkills = (key: string) => {
       <div class="mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
           <Icon name="mdi:code-tags" size="16" />
-          <span>TECH_STACK & EXPERTISE</span>
+          <span>{{ t.skills.tag }}</span>
         </div>
         <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-4">
           <span class="w-2 h-10 bg-tech-purple block"></span>
-          Skills Técnicos
+          {{ t.skills.title }}
         </h3>
         <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
-          Stack tecnológico probado en producción, enfocado en robustez, escalabilidad, buenas prácticas y arquitectura de software.
+          {{ t.skills.subtitle }}
         </p>
       </div>
 
@@ -151,7 +153,7 @@ const getSkills = (key: string) => {
 
           <!-- Bottom micro-indicator -->
           <div class="relative z-10 pt-3 mt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-zinc-500">
-            <span>Producción</span>
+            <span>{{ t.skills.production }}</span>
             <span class="text-tech-purple">✓ 100%</span>
           </div>
         </div>

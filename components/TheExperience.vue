@@ -1,13 +1,15 @@
-<script setup>
-import profile from '~/data/profile.json'
+<script setup lang="ts">
+import { useLanguage } from '~/composables/useLanguage'
 
-const formatDate = (date) => {
-  if (date === 'Present') return 'Actualidad'
+const { profile, t, currentLocale } = useLanguage()
+
+const formatDate = (date: string) => {
+  if (date === 'Present') return t.value.experience.present
   const [year, month] = date.split('-')
   return `${month}/${year}`
 }
 
-const isCurrentRole = (endDate) => endDate === 'Present'
+const isCurrentRole = (endDate: string) => endDate === 'Present'
 </script>
 
 <template>
@@ -21,14 +23,14 @@ const isCurrentRole = (endDate) => endDate === 'Present'
       <div class="mb-20">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-red border border-tech-red/30 rounded-full bg-tech-red/5">
           <Icon name="mdi:timeline-text-outline" size="16" />
-          <span>CAREER & TRACK_RECORD</span>
+          <span>{{ t.experience.tag }}</span>
         </div>
         <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-4">
           <span class="w-2 h-10 bg-tech-red block"></span>
-          Experiencia Profesional
+          {{ t.experience.title }}
         </h3>
         <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
-          Línea del tiempo y trayectoria enfocada en liderazgo técnico, arquitectura escalable y desarrollo de sistemas en producción.
+          {{ t.experience.subtitle }}
         </p>
       </div>
 
@@ -66,7 +68,7 @@ const isCurrentRole = (endDate) => endDate === 'Present'
               />
             </div>
 
-            <!-- Card Container (Left on desktop for odd, Right for even, always right on mobile) -->
+            <!-- Card Container -->
             <div
               class="w-full pl-14 sm:pl-16 md:pl-0 md:w-[calc(50%-2.5rem)]"
             >
@@ -113,10 +115,10 @@ const isCurrentRole = (endDate) => endDate === 'Present'
                 <div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-tech-gray">
                   <span class="flex items-center gap-1.5 text-tech-gray group-hover:text-gray-200 transition-colors">
                     <Icon name="mdi:check-decagram" size="16" class="text-tech-red" />
-                    Entorno Productivo
+                    {{ t.experience.productionEnv }}
                   </span>
                   <span class="text-[11px] font-mono text-tech-red/80">
-                    Etapa {{ profile.experience.length - index }}
+                    {{ t.experience.stage }} {{ profile.experience.length - index }}
                   </span>
                 </div>
               </article>
