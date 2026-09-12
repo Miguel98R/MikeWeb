@@ -17,6 +17,10 @@ const getLangColor = (tech: string) => {
   return 'bg-tech-purple'
 }
 
+const formatRepoName = (name: string) => {
+  return name.replace(/([_\-\/])/g, "$1\u200B")
+}
+
 const getTechTags = (tech: string) => {
   if (!tech) return []
   return tech.split(/[/,]/).map(t => t.trim()).filter(Boolean)
@@ -80,14 +84,14 @@ const getTechTags = (tech: string) => {
           rel="noopener noreferrer"
           v-motion-slide-visible-once-bottom
           :delay="index * 60"
-          class="group relative rounded-2xl border border-white/10 bg-tech-surface/75 hover:bg-tech-surface backdrop-blur-md p-6 sm:p-7 transition-all duration-300 hover:border-tech-purple/50 hover:shadow-[0_0_35px_rgba(139,92,246,0.2)] hover:-translate-y-1.5 flex flex-col justify-between"
+          class="group relative rounded-2xl border border-white/10 bg-tech-surface/75 hover:bg-tech-surface backdrop-blur-md p-6 sm:p-7 transition-all duration-300 hover:border-tech-purple/50 hover:shadow-[0_0_35px_rgba(139,92,246,0.2)] hover:-translate-y-1.5 flex flex-col justify-between min-w-0 overflow-hidden"
         >
           <!-- Hover subtle gradient -->
           <div
             class="absolute inset-0 rounded-2xl bg-gradient-to-br from-tech-purple/10 via-transparent to-tech-red/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
           />
 
-          <div class="relative z-10">
+          <div class="relative z-10 w-full min-w-0">
             <!-- Top Row: Folder / Git Icon & Visibility Badge -->
             <div class="flex items-center justify-between gap-2 mb-5">
               <div class="w-10 h-10 rounded-xl bg-tech-purple/10 border border-tech-purple/30 flex items-center justify-center text-tech-purple group-hover:scale-110 group-hover:bg-tech-purple/20 transition-all shadow-inner">
@@ -101,8 +105,8 @@ const getTechTags = (tech: string) => {
             </div>
 
             <!-- Repo Name -->
-            <h4 class="text-lg font-bold text-white group-hover:text-tech-purple transition-colors mb-2 font-mono flex items-center gap-2 break-all">
-              <span class="break-all">{{ repo.name }}</span>
+            <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-tech-purple transition-colors mb-2 font-mono leading-snug break-words [overflow-wrap:anywhere] break-all">
+              {{ formatRepoName(repo.name) }}
             </h4>
 
             <!-- Description -->
