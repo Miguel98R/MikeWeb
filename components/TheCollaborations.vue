@@ -55,7 +55,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="colaboraciones" class="py-28 px-6 bg-transparent relative overflow-hidden">
+  <section id="colaboraciones" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
     <!-- Background subtle gradient glow -->
     <div
       class="absolute inset-0 opacity-5 pointer-events-none"

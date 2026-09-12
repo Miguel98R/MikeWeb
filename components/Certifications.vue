@@ -30,7 +30,7 @@ const getIssuerColor = (issuer: string) => {
 </script>
 
 <template>
-  <section id="certificaciones" class="py-28 px-6 bg-transparent relative overflow-hidden">
+  <section id="certificaciones" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
     <!-- Ambient glow -->
     <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 

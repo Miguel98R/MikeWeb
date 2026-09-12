@@ -13,7 +13,7 @@ const isCurrentRole = (endDate: string) => endDate === 'Present'
 </script>
 
 <template>
-  <section id="experiencia" class="py-28 px-6 bg-transparent relative overflow-hidden">
+  <section id="experiencia" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
     <!-- Ambient glows -->
     <div class="absolute top-1/4 -left-32 w-96 h-96 bg-tech-red/10 rounded-full blur-3xl pointer-events-none" />
     <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />

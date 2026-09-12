@@ -24,7 +24,7 @@ const getServiceTags = (footerText: string) => {
 </script>
 
 <template>
-  <section id="servicios" class="py-28 px-6 bg-transparent relative overflow-hidden">
+  <section id="servicios" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
     <!-- Ambient background glow -->
     <div
       class="absolute inset-0 opacity-5 pointer-events-none"

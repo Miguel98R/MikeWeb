@@ -24,7 +24,7 @@ const getTechTags = (tech: string) => {
 </script>
 
 <template>
-  <section id="proyectos" class="py-28 px-6 bg-transparent relative overflow-hidden">
+  <section id="proyectos" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
     <!-- Ambient glow -->
     <div class="absolute top-1/3 -right-32 w-96 h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -101,8 +101,8 @@ const getTechTags = (tech: string) => {
             </div>
 
             <!-- Repo Name -->
-            <h4 class="text-lg font-bold text-white group-hover:text-tech-purple transition-colors mb-2 font-mono flex items-center gap-2">
-              <span>{{ repo.name }}</span>
+            <h4 class="text-lg font-bold text-white group-hover:text-tech-purple transition-colors mb-2 font-mono flex items-center gap-2 break-all">
+              <span class="break-all">{{ repo.name }}</span>
             </h4>
 
             <!-- Description -->
@@ -112,15 +112,15 @@ const getTechTags = (tech: string) => {
           </div>
 
           <!-- Bottom Meta & Tags -->
-          <div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full" :class="getLangColor(repo.tech)" />
-              <span class="text-xs font-mono text-tech-gray">
+          <div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2 min-w-0 flex-1">
+              <span class="w-2.5 h-2.5 rounded-full shrink-0" :class="getLangColor(repo.tech)" />
+              <span class="text-xs font-mono text-tech-gray truncate" :title="repo.tech">
                 {{ repo.tech }}
               </span>
             </div>
 
-            <div class="flex items-center gap-1 text-xs font-mono text-tech-purple group-hover:text-white transition-colors">
+            <div class="flex items-center gap-1 text-xs font-mono text-tech-purple group-hover:text-white transition-colors shrink-0">
               <span>{{ t.projects.viewOnGithub }}</span>
               <Icon name="mdi:arrow-right" size="14" class="group-hover:translate-x-1 transition-transform" />
             </div>
