@@ -362,6 +362,24 @@
         "Performance monitoring and technical support across on-premise store servers and cloud infrastructure."
       ],
       "technologies": ["Vue.js", "Node.js", "Express", "MongoDB", "Socket.io", "Linux"]
+    },
+    {
+      "id": "grupo-plegar",
+      "name": "Grupo Plegar",
+      "sector": "Structures & Canopies · Nationwide",
+      "logo": "/images/clients/plegar.png",
+      "logoIcon": "mdi:tent",
+      "badge": "Nationwide Coverage",
+      "color": "from-blue-500/20 to-indigo-600/20",
+      "accentColor": "text-blue-400",
+      "tagline": "Landing page with product and client management",
+      "description": "Grupo Plegar is a company with nationwide service coverage. A corporate landing page was developed with an admin module for product and client management.",
+      "services": [
+        "Design and development of a corporate landing page with national reach.",
+        "Product management panel: create, edit and dynamic catalog.",
+        "Client management module with contact tracking."
+      ],
+      "technologies": ["Nuxt 3", "Vue 3", "Tailwind CSS", "Node.js"]
     }
   ]
 }
