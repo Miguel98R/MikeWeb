@@ -93,7 +93,7 @@ onUnmounted(() => {
           :key="client.id"
           v-motion-slide-visible-once-bottom
           :delay="index * 60"
-          class="group relative h-36 sm:h-44 rounded-2xl border border-white/10 bg-[#0f0f15]/90 hover:bg-[#151520] backdrop-blur-md flex items-center justify-center p-6 cursor-pointer transition-all duration-300 hover:border-tech-purple/60 hover:shadow-[0_0_35px_rgba(139,92,246,0.22)] hover:-translate-y-1.5 overflow-hidden"
+          class="group relative h-36 sm:h-44 rounded-2xl border border-white/10 bg-[#0f0f15]/90 hover:bg-[#151520] backdrop-blur-md flex items-center justify-center p-4 sm:p-5 pt-7 sm:pt-8 cursor-pointer transition-all duration-300 hover:border-tech-purple/60 hover:shadow-[0_0_35px_rgba(139,92,246,0.22)] hover:-translate-y-1.5 overflow-hidden"
           @click="openModal(client)"
         >
           <!-- Subtle hover corner glow -->
@@ -112,7 +112,7 @@ onUnmounted(() => {
               <img
                 :src="client.logo"
                 :alt="client.name"
-                class="max-h-16 sm:max-h-20 max-w-[170px] sm:max-w-[200px] w-auto object-contain transition-all duration-300 group-hover:brightness-110"
+                class="max-h-20 sm:max-h-24 md:max-h-26 max-w-[190px] sm:max-w-[230px] md:max-w-[245px] w-auto object-contain transition-all duration-300 group-hover:brightness-110"
                 loading="lazy"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
