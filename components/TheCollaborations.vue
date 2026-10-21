@@ -93,7 +93,7 @@ onUnmounted(() => {
           :key="client.id"
           v-motion-slide-visible-once-bottom
           :delay="index * 60"
-          class="group relative h-32 sm:h-36 rounded-2xl border border-white/10 bg-[#0f0f15]/90 hover:bg-[#151520] backdrop-blur-md flex items-center justify-center p-6 cursor-pointer transition-all duration-300 hover:border-tech-purple/60 hover:shadow-[0_0_35px_rgba(139,92,246,0.22)] hover:-translate-y-1.5 overflow-hidden"
+          class="group relative h-36 sm:h-44 rounded-2xl border border-white/10 bg-[#0f0f15]/90 hover:bg-[#151520] backdrop-blur-md flex items-center justify-center p-6 cursor-pointer transition-all duration-300 hover:border-tech-purple/60 hover:shadow-[0_0_35px_rgba(139,92,246,0.22)] hover:-translate-y-1.5 overflow-hidden"
           @click="openModal(client)"
         >
           <!-- Subtle hover corner glow -->
@@ -107,23 +107,23 @@ onUnmounted(() => {
           </span>
 
           <!-- Logo Container -->
-          <div class="relative z-10 flex flex-col items-center justify-center text-center transition-transform duration-300 group-hover:scale-105">
+          <div class="relative z-10 flex flex-col items-center justify-center text-center transition-transform duration-300 group-hover:scale-105 w-full px-2">
             <template v-if="client.logo">
               <img
                 :src="client.logo"
                 :alt="client.name"
-                class="max-h-12 max-w-[130px] object-contain transition-all duration-300 group-hover:brightness-110"
+                class="max-h-16 sm:max-h-20 max-w-[170px] sm:max-w-[200px] w-auto object-contain transition-all duration-300 group-hover:brightness-110"
                 loading="lazy"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
               <!-- Fallback if image fails -->
               <div class="hidden flex-col items-center gap-2">
-                <Icon :name="client.logoIcon || 'mdi:domain'" size="28" class="text-tech-purple" />
+                <Icon :name="client.logoIcon || 'mdi:domain'" size="36" class="text-tech-purple" />
                 <span class="text-sm font-bold text-white tracking-wide font-mono">{{ client.name }}</span>
               </div>
             </template>
             <template v-else>
-              <Icon :name="client.logoIcon || 'mdi:domain'" size="32" class="text-tech-purple mb-1.5" />
+              <Icon :name="client.logoIcon || 'mdi:domain'" size="38" class="text-tech-purple mb-1.5" />
               <span class="text-sm font-bold text-white tracking-wide font-mono">{{ client.name }}</span>
             </template>
           </div>
