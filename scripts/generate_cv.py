@@ -272,14 +272,14 @@ def generate_harvard_cv(lang="es"):
     add_section("HABILIDADES TÉCNICAS" if lang == "es" else "TECHNICAL SKILLS")
     if lang == "es":
         skills = [
-            "• <b>Arquitectura & Cloud:</b> Arquitectura Hexagonal, SOLID, Clean Code, AWS (EC2, ECS, S3, IAM), Docker, CI/CD, Nginx, Linux.",
+            "• <b>Arquitectura & Cloud:</b> Arquitectura Hexagonal, SOLID, Clean Code, AWS (EC2, ECS, S3, IAM), Docker, Kubernetes, Coolify, CI/CD, Nginx, Linux.",
             "• <b>Backend & Inteligencia Artificial:</b> Node.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis, Agentes de IA, RAG, LLMs, Chatbots.",
             "• <b>Frontend & Mobile:</b> Vue.js, NuxtJS, ReactJS, Next.js, Flutter, Tailwind CSS, Bootstrap, HTML5/CSS3.",
             "• <b>Metodologías & Idiomas:</b> Scrum, Kanban, Mentoring Técnico, Code Reviews, Git | Español (Nativo), Inglés (Intermedio B2)."
         ]
     else:
         skills = [
-            "• <b>Architecture & Cloud:</b> Hexagonal Architecture, SOLID, Clean Code, AWS (EC2, ECS, S3, IAM), Docker, CI/CD, Nginx, Linux.",
+            "• <b>Architecture & Cloud:</b> Hexagonal Architecture, SOLID, Clean Code, AWS (EC2, ECS, S3, IAM), Docker, Kubernetes, Coolify, CI/CD, Nginx, Linux.",
             "• <b>Backend & Artificial Intelligence:</b> Node.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis, AI Agents, RAG, LLMs, Chatbots.",
             "• <b>Frontend & Mobile:</b> Vue.js, NuxtJS, ReactJS, Next.js, Flutter, Tailwind CSS, Bootstrap, HTML5/CSS3.",
             "• <b>Methodologies & Languages:</b> Scrum, Kanban, Technical Mentorship, Code Reviews, Git | Spanish (Native), English (Intermediate B2)."

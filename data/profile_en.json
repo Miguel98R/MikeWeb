@@ -51,6 +51,8 @@
     ],
     "devops_cloud": [
       "Docker",
+      "Kubernetes",
+      "Coolify",
       "Nginx",
       "AWS (EC2, ECS, S3, IAM, App Runner, SNS, Polly, Transcribe)",
       "GitLab CI/CD",
