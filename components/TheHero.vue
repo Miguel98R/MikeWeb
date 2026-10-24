@@ -46,6 +46,8 @@ const isCvDropdownOpen = ref(false)
             <a
               :href="currentLocale === 'en' ? '/CV_Jose_Miguel_Rosas_Jimenez_EN.pdf' : '/CV_Jose_Miguel_Rosas_Jimenez.pdf'"
               :download="currentLocale === 'en' ? 'CV_Jose_Miguel_Rosas_Jimenez_EN.pdf' : 'CV_Jose_Miguel_Rosas_Jimenez_ES.pdf'"
+              target="_blank"
+              rel="noopener noreferrer"
               class="px-5 py-3 border border-tech-red text-tech-red font-bold rounded-l-lg hover:bg-tech-red hover:text-black transition-all duration-300 flex items-center gap-2"
               :title="currentLocale === 'en' ? 'Download Resume in English' : 'Descargar CV en Español'"
             >
@@ -72,6 +74,8 @@ const isCvDropdownOpen = ref(false)
               <a
                 href="/CV_Jose_Miguel_Rosas_Jimenez.pdf"
                 download="CV_Jose_Miguel_Rosas_Jimenez_ES.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="flex items-center justify-between px-3 py-2 text-xs font-mono rounded-lg hover:bg-tech-red/10 text-gray-200 hover:text-tech-red transition-colors"
               >
                 <span>🇪🇸 CV en Español</span>
@@ -80,6 +84,8 @@ const isCvDropdownOpen = ref(false)
               <a
                 href="/CV_Jose_Miguel_Rosas_Jimenez_EN.pdf"
                 download="CV_Jose_Miguel_Rosas_Jimenez_EN.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="flex items-center justify-between px-3 py-2 text-xs font-mono rounded-lg hover:bg-tech-red/10 text-gray-200 hover:text-tech-red transition-colors"
               >
                 <span>🇺🇸 Resume (English)</span>

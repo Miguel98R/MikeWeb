@@ -1,186 +1,216 @@
 import os
+import fitz
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 
-icons_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public", "images", "cv_icons"))
-
-def build_pdf(lang="es"):
+def generate_harvard_cv(lang="es"):
     filename = "CV_Jose_Miguel_Rosas_Jimenez.pdf" if lang == "es" else "CV_Jose_Miguel_Rosas_Jimenez_EN.pdf"
-    pdf_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public", filename))
+    output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public"))
+    pdf_path = os.path.join(output_dir, filename)
 
+    # Letter is 612 x 792 pt
+    # Harvard Standard Margins: 0.5 in (36 pt)
     doc = SimpleDocTemplate(
         pdf_path,
         pagesize=letter,
-        leftMargin=38,
-        rightMargin=38,
-        topMargin=28,
-        bottomMargin=28
+        leftMargin=36,
+        rightMargin=36,
+        topMargin=26,
+        bottomMargin=26
     )
 
     styles = getSampleStyleSheet()
 
+    # Harvard Typography: Classic Times family (Times-Roman, Times-Bold, Times-Italic)
     name_style = ParagraphStyle(
-        'NameHeader', parent=styles['Normal'],
-        fontName='Helvetica-Bold', fontSize=22, leading=26,
-        alignment=1, textColor=colors.HexColor('#111827')
+        'HarvardName', parent=styles['Normal'],
+        fontName='Times-Bold', fontSize=18, leading=21,
+        alignment=1, textColor=colors.HexColor('#000000')
     )
 
-    tagline_style = ParagraphStyle(
-        'TaglineHeader', parent=styles['Normal'],
-        fontName='Helvetica', fontSize=10.5, leading=14,
-        alignment=1, textColor=colors.HexColor('#374151')
+    sub_role_style = ParagraphStyle(
+        'HarvardSubRole', parent=styles['Normal'],
+        fontName='Times-Italic', fontSize=9.5, leading=12,
+        alignment=1, textColor=colors.HexColor('#222222')
     )
 
     contact_style = ParagraphStyle(
-        'ContactCenter', parent=styles['Normal'],
-        fontName='Helvetica', fontSize=8.8, leading=13,
-        alignment=1, textColor=colors.HexColor('#4b5563')
+        'HarvardContact', parent=styles['Normal'],
+        fontName='Times-Roman', fontSize=8.5, leading=11.5,
+        alignment=1, textColor=colors.HexColor('#222222')
     )
 
     section_style = ParagraphStyle(
-        'SectionCenter', parent=styles['Normal'],
-        fontName='Helvetica-Bold', fontSize=10.5, leading=14,
-        alignment=1, spaceBefore=9, spaceAfter=2.5,
-        textColor=colors.HexColor('#111827')
+        'HarvardSection', parent=styles['Normal'],
+        fontName='Times-Bold', fontSize=10, leading=13,
+        alignment=0, spaceBefore=5.5, spaceAfter=1,
+        textColor=colors.HexColor('#000000')
     )
 
     profile_style = ParagraphStyle(
-        'Profile', parent=styles['Normal'],
-        fontName='Helvetica', fontSize=9.2, leading=13.2,
-        alignment=4, textColor=colors.HexColor('#1f2937')
+        'HarvardProfile', parent=styles['Normal'],
+        fontName='Times-Roman', fontSize=8.4, leading=11.2,
+        alignment=4, textColor=colors.HexColor('#111111')
     )
 
-    job_title_style = ParagraphStyle(
-        'JobTitle', parent=styles['Normal'],
-        fontName='Helvetica-Bold', fontSize=9.4, leading=12.5,
-        textColor=colors.HexColor('#111827')
+    entry_title_style = ParagraphStyle(
+        'HarvardEntryTitle', parent=styles['Normal'],
+        fontName='Times-Bold', fontSize=8.8, leading=11.5,
+        textColor=colors.HexColor('#000000')
     )
 
-    job_date_style = ParagraphStyle(
-        'JobDate', parent=styles['Normal'],
-        fontName='Helvetica-Bold', fontSize=9, leading=12.5,
-        alignment=2, textColor=colors.HexColor('#111827')
+    entry_date_style = ParagraphStyle(
+        'HarvardEntryDate', parent=styles['Normal'],
+        fontName='Times-Italic', fontSize=8.6, leading=11.5,
+        alignment=2, textColor=colors.HexColor('#111111')
     )
 
     bullet_style = ParagraphStyle(
-        'Bullet', parent=styles['Normal'],
-        fontName='Helvetica', fontSize=8.8, leading=12.2,
+        'HarvardBullet', parent=styles['Normal'],
+        fontName='Times-Roman', fontSize=8.3, leading=11.1,
         leftIndent=11, firstLineIndent=-7,
-        textColor=colors.HexColor('#374151')
+        textColor=colors.HexColor('#111111')
     )
 
     body_style = ParagraphStyle(
-        'Body', parent=styles['Normal'],
-        fontName='Helvetica', fontSize=8.8, leading=12.2,
-        textColor=colors.HexColor('#374151')
+        'HarvardBody', parent=styles['Normal'],
+        fontName='Times-Roman', fontSize=8.3, leading=11.1,
+        textColor=colors.HexColor('#111111')
     )
 
     story = []
 
-    # 1. HEADER (CENTERED)
+    # 1. HEADER (CENTERED, HARVARD SPECIFICATION)
     story.append(Paragraph("JOSÉ MIGUEL ROSAS JIMÉNEZ", name_style))
-    story.append(Spacer(1, 2))
-    story.append(Paragraph("Desarrollador Full Stack | Tech Lead | Software Architect" if lang == "es" else "Full Stack Developer | Tech Lead | Software Architect", tagline_style))
-    story.append(Spacer(1, 4))
-
-    img_pin = f'<img src="{icons_dir}/location.png" width="8" height="8" valign="-0.5"/>'
-    img_phone = f'<img src="{icons_dir}/phone.png" width="8" height="8" valign="-0.5"/>'
-    img_mail = f'<img src="{icons_dir}/email.png" width="8" height="8" valign="-0.5"/>'
-    img_web = f'<img src="{icons_dir}/web.png" width="8" height="8" valign="-0.5"/>'
-    img_li = f'<img src="{icons_dir}/linkedin.png" width="8" height="8" valign="-0.5"/>'
-    img_gh = f'<img src="{icons_dir}/github.png" width="8" height="8" valign="-0.5"/>'
+    story.append(Spacer(1, 1.5))
+    
+    role_text = "Tech Lead &nbsp;|&nbsp; Software Architect &nbsp;|&nbsp; Senior Full Stack Developer"
+    story.append(Paragraph(role_text, sub_role_style))
+    story.append(Spacer(1, 2.5))
 
     location_str = "Pachuca de Soto, Hidalgo, México" if lang == "es" else "Pachuca de Soto, Hidalgo, Mexico"
     email_str = "mikerosas.dev98@gmail.com"
 
-    l1 = f'{img_phone} +52 771 434 9366 &nbsp;&nbsp;|&nbsp;&nbsp; {img_pin} {location_str} &nbsp;&nbsp;|&nbsp;&nbsp; {img_mail} <link href="mailto:{email_str}">{email_str}</link>'
-    l2 = f'{img_web} <link href="https://mikerosasdev.com">mikerosasdev.com</link> &nbsp;&nbsp;|&nbsp;&nbsp; {img_li} <link href="https://linkedin.com/in/josemiguelrosas">/in/josemiguelrosas</link> &nbsp;&nbsp;|&nbsp;&nbsp; {img_gh} <link href="https://github.com/Miguel98R">/Miguel98R</link> &nbsp;&nbsp;|&nbsp;&nbsp; {img_gh} <link href="https://github.com/mikerosasdev98">/mikerosasdev98</link>'
+    line1 = f'{location_str} &nbsp;•&nbsp; +52 771 434 9366 &nbsp;•&nbsp; <link href="mailto:{email_str}"><font color="#111827">{email_str}</font></link>'
+    line2 = (
+        f'<link href="https://mikerosasdev.com"><font color="#111827">mikerosasdev.com</font></link> &nbsp;•&nbsp; '
+        f'<link href="https://linkedin.com/in/josemiguelrosas"><font color="#111827">linkedin.com/in/josemiguelrosas</font></link> &nbsp;•&nbsp; '
+        f'<link href="https://github.com/Miguel98R"><font color="#111827">github.com/Miguel98R</font></link>'
+    )
+    story.append(Paragraph(line1, contact_style))
+    story.append(Spacer(1, 1))
+    story.append(Paragraph(line2, contact_style))
+    story.append(Spacer(1, 1.5))
 
-    story.append(Paragraph(l1, contact_style))
-    story.append(Paragraph(l2, contact_style))
-    story.append(Spacer(1, 4))
-
-    def add_sec(title):
+    # SECTION HELPER WITH FULL WIDTH SOLID DIVIDER
+    def add_section(title):
         story.append(Paragraph(title, section_style))
-        story.append(HRFlowable(width="100%", thickness=0.75, color=colors.HexColor('#111827'), spaceBefore=2, spaceAfter=5))
+        story.append(HRFlowable(width="100%", thickness=0.8, color=colors.HexColor('#000000'), spaceBefore=1, spaceAfter=3))
 
-    # 2. PERFIL / PROFILE
-    add_sec("PERFIL" if lang == "es" else "PROFESSIONAL PROFILE")
+    # 2. RESUMEN PROFESIONAL / PROFESSIONAL SUMMARY
+    add_section("RESUMEN PROFESIONAL" if lang == "es" else "PROFESSIONAL SUMMARY")
     if lang == "es":
-        profile_p = "Desarrollador Full Stack, Tech Lead y Arquitecto de Software con más de 5 años de experiencia liderando equipos técnicos, diseñando arquitecturas escalables y desarrollando soluciones web y móviles orientadas a producción. Especializado en backend robusto con Node.js y NestJS, integración de Agentes de IA y Chatbots inteligentes, despliegues en la nube con AWS y aplicación rigurosa de principios SOLID, Clean Code y Arquitectura Hexagonal."
+        summary = (
+            "Tech Lead, Arquitecto de Software y Desarrollador Full Stack con más de 5 años de experiencia liderando "
+            "equipos de ingeniería, diseñando arquitecturas escalables (Hexagonal, Microservicios) y desplegando soluciones "
+            "de alta disponibilidad en producción. Especialista en backend robusto con Node.js y NestJS, integración de "
+            "Agentes de IA y Chatbots inteligentes (RAG, LLMs), infraestructura cloud en AWS (EC2, ECS, S3) y aplicación "
+            "rigurosa de principios SOLID, Clean Code y pipelines automatizados de CI/CD."
+        )
     else:
-        profile_p = "Full Stack Developer, Tech Lead, and Software Architect with over 5 years of experience leading engineering teams, designing scalable architectures, and developing production-ready web and mobile solutions. Specialized in robust backends with Node.js and NestJS, AI Agents and intelligent Chatbots integration, AWS cloud deployments, and strict adherence to SOLID principles, Clean Code, and Hexagonal Architecture."
-    story.append(Paragraph(profile_p, profile_style))
-    story.append(Spacer(1, 3))
+        summary = (
+            "Tech Lead, Software Architect, and Senior Full Stack Developer with 5+ years of experience leading engineering "
+            "teams, architecting scalable systems (Hexagonal, Microservices), and delivering high-availability production solutions. "
+            "Specialized in robust backends with Node.js and NestJS, intelligent AI Agents and Chatbot ecosystems (RAG, LLMs), "
+            "cloud infrastructure on AWS (EC2, ECS, S3), and disciplined engineering practices (SOLID, Clean Code, CI/CD)."
+        )
+    story.append(Paragraph(summary, profile_style))
+    story.append(Spacer(1, 1.5))
 
-    # 3. EXPERIENCIA LABORAL / WORK EXPERIENCE
-    add_sec("EXPERIENCIA LABORAL" if lang == "es" else "WORK EXPERIENCE")
+    # 3. EXPERIENCIA LABORAL / PROFESSIONAL EXPERIENCE
+    add_section("EXPERIENCIA LABORAL" if lang == "es" else "PROFESSIONAL EXPERIENCE")
 
-    def add_exp(title, comp, date_str, bullets):
-        t = Table([[
-            Paragraph(f"<b>{title}</b> — <font color='#4b5563'>{comp}</font>", job_title_style),
-            Paragraph(date_str, job_date_style)
-        ]], colWidths=[385, 151])
+    def add_job(company, location, role, dates, bullets):
+        left_html = f"<b>{company}</b> &nbsp;|&nbsp; <i>{role}</i>"
+        right_html = f"<i>{dates}</i>"
+        table_data = [[Paragraph(left_html, entry_title_style), Paragraph(right_html, entry_date_style)]]
+        t = Table(table_data, colWidths=[400, 140])
         t.setStyle(TableStyle([
-            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+            ('VALIGN', (0,0), (-1,-1), 'BOTTOM'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
             ('RIGHTPADDING', (0,0), (-1,-1), 0),
             ('TOPPADDING', (0,0), (-1,-1), 0),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 0.5),
         ]))
         story.append(t)
         for b in bullets:
             story.append(Paragraph(f"• {b}", bullet_style))
-        story.append(Spacer(1, 3.5))
+        story.append(Spacer(1, 2.5))
 
     if lang == "es":
-        add_exp("Director de Tecnología e IA", "SIPCEC", "Ago. 2026 - Presente", [
-            "Dirección técnica del área de Salud Digital e IA. Liderazgo en arquitectura de software e integración de agentes de IA para el ecosistema clínico y preventivo (RedVive+)."
-        ])
-        add_exp("Tech Lead & Software Architect", "Grupo Norte 70", "May. 2025 - Presente", [
-            "Lidero equipos bajo Scrum, defino arquitecturas escalables (Hexagonal) con Node.js/NestJS, CI/CD en AWS y code reviews estrictos con Clean Code."
-        ])
-        add_exp("Full Stack Developer", "Grupo Tecnológico Sorah", "Sept. 2024 - Presente", [
-            "Desarrollo de soluciones full stack empresariales con NestJS y Vue.js; optimización de bases de datos PostgreSQL y microservicios de nómina."
-        ])
-        add_exp("CEO & Full Stack Developer", "MikeDev", "Jul. 2019 - Presente", [
-            "Desarrollo e integración de Agentes de IA y Chatbots inteligentes; diseño de arquitecturas cloud con AWS, Docker y bases de datos relacionales y NoSQL."
-        ])
-        add_exp("Full Stack Developer & Tech Researcher", "Leganux", "Ago. 2022 - Ago. 2024", [
-            "Investigación tecnológica, desarrollo de prototipos innovadores, administración de servidores Linux y despliegues productivos en AWS (EC2)."
-        ])
-        add_exp("Desarrollador Web Jr", "FMB Solutions", "Jun. 2019 - Dic. 2019", [
-            "Desarrollo frontend y backend con React.js y Node.js; gestión y consultas en bases de datos relacionales con SQL Server."
-        ])
+        add_job(
+            "SIPCEC", "México", "Director de Tecnología e IA", "Ago. 2026 – Presente",
+            ["Dirección técnica del ecosistema de Salud Digital (RedVive+); diseño de arquitectura escalable e integración de agentes de IA con RAG para el procesamiento clínico y preventivo automatizado."]
+        )
+        add_job(
+            "Grupo Norte 70", "México", "Tech Lead & Software Architect", "May. 2025 – Presente",
+            ["Liderazgo técnico de equipos Scrum, diseño de arquitectura hexagonal con Node.js/NestJS, pipelines automatizados de CI/CD en AWS y estándares de calidad con Clean Code."]
+        )
+        add_job(
+            "Grupo Tecnológico Sorah", "México", "Full Stack Developer", "Sept. 2024 – Presente",
+            ["Desarrollo de módulos empresariales con NestJS y Vue.js; optimización de queries y esquemas PostgreSQL para procesamiento de nómina de alta concurrencia."]
+        )
+        add_job(
+            "MikeDev", "México", "CEO & Lead Software Architect", "Jul. 2019 – Presente",
+            ["Fundador y consultor principal; desarrollo de Agentes de IA, automatización con WhatsApp Cloud API y arquitecturas serverless/contenedores con AWS y Docker."]
+        )
+        add_job(
+            "Leganux", "México", "Full Stack Developer & Tech Researcher", "Ago. 2022 – Ago. 2024",
+            ["Investigación aplicada, desarrollo de prototipos tecnológicos, administración de servidores Linux y despliegues en infraestructura AWS (EC2)."]
+        )
+        add_job(
+            "FMB Solutions", "México", "Desarrollador Web Jr", "Jun. 2019 – Dic. 2019",
+            ["Desarrollo web con React.js y Node.js; diseño y optimización de bases de datos relacionales en SQL Server."]
+        )
     else:
-        add_exp("Director of Technology & AI", "SIPCEC", "Aug. 2026 - Present", [
-            "Technical leadership in Digital Health and Artificial Intelligence. Architecture design and AI agents integration for occupational health ecosystems (RedVive+)."
-        ])
-        add_exp("Tech Lead & Software Architect", "Grupo Norte 70", "May 2025 - Present", [
-            "Scrum technical leadership, defining scalable architectures (Hexagonal) with Node.js/NestJS, CI/CD on AWS, and enforcing strict Clean Code reviews."
-        ])
-        add_exp("Full Stack Developer", "Grupo Tecnológico Sorah", "Sept. 2024 - Present", [
-            "Enterprise full-stack development with NestJS and Vue.js; PostgreSQL database optimization and high-concurrency payroll microservices."
-        ])
-        add_exp("CEO & Full Stack Developer", "MikeDev", "Jul. 2019 - Present", [
-            "Development and integration of intelligent AI Agents and Chatbots; cloud architecture with AWS, Docker, and relational/NoSQL databases."
-        ])
-        add_exp("Full Stack Developer & Tech Researcher", "Leganux", "Aug. 2022 - Aug. 2024", [
-            "Technology research, innovative prototype development, Linux server administration, and production deployments on AWS (EC2)."
-        ])
-        add_exp("Junior Web Developer", "FMB Solutions", "Jun. 2019 - Dec. 2019", [
-            "Frontend and backend web development using React.js and Node.js; relational database management with SQL Server."
-        ])
+        add_job(
+            "SIPCEC", "Mexico", "Director of Technology & AI", "Aug. 2026 – Present",
+            ["Technical leadership of the Digital Health ecosystem (RedVive+); designed scalable architecture and integrated AI agents with RAG for clinical and preventive automated workflows."]
+        )
+        add_job(
+            "Grupo Norte 70", "Mexico", "Tech Lead & Software Architect", "May 2025 – Present",
+            ["Technical leadership for Scrum teams, hexagonal architecture implementation with Node.js/NestJS, automated CI/CD pipelines on AWS, and rigorous Clean Code reviews."]
+        )
+        add_job(
+            "Grupo Tecnológico Sorah", "Mexico", "Full Stack Developer", "Sept. 2024 – Present",
+            ["Enterprise system development using NestJS and Vue.js; PostgreSQL database optimization for high-concurrency payroll microservices."]
+        )
+        add_job(
+            "MikeDev", "Mexico", "CEO & Lead Software Architect", "Jul. 2019 – Present",
+            ["Founder and principal consultant; engineered intelligent AI Agents, WhatsApp Cloud API automation workflows, and containerized architectures on AWS."]
+        )
+        add_job(
+            "Leganux", "Mexico", "Full Stack Developer & Tech Researcher", "Aug. 2022 – Aug. 2024",
+            ["Applied technology research, rapid prototype development, Linux server administration, and production deployments on AWS (EC2)."]
+        )
+        add_job(
+            "FMB Solutions", "Mexico", "Junior Web Developer", "Jun. 2019 – Dec. 2019",
+            ["Web application development using React.js and Node.js; management and query optimization for relational databases in SQL Server."]
+        )
 
-    # 4. EDUCACIÓN / EDUCATION
-    add_sec("EDUCACIÓN" if lang == "es" else "EDUCATION")
-    edu_text = "<b>Centro Universitario Hidalguense A.C.</b> — Licenciatura en Ingeniería en Sistemas Computacionales" if lang == "es" else "<b>Centro Universitario Hidalguense A.C.</b> — Bachelor's Degree in Computer Systems Engineering"
-    t_edu = Table([[
-        Paragraph(edu_text, job_title_style),
-        Paragraph("2018 – 2023", job_date_style)
-    ]], colWidths=[420, 116])
+    # 4. EDUCACIÓN / EDUCATION (HARVARD 2-LINE FORMAT)
+    add_section("EDUCACIÓN" if lang == "es" else "EDUCATION")
+    edu_inst = "<b>Centro Universitario Hidalguense A.C.</b>"
+    edu_loc = "<i>Pachuca, Hidalgo, México</i>" if lang == "es" else "<i>Pachuca, Hidalgo, Mexico</i>"
+    edu_degree = "<i>Licenciatura en Ingeniería en Sistemas Computacionales</i>" if lang == "es" else "<i>Bachelor of Science in Computer Systems Engineering</i>"
+    edu_dates = "<i>2018 – 2023</i>"
+
+    t_edu = Table([
+        [Paragraph(edu_inst, entry_title_style), Paragraph(edu_loc, entry_date_style)],
+        [Paragraph(edu_degree, body_style), Paragraph(edu_dates, entry_date_style)]
+    ], colWidths=[390, 150])
     t_edu.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ('LEFTPADDING', (0,0), (-1,-1), 0),
@@ -189,10 +219,10 @@ def build_pdf(lang="es"):
         ('BOTTOMPADDING', (0,0), (-1,-1), 0),
     ]))
     story.append(t_edu)
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 1.5))
 
-    # 5. CERTIFICACIONES / CERTIFICATIONS
-    add_sec("CERTIFICACIONES Y COMPETENCIAS" if lang == "es" else "CERTIFICATIONS & CREDENTIALS")
+    # 5. CERTIFICACIONES Y CREDENCIALES / CERTIFICATIONS & CREDENTIALS
+    add_section("CERTIFICACIONES Y CREDENCIALES" if lang == "es" else "CERTIFICATIONS & CREDENTIALS")
     if lang == "es":
         col1 = [
             "• <b>CRUD Operations in MongoDB</b> — MongoDB (2026)",
@@ -227,47 +257,46 @@ def build_pdf(lang="es"):
     cert_rows = []
     for i in range(len(col1)):
         cert_rows.append([Paragraph(col1[i], body_style), Paragraph(col2[i], body_style)])
-    t_certs = Table(cert_rows, colWidths=[268, 268])
+    t_certs = Table(cert_rows, colWidths=[270, 270])
     t_certs.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ('LEFTPADDING', (0,0), (-1,-1), 0),
         ('RIGHTPADDING', (0,0), (-1,-1), 0),
-        ('TOPPADDING', (0,0), (-1,-1), 1),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+        ('TOPPADDING', (0,0), (-1,-1), 0.5),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 0.5),
     ]))
     story.append(t_certs)
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 1.5))
 
-    # 6. INFORMACIÓN ADICIONAL / ADDITIONAL SKILLS
-    add_sec("INFORMACIÓN ADICIONAL & HABILIDADES" if lang == "es" else "ADDITIONAL INFORMATION & SKILLS")
+    # 6. HABILIDADES TÉCNICAS / TECHNICAL SKILLS
+    add_section("HABILIDADES TÉCNICAS" if lang == "es" else "TECHNICAL SKILLS")
     if lang == "es":
-        skills_data = [
-            [Paragraph("• <b>Arquitectura & Cloud:</b> Arquitectura Hexagonal, SOLID, Clean Code, AWS (EC2, ECS, S3), Docker, CI/CD, Linux.", body_style),
-             Paragraph("• <b>IA & Backend:</b> Agentes de IA, Chatbots, RAG, Node.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis.", body_style)],
-            [Paragraph("• <b>Frontend & Móvil:</b> Vue.js, NuxtJS, ReactJS, Next.js, Flutter, Tailwind CSS, Bootstrap.", body_style),
-             Paragraph("• <b>Idiomas & Metodologías:</b> Español (Nativo), Inglés (Intermedio) | Scrum, Kanban, Code Reviews.", body_style)]
+        skills = [
+            "• <b>Arquitectura & Cloud:</b> Arquitectura Hexagonal, SOLID, Clean Code, AWS (EC2, ECS, S3, IAM), Docker, CI/CD, Nginx, Linux.",
+            "• <b>Backend & Inteligencia Artificial:</b> Node.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis, Agentes de IA, RAG, LLMs, Chatbots.",
+            "• <b>Frontend & Mobile:</b> Vue.js, NuxtJS, ReactJS, Next.js, Flutter, Tailwind CSS, Bootstrap, HTML5/CSS3.",
+            "• <b>Metodologías & Idiomas:</b> Scrum, Kanban, Mentoring Técnico, Code Reviews, Git | Español (Nativo), Inglés (Intermedio B2)."
         ]
     else:
-        skills_data = [
-            [Paragraph("• <b>Architecture & Cloud:</b> Hexagonal Architecture, SOLID, Clean Code, AWS (EC2, ECS, S3), Docker, CI/CD, Linux.", body_style),
-             Paragraph("• <b>AI & Backend:</b> AI Agents, Chatbots, RAG, Node.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis.", body_style)],
-            [Paragraph("• <b>Frontend & Mobile:</b> Vue.js, NuxtJS, ReactJS, Next.js, Flutter, Tailwind CSS, Bootstrap.", body_style),
-             Paragraph("• <b>Languages & Methodologies:</b> Spanish (Native), English (Intermediate) | Scrum, Kanban, Code Reviews.", body_style)]
+        skills = [
+            "• <b>Architecture & Cloud:</b> Hexagonal Architecture, SOLID, Clean Code, AWS (EC2, ECS, S3, IAM), Docker, CI/CD, Nginx, Linux.",
+            "• <b>Backend & Artificial Intelligence:</b> Node.js, NestJS, TypeScript, MongoDB, PostgreSQL, Redis, AI Agents, RAG, LLMs, Chatbots.",
+            "• <b>Frontend & Mobile:</b> Vue.js, NuxtJS, ReactJS, Next.js, Flutter, Tailwind CSS, Bootstrap, HTML5/CSS3.",
+            "• <b>Methodologies & Languages:</b> Scrum, Kanban, Technical Mentorship, Code Reviews, Git | Spanish (Native), English (Intermediate B2)."
         ]
 
-    t_skills = Table(skills_data, colWidths=[268, 268])
-    t_skills.setStyle(TableStyle([
-        ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
-        ('LEFTPADDING', (0,0), (-1,-1), 0),
-        ('RIGHTPADDING', (0,0), (-1,-1), 0),
-        ('TOPPADDING', (0,0), (-1,-1), 1),
-        ('BOTTOMPADDING', (0,0), (-1,-1), 1),
-    ]))
-    story.append(t_skills)
+    for s in skills:
+        story.append(Paragraph(s, body_style))
 
     doc.build(story)
-    print(f"Generated {lang.upper()} CV PDF at: {pdf_path}")
+    print(f"Built Harvard CV ({lang.upper()}) -> {pdf_path}")
+
+    # Validate page count with PyMuPDF
+    pdf_doc = fitz.open(pdf_path)
+    page_count = len(pdf_doc)
+    print(f"==> {filename}: PAGE COUNT = {page_count}")
+    assert page_count == 1, f"ERROR: {filename} has {page_count} pages, must be EXACTLY 1 page!"
 
 if __name__ == "__main__":
-    build_pdf("es")
-    build_pdf("en")
+    generate_harvard_cv("es")
+    generate_harvard_cv("en")
