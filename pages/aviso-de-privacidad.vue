@@ -4,7 +4,11 @@ import profile from '~/data/profile.json'
 useHead({
   title: 'Aviso de Privacidad',
   meta: [
-    { name: 'description', content: 'Aviso de Privacidad de Jose Miguel Rosas Jimenez - MikeRosasDev' }
+    { name: 'description', content: 'Aviso de Privacidad de Jose Miguel Rosas Jimenez - MikeRosasDev' },
+    { name: 'robots', content: 'index, follow' }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://mikerosasdev.com/aviso-de-privacidad' }
   ]
 })
 </script>

@@ -25,6 +25,13 @@ export default defineNuxtConfig({
 
     css: ['~/assets/css/main.css'],
 
+    routeRules: {
+        '/home': { redirect: { to: '/', statusCode: 301 } },
+        '/docs/**': { redirect: { to: '/CV_Jose_Miguel_Rosas_Jimenez.pdf', statusCode: 301 } },
+        '/email_success': { redirect: { to: '/', statusCode: 301 } },
+        '/email_error': { redirect: { to: '/', statusCode: 301 } }
+    },
+
     app: {
         head: {
             title: 'MikeRosasDev · Tech Lead & Software Architect',
@@ -68,7 +75,6 @@ export default defineNuxtConfig({
             ],
 
             link: [
-                { rel: 'canonical', href: 'https://mikerosasdev.com' },
                 { rel: 'icon', type: 'image/x-icon', href: '/images/logo_mike.ico' },
                 {
                     rel: 'stylesheet',
