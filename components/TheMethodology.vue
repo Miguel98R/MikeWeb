@@ -14,56 +14,55 @@ const getStepIcon = (num: string) => {
 </script>
 
 <template>
-  <section id="metodologia" class="py-24 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
+  <section id="metodologia" class="py-20 sm:py-24 px-4 sm:px-6 bg-transparent relative overflow-hidden scroll-mt-20 w-full max-w-full">
     <!-- Ambient Background Glow -->
     <div
       class="absolute inset-0 opacity-5 pointer-events-none"
       style="background-image: radial-gradient(#8b5cf6 1px, transparent 1px); background-size: 55px 55px;"
     />
-    <div class="absolute bottom-10 left-10 w-[450px] h-[350px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
+    <!-- Ambient glow centered to avoid viewport edge overflow -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-[85%] max-w-[450px] h-[250px] sm:h-[350px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto relative z-10 w-full">
 
       <!-- Header -->
-      <div class="mb-16">
+      <div class="mb-12 sm:mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
           <Icon name="mdi:timeline-check-outline" size="16" />
           <span>{{ t.methodology.tag }}</span>
         </div>
-        <h3 class="text-3xl md:text-4xl font-bold flex items-center gap-4 text-white">
-          <span class="w-2 h-10 bg-tech-purple block"></span>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center gap-3 sm:gap-4 text-white">
+          <span class="w-1.5 sm:w-2 h-8 sm:h-10 bg-tech-purple block"></span>
           {{ t.methodology.title }}
         </h3>
-        <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base font-light">
+        <p class="text-tech-gray mt-3 sm:mt-4 max-w-2xl text-xs sm:text-sm md:text-base font-light">
           {{ t.methodology.subtitle }}
         </p>
       </div>
 
       <!-- 4-Step Process Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative w-full">
         <div
           v-for="(step, index) in t.methodology.steps"
           :key="step.num"
-          v-motion-slide-visible-once-bottom
-          :delay="index * 80"
-          class="group relative rounded-2xl border border-white/10 bg-tech-surface/80 hover:bg-[#12121a] backdrop-blur-md p-7 transition-all duration-300 hover:border-tech-purple/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.18)] hover:-translate-y-1.5 flex flex-col justify-between"
+          class="group relative rounded-2xl border border-white/10 bg-tech-surface/80 hover:bg-[#12121a] backdrop-blur-md p-6 sm:p-7 transition-all duration-300 hover:border-tech-purple/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.18)] hover:-translate-y-1 flex flex-col justify-between w-full"
         >
           <!-- Hover top highlight -->
           <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-tech-purple to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl" />
 
           <div>
             <!-- Step Number & Icon -->
-            <div class="flex items-center justify-between mb-6">
-              <span class="text-3xl font-mono font-bold text-zinc-600 group-hover:text-tech-purple transition-colors">
+            <div class="flex items-center justify-between mb-5 sm:mb-6">
+              <span class="text-2xl sm:text-3xl font-mono font-bold text-zinc-600 group-hover:text-tech-purple transition-colors">
                 {{ step.num }}
               </span>
-              <div class="w-10 h-10 rounded-xl bg-tech-purple/10 border border-tech-purple/20 flex items-center justify-center text-tech-purple group-hover:scale-110 transition-transform">
-                <Icon :name="getStepIcon(step.num)" size="22" />
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-tech-purple/10 border border-tech-purple/20 flex items-center justify-center text-tech-purple group-hover:scale-110 transition-transform">
+                <Icon :name="getStepIcon(step.num)" size="20" />
               </div>
             </div>
 
             <!-- Title -->
-            <h4 class="text-lg font-bold text-white mb-3 group-hover:text-tech-purple transition-colors">
+            <h4 class="text-base sm:text-lg font-bold text-white mb-2.5 group-hover:text-tech-purple transition-colors">
               {{ step.title }}
             </h4>
 
@@ -74,7 +73,7 @@ const getStepIcon = (num: string) => {
           </div>
 
           <!-- Bottom Micro Tag -->
-          <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+          <div class="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-500">
             <span>Fase 0{{ index + 1 }}</span>
             <Icon name="mdi:arrow-right" size="14" class="opacity-0 group-hover:opacity-100 text-tech-purple transition-all -translate-x-1 group-hover:translate-x-0" />
           </div>
@@ -82,19 +81,19 @@ const getStepIcon = (num: string) => {
       </div>
 
       <!-- Bottom Direct Contact Prompt -->
-      <div class="mt-14 p-6 sm:p-8 rounded-2xl border border-white/10 bg-gradient-to-r from-tech-purple/10 via-black to-tech-red/10 flex flex-col sm:flex-row items-center justify-between gap-6 backdrop-blur-md">
+      <div class="mt-10 sm:mt-14 p-5 sm:p-7 md:p-8 rounded-2xl border border-white/10 bg-gradient-to-r from-tech-purple/10 via-black to-tech-red/10 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 backdrop-blur-md w-full">
         <div class="flex items-center gap-4 text-center sm:text-left">
-          <div class="w-12 h-12 rounded-2xl bg-tech-purple/20 border border-tech-purple/40 flex items-center justify-center text-tech-purple shrink-0 hidden sm:flex">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-tech-purple/20 border border-tech-purple/40 flex items-center justify-center text-tech-purple shrink-0 hidden sm:flex">
             <Icon name="mdi:headset" size="24" />
           </div>
           <div>
-            <h4 class="text-base sm:text-lg font-bold text-white">¿Tienes un proyecto con requerimientos específicos?</h4>
-            <p class="text-xs sm:text-sm text-zinc-400 font-light">Evaluamos tu arquitectura actual o diseñamos tu solución desde cero sin costo de diagnóstico inicial.</p>
+            <h4 class="text-sm sm:text-base md:text-lg font-bold text-white">¿Tienes un proyecto con requerimientos específicos?</h4>
+            <p class="text-xs sm:text-sm text-zinc-400 font-light mt-0.5">Evaluamos tu arquitectura actual o diseñamos tu solución desde cero sin costo de diagnóstico inicial.</p>
           </div>
         </div>
         <button
           type="button"
-          class="px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-all font-sans text-xs sm:text-sm shrink-0 cursor-pointer shadow-lg hover:scale-105"
+          class="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-all font-sans text-xs sm:text-sm shrink-0 cursor-pointer shadow-lg hover:scale-105"
           @click="openContactModal"
         >
           Iniciar Evaluación Técnica

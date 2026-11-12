@@ -13,21 +13,21 @@ const isCurrentRole = (endDate: string) => endDate === 'Present'
 </script>
 
 <template>
-  <section id="experiencia" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
-    <!-- Ambient glows -->
-    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-tech-red/10 rounded-full blur-3xl pointer-events-none" />
-    <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
+  <section id="experiencia" class="py-16 sm:py-28 px-4 sm:px-6 bg-transparent relative overflow-hidden scroll-mt-20 w-full max-w-full">
+    <!-- Ambient glows centered to avoid viewport edge overflow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[85%] max-w-[384px] h-64 sm:h-96 bg-tech-red/10 rounded-full blur-3xl pointer-events-none" />
+    <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[85%] max-w-[384px] h-64 sm:h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-5xl mx-auto relative z-10">
+    <div class="max-w-5xl mx-auto relative z-10 w-full">
       <!-- Header -->
-      <div class="mb-20">
+      <div class="mb-12 sm:mb-20">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-red border border-tech-red/30 rounded-full bg-tech-red/5">
           <Icon name="mdi:timeline-text-outline" size="16" />
           <span>{{ t.experience.tag }}</span>
         </div>
-        <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-4">
-          <span class="w-2 h-10 bg-tech-red block"></span>
-          {{ t.experience.title }}
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white flex items-center gap-3 sm:gap-4 break-words">
+          <span class="w-1.5 sm:w-2 h-8 sm:h-10 bg-tech-red block shrink-0"></span>
+          <span>{{ t.experience.title }}</span>
         </h3>
         <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
           {{ t.experience.subtitle }}

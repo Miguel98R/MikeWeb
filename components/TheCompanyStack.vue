@@ -12,24 +12,24 @@ const getCategoryIcon = (index: number) => {
 </script>
 
 <template>
-  <section id="stack" class="py-24 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
+  <section id="stack" class="py-16 sm:py-24 px-4 sm:px-6 bg-transparent relative overflow-hidden scroll-mt-20 w-full max-w-full">
     <div
       class="absolute inset-0 opacity-5 pointer-events-none"
       style="background-image: radial-gradient(#8b5cf6 1px, transparent 1px); background-size: 50px 50px;"
     />
-    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[350px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-[550px] h-[250px] sm:h-[350px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto relative z-10 w-full">
 
       <!-- Header -->
-      <div class="mb-16">
+      <div class="mb-12 sm:mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
           <Icon name="mdi:code-json" size="16" />
           <span>{{ t.companyStack.tag }}</span>
         </div>
-        <h3 class="text-3xl md:text-4xl font-bold flex items-center gap-4 text-white">
-          <span class="w-2 h-10 bg-tech-purple block"></span>
-          {{ t.companyStack.title }}
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center gap-3 sm:gap-4 text-white break-words">
+          <span class="w-1.5 sm:w-2 h-8 sm:h-10 bg-tech-purple block shrink-0"></span>
+          <span>{{ t.companyStack.title }}</span>
         </h3>
         <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base font-light">
           {{ t.companyStack.subtitle }}

@@ -85,20 +85,20 @@ const getSkills = (key: string) => {
 </script>
 
 <template>
-  <section id="skills" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
+  <section id="skills" class="py-16 sm:py-28 px-4 sm:px-6 bg-transparent relative overflow-hidden scroll-mt-20 w-full max-w-full">
     <!-- Ambient glow -->
-    <div class="absolute -top-32 left-1/4 w-96 h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[85%] max-w-[384px] h-72 sm:h-96 bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto relative z-10 w-full">
       <!-- Header -->
-      <div class="mb-16">
+      <div class="mb-12 sm:mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
           <Icon name="mdi:code-tags" size="16" />
           <span>{{ t.skills.tag }}</span>
         </div>
-        <h3 class="text-3xl md:text-4xl font-bold text-white flex items-center gap-4">
-          <span class="w-2 h-10 bg-tech-purple block"></span>
-          {{ t.skills.title }}
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white flex items-center gap-3 sm:gap-4 break-words">
+          <span class="w-1.5 sm:w-2 h-8 sm:h-10 bg-tech-purple block shrink-0"></span>
+          <span>{{ t.skills.title }}</span>
         </h3>
         <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
           {{ t.skills.subtitle }}

@@ -9,36 +9,36 @@ const isCvDropdownOpen = ref(false)
 </script>
 
 <template>
-  <section class="min-h-[85vh] flex items-center justify-center relative overflow-hidden px-6 pt-24 pb-16">
+  <section class="min-h-[85vh] flex items-center justify-center relative overflow-hidden px-4 sm:px-6 pt-20 sm:pt-24 pb-14 sm:pb-16 w-full max-w-full">
     <!-- Ambient Background Glow -->
     <div
       class="absolute inset-0 pointer-events-none opacity-10"
       style="background-image: radial-gradient(#8b5cf6 1px, transparent 1px); background-size: 50px 50px;"
     />
-    <div class="absolute -top-32 right-1/4 w-[600px] h-[450px] bg-gradient-to-b from-tech-purple/20 via-tech-red/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+    <div class="absolute -top-32 right-1/4 w-full max-w-[600px] h-[350px] sm:h-[450px] bg-gradient-to-b from-tech-purple/20 via-tech-red/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-6xl w-full grid lg:grid-cols-12 gap-12 items-center z-10">
+    <div class="max-w-6xl w-full min-w-0 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center z-10">
 
       <!-- LEFT: Profile & Bio (7 cols) -->
-      <div class="lg:col-span-7 flex flex-col items-start" v-motion-slide-visible-once-left>
+      <div class="lg:col-span-7 flex flex-col items-start w-full min-w-0">
 
         <!-- Back to Company link -->
         <NuxtLink
           to="/"
-          class="inline-flex items-center gap-2 mb-6 text-xs font-mono text-zinc-400 hover:text-white transition-colors group"
+          class="inline-flex items-center gap-2 mb-5 text-xs font-mono text-zinc-400 hover:text-white transition-colors group min-h-[44px]"
         >
           <Icon name="mdi:arrow-left" size="16" class="group-hover:-translate-x-1 transition-transform text-tech-purple" />
           <span>{{ t.ceoPage.backHome }}</span>
         </NuxtLink>
 
         <!-- CEO Badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 mb-4 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/10 backdrop-blur-md">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 mb-4 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/10 backdrop-blur-md max-w-full">
           <Icon name="mdi:account-tie" size="16" />
           <span class="font-bold tracking-wide">{{ t.ceoPage.badge }}</span>
         </div>
 
         <!-- Name -->
-        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-3">
+        <h1 class="text-2xl min-[360px]:text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3 break-words [overflow-wrap:anywhere] w-full">
           {{ profile.basics.name }}
         </h1>
 
@@ -145,7 +145,7 @@ const isCvDropdownOpen = ref(false)
       </div>
 
       <!-- RIGHT: Quote & Professional Links Card (5 cols) -->
-      <div class="lg:col-span-5 relative" v-motion-fade-visible-once>
+      <div class="lg:col-span-5 relative min-w-0 w-full" v-motion-fade-visible-once>
         <div class="rounded-2xl border border-white/10 bg-[#0f0f15]/95 backdrop-blur-xl p-8 relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.8)]">
 
           <!-- Glowing corner badge -->

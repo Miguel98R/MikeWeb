@@ -14,9 +14,9 @@ useHead({
 </script>
 
 <template>
-  <main class="bg-tech-black text-white min-h-screen py-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl md:text-4xl font-bold mb-8 text-tech-purple">
+  <main class="bg-tech-black text-white min-h-screen py-16 sm:py-20 px-4 sm:px-6 w-full max-w-full overflow-hidden">
+    <div class="max-w-4xl mx-auto w-full">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-tech-purple break-words">
         Aviso de Privacidad
       </h1>
 

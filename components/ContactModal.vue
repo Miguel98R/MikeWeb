@@ -60,29 +60,29 @@ onUnmounted(() => {
           leave-to-class="opacity-0 scale-95 translate-y-2"
         >
           <div
-            class="relative w-full max-w-lg bg-[#0c0c12] border border-tech-purple/50 rounded-3xl p-6 sm:p-8 shadow-[0_0_70px_rgba(139,92,246,0.35)]"
+            class="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-[#0c0c12] border border-tech-purple/50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-[0_0_70px_rgba(139,92,246,0.35)]"
             @click.stop
           >
             <!-- Close Button -->
             <button
               type="button"
               aria-label="Cerrar modal"
-              class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/30 text-tech-gray hover:text-white flex items-center justify-center transition-all cursor-pointer z-20"
+              class="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/15 hover:border-white/30 text-tech-gray hover:text-white flex items-center justify-center transition-all cursor-pointer z-20"
               @click="closeContactModal"
             >
               <Icon name="mdi:close" size="20" />
             </button>
 
             <!-- Header -->
-            <div class="mb-6">
+            <div class="mb-6 pr-8 sm:pr-0">
               <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
                 <Icon name="mdi:rocket-launch-outline" size="14" />
                 <span>{{ t.contactModal.tag }}</span>
               </div>
-              <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+              <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 break-words">
                 {{ t.contactModal.title }}
               </h3>
-              <p class="text-sm text-tech-gray leading-relaxed font-light">
+              <p class="text-xs sm:text-sm text-tech-gray leading-relaxed font-light">
                 {{ t.contactModal.subtitle }}
               </p>
             </div>
@@ -161,9 +161,9 @@ onUnmounted(() => {
             </div>
 
             <!-- Footer info -->
-            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+            <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-between text-[11px] font-mono text-zinc-500">
               <span>Pachuca, Hgo. · Remote Worldwide</span>
-              <span class="text-emerald-400 flex items-center gap-1">
+              <span class="text-emerald-400 flex items-center gap-1.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                 Available for Projects
               </span>

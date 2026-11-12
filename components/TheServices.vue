@@ -24,38 +24,36 @@ const getServiceTags = (footerText: string) => {
 </script>
 
 <template>
-  <section id="servicios" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
+  <section id="servicios" class="py-20 sm:py-28 px-4 sm:px-6 bg-transparent relative overflow-hidden scroll-mt-20 w-full max-w-full">
     <!-- Ambient background glow -->
     <div
       class="absolute inset-0 opacity-5 pointer-events-none"
       style="background-image: radial-gradient(#ef4444 1px, transparent 1px); background-size: 60px 60px;"
     />
-    <div class="absolute -top-40 right-1/4 w-[500px] h-[500px] bg-tech-red/10 rounded-full blur-3xl pointer-events-none" />
+    <div class="absolute -top-40 right-1/4 w-full max-w-[500px] h-[350px] sm:h-[500px] bg-tech-red/10 rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto relative z-10 w-full">
       <!-- Header -->
-      <div class="mb-16">
+      <div class="mb-12 sm:mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-red border border-tech-red/30 rounded-full bg-tech-red/5">
           <Icon name="mdi:briefcase-outline" size="16" />
           <span>{{ t.services.tag }}</span>
         </div>
-        <h3 class="text-3xl md:text-4xl font-bold flex items-center gap-4 text-white">
-          <span class="w-2 h-10 bg-tech-red block"></span>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center gap-3 sm:gap-4 text-white">
+          <span class="w-1.5 sm:w-2 h-8 sm:h-10 bg-tech-red block"></span>
           {{ t.services.title }}
         </h3>
-        <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
+        <p class="text-tech-gray mt-3 sm:mt-4 max-w-2xl text-xs sm:text-sm md:text-base font-light">
           {{ t.services.subtitle }}
         </p>
       </div>
 
       <!-- Services Cards Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 w-full">
         <article
           v-for="(service, index) in profile.services"
           :key="index"
-          v-motion-slide-visible-once-bottom
-          :delay="index * 70"
-          class="group relative rounded-2xl border border-white/10 bg-tech-surface/75 hover:bg-tech-surface backdrop-blur-md p-7 sm:p-8 transition-all duration-300 hover:border-tech-red/50 hover:shadow-[0_0_35px_rgba(239,68,68,0.2)] hover:-translate-y-1.5 flex flex-col justify-between"
+          class="group relative rounded-2xl border border-white/10 bg-tech-surface/75 hover:bg-tech-surface backdrop-blur-md p-6 sm:p-7 md:p-8 transition-all duration-300 hover:border-tech-red/50 hover:shadow-[0_0_35px_rgba(239,68,68,0.2)] hover:-translate-y-1.5 flex flex-col justify-between w-full"
         >
           <!-- Gradient accent on hover -->
           <div

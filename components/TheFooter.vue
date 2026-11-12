@@ -12,18 +12,18 @@ const emailHref = computed(() => {
 </script>
 
 <template>
-  <footer id="contacto" class="py-16 border-t border-white/10 bg-[#040407] text-center relative overflow-hidden">
+  <footer id="contacto" class="py-12 sm:py-16 border-t border-white/10 bg-[#040407] text-center relative overflow-hidden w-full max-w-full">
     <!-- Ambient subtle glow -->
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[180px] sm:h-[200px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 w-full">
 
       <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
         <Icon name="mdi:sparkles" size="14" />
         <span>ENTERPRISE COLLABORATION</span>
       </div>
 
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 break-words">
         {{ t.footer.title }}
       </h2>
 
@@ -32,10 +32,10 @@ const emailHref = computed(() => {
       </p>
 
       <!-- Action Button to open Modal -->
-      <div class="mb-10">
+      <div class="mb-10 flex justify-center">
         <button
           type="button"
-          class="px-8 py-3.5 bg-tech-purple text-white font-bold rounded-xl hover:bg-opacity-90 hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] hover:-translate-y-0.5 transition-all text-sm font-sans cursor-pointer inline-flex items-center gap-2"
+          class="w-full sm:w-auto px-8 py-3.5 bg-tech-purple text-white font-bold rounded-xl hover:bg-opacity-90 hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] hover:-translate-y-0.5 transition-all text-sm font-sans cursor-pointer inline-flex items-center justify-center gap-2 min-h-[44px]"
           @click="openContactModal"
         >
           <Icon name="mdi:message-text-outline" size="18" />

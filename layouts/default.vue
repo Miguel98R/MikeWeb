@@ -18,7 +18,7 @@ const handleContactClick = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-tech-black text-white selection:bg-tech-purple selection:text-white font-sans relative">
+  <div class="min-h-screen bg-tech-black text-white selection:bg-tech-purple selection:text-white font-sans relative w-full max-w-full overflow-x-hidden">
     <!-- Dynamic Circuit & Binary Tech Background -->
     <TechCyberBackground />
 
@@ -27,14 +27,14 @@ const handleContactClick = () => {
       style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);"
     />
 
-    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-tech-black/90 backdrop-blur-md transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-tech-black/95 backdrop-blur-md transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
 
         <!-- Brand / Studio Logo -->
-        <NuxtLink to="/" class="text-lg sm:text-xl font-bold tracking-tighter flex items-center gap-2 group">
+        <NuxtLink to="/" class="text-base sm:text-lg md:text-xl font-bold tracking-tighter flex items-center gap-1.5 group shrink-0">
           <span class="text-tech-purple font-mono group-hover:text-tech-red transition-colors">&lt;</span>
-          <span>MikeRosasDev</span>
-          <span class="text-xs px-1.5 py-0.5 rounded bg-white/[0.06] border border-white/10 text-zinc-400 font-mono font-normal hidden sm:inline-block">Studio</span>
+          <span class="truncate max-w-[170px] sm:max-w-none">MikeRosasDev</span>
+          <span class="text-[11px] px-1.5 py-0.5 rounded bg-white/[0.06] border border-white/10 text-zinc-400 font-mono font-normal hidden sm:inline-block">Studio</span>
           <span class="text-tech-purple font-mono group-hover:text-tech-red transition-colors">/&gt;</span>
         </NuxtLink>
 
@@ -109,20 +109,25 @@ const handleContactClick = () => {
         </nav>
 
         <!-- Mobile Header Controls -->
-        <div class="flex md:hidden items-center gap-3">
+        <div class="flex md:hidden items-center gap-2">
           <!-- Mobile Language Switcher -->
           <button
             type="button"
-            class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300 hover:text-white hover:border-tech-purple/50"
+            class="flex items-center gap-1.5 px-2.5 py-1.5 min-h-[38px] rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300 hover:text-white hover:border-tech-purple/50 cursor-pointer"
             @click="toggleLanguage"
             aria-label="Toggle language"
           >
-            <Icon name="mdi:translate" size="14" class="text-tech-purple" />
+            <Icon name="mdi:translate" size="15" class="text-tech-purple" />
             <span class="font-bold uppercase text-tech-purple">{{ currentLocale }}</span>
           </button>
 
           <!-- Mobile Hamburger -->
-          <button class="text-white p-1" @click="isMenuOpen = !isMenuOpen" aria-label="Abrir menú">
+          <button
+            type="button"
+            class="text-white p-2 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+            @click="isMenuOpen = !isMenuOpen"
+            aria-label="Abrir menú"
+          >
             <Icon :name="isMenuOpen ? 'mdi:close' : 'mdi:menu'" size="24" />
           </button>
         </div>
@@ -130,34 +135,34 @@ const handleContactClick = () => {
 
       <!-- Mobile Dropdown Menu -->
       <div v-if="isMenuOpen" class="md:hidden bg-tech-black/95 border-b border-white/10 p-6 absolute w-full shadow-2xl backdrop-blur-xl">
-        <div class="flex flex-col gap-3.5 text-center">
+        <div class="flex flex-col gap-2 text-center">
           <template v-if="!isCeoPage">
-            <a href="#servicios" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.services }}</a>
-            <a href="#metodologia" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.methodology }}</a>
-            <a href="#colaboraciones" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.collaborations }}</a>
-            <a href="#stack" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.stack }}</a>
+            <a href="#servicios" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.services }}</a>
+            <a href="#metodologia" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.methodology }}</a>
+            <a href="#colaboraciones" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.collaborations }}</a>
+            <a href="#stack" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.stack }}</a>
           </template>
           <template v-else>
-            <NuxtLink to="/" class="hover:text-white py-1 transition-all flex items-center justify-center gap-2" @click="isMenuOpen = false">
+            <NuxtLink to="/" class="hover:text-white py-2 min-h-[44px] transition-all flex items-center justify-center gap-2" @click="isMenuOpen = false">
               <Icon name="mdi:home-outline" size="18" />
               <span>{{ t.nav.home }}</span>
             </NuxtLink>
-            <a href="#experiencia" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.experience }}</a>
-            <a href="#skills" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.skills }}</a>
-            <a href="#certificaciones" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.certificaciones }}</a>
-            <a href="#proyectos" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.projects }}</a>
+            <a href="#experiencia" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.experience }}</a>
+            <a href="#skills" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.skills }}</a>
+            <a href="#certificaciones" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.certificaciones }}</a>
+            <a href="#proyectos" class="hover:text-white py-2 min-h-[44px] flex items-center justify-center transition-all" @click="isMenuOpen = false">{{ t.nav.projects }}</a>
           </template>
 
           <!-- Mobile Acerca del CEO Tab -->
           <NuxtLink
             to="/acerca-del-ceo"
-            class="py-2.5 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-2 my-1"
+            class="py-3 min-h-[44px] rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-2 my-1"
             :class="isCeoPage
               ? 'bg-tech-purple text-white border-tech-purple'
               : 'bg-white/5 text-zinc-200 border-white/10 hover:border-tech-purple/50'"
             @click="isMenuOpen = false"
           >
-            <Icon name="mdi:account-tie" size="16" class="text-tech-purple" />
+            <Icon name="mdi:account-tie" size="16" :class="isCeoPage ? 'text-white' : 'text-tech-purple'" />
             <span>{{ t.nav.ceo }}</span>
           </NuxtLink>
 
@@ -166,7 +171,7 @@ const handleContactClick = () => {
             <div class="inline-flex items-center p-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs">
               <button
                 type="button"
-                class="px-4 py-1 rounded-full transition-all font-bold"
+                class="px-4 py-2 min-h-[38px] rounded-full transition-all font-bold cursor-pointer"
                 :class="currentLocale === 'es' ? 'bg-tech-purple text-white' : 'text-zinc-400'"
                 @click="setLanguage('es')"
               >
@@ -174,7 +179,7 @@ const handleContactClick = () => {
               </button>
               <button
                 type="button"
-                class="px-4 py-1 rounded-full transition-all font-bold"
+                class="px-4 py-2 min-h-[38px] rounded-full transition-all font-bold cursor-pointer"
                 :class="currentLocale === 'en' ? 'bg-tech-purple text-white' : 'text-zinc-400'"
                 @click="setLanguage('en')"
               >
@@ -185,7 +190,7 @@ const handleContactClick = () => {
 
           <button
             type="button"
-            class="w-full py-3 rounded-xl bg-tech-purple text-white font-bold transition-all font-mono text-xs cursor-pointer shadow-lg hover:shadow-tech-purple/50"
+            class="w-full py-3 min-h-[44px] rounded-xl bg-tech-purple text-white font-bold transition-all font-mono text-xs cursor-pointer shadow-lg hover:shadow-tech-purple/50"
             @click="handleContactClick"
           >
             {{ t.nav.contact }}

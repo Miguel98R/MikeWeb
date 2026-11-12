@@ -55,27 +55,27 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="colaboraciones" class="py-28 px-6 bg-transparent relative overflow-hidden scroll-mt-20">
+  <section id="colaboraciones" class="py-20 sm:py-28 px-4 sm:px-6 bg-transparent relative overflow-hidden scroll-mt-20 w-full max-w-full">
     <!-- Background subtle gradient glow -->
     <div
       class="absolute inset-0 opacity-5 pointer-events-none"
       style="background-image: radial-gradient(#8b5cf6 1px, transparent 1px); background-size: 50px 50px;"
     />
-    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[650px] h-[450px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-[650px] h-[350px] sm:h-[450px] bg-tech-purple/10 rounded-full blur-3xl pointer-events-none" />
 
-    <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-6xl mx-auto relative z-10 w-full">
       <!-- Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-6">
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 text-xs font-mono text-tech-purple border border-tech-purple/30 rounded-full bg-tech-purple/5">
             <Icon name="mdi:handshake-outline" size="16" />
             <span>{{ t.collaborations.tag }}</span>
           </div>
-          <h3 class="text-3xl md:text-4xl font-bold flex items-center gap-4 text-white">
-            <span class="w-2 h-10 bg-tech-purple block"></span>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center gap-3 sm:gap-4 text-white">
+            <span class="w-1.5 sm:w-2 h-8 sm:h-10 bg-tech-purple block"></span>
             {{ t.collaborations.title }}
           </h3>
-          <p class="text-tech-gray mt-4 max-w-2xl text-sm sm:text-base">
+          <p class="text-tech-gray mt-3 sm:mt-4 max-w-2xl text-xs sm:text-sm md:text-base font-light">
             {{ t.collaborations.subtitle }}
           </p>
         </div>
@@ -87,13 +87,11 @@ onUnmounted(() => {
       </div>
 
       <!-- Modern Minimalist Logo Tiles Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-6 w-full">
         <div
           v-for="(client, index) in collaborations"
           :key="client.id"
-          v-motion-slide-visible-once-bottom
-          :delay="index * 60"
-          class="group relative h-36 sm:h-44 rounded-2xl border border-white/10 bg-[#0f0f15]/90 hover:bg-[#151520] backdrop-blur-md flex items-center justify-center p-4 sm:p-5 pt-7 sm:pt-8 cursor-pointer transition-all duration-300 hover:border-tech-purple/60 hover:shadow-[0_0_35px_rgba(139,92,246,0.22)] hover:-translate-y-1.5 overflow-hidden"
+          class="group relative h-32 sm:h-40 md:h-44 rounded-2xl border border-white/10 bg-[#0f0f15]/90 hover:bg-[#151520] backdrop-blur-md flex items-center justify-center p-3 sm:p-5 pt-6 sm:pt-8 cursor-pointer transition-all duration-300 hover:border-tech-purple/60 hover:shadow-[0_0_35px_rgba(139,92,246,0.22)] hover:-translate-y-1.5 overflow-hidden w-full"
           @click="openModal(client)"
         >
           <!-- Subtle hover corner glow -->
@@ -102,34 +100,34 @@ onUnmounted(() => {
           />
 
           <!-- Badge sector -->
-          <span class="absolute top-3 left-3 text-[10px] font-mono text-zinc-500 group-hover:text-tech-purple transition-colors truncate max-w-[80%]">
+          <span class="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 text-[9px] sm:text-[10px] font-mono text-zinc-500 group-hover:text-tech-purple transition-colors truncate max-w-[85%]">
             {{ client.badge }}
           </span>
 
           <!-- Logo Container -->
-          <div class="relative z-10 flex flex-col items-center justify-center text-center transition-transform duration-300 group-hover:scale-105 w-full px-2">
+          <div class="relative z-10 flex flex-col items-center justify-center text-center transition-transform duration-300 group-hover:scale-105 w-full px-2 max-w-full">
             <template v-if="client.logo">
               <img
                 :src="client.logo"
                 :alt="client.name"
-                class="max-h-20 sm:max-h-24 md:max-h-26 max-w-[190px] sm:max-w-[230px] md:max-w-[245px] w-auto object-contain transition-all duration-300 group-hover:brightness-110"
+                class="max-h-16 sm:max-h-20 md:max-h-24 max-w-full w-auto object-contain transition-all duration-300 group-hover:brightness-110"
                 loading="lazy"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
               <!-- Fallback if image fails -->
-              <div class="hidden flex-col items-center gap-2">
-                <Icon :name="client.logoIcon || 'mdi:domain'" size="36" class="text-tech-purple" />
-                <span class="text-sm font-bold text-white tracking-wide font-mono">{{ client.name }}</span>
+              <div class="hidden flex-col items-center gap-1.5 sm:gap-2">
+                <Icon :name="client.logoIcon || 'mdi:domain'" size="30" class="text-tech-purple" />
+                <span class="text-xs sm:text-sm font-bold text-white tracking-wide font-mono truncate max-w-[120px]">{{ client.name }}</span>
               </div>
             </template>
             <template v-else>
-              <Icon :name="client.logoIcon || 'mdi:domain'" size="38" class="text-tech-purple mb-1.5" />
-              <span class="text-sm font-bold text-white tracking-wide font-mono">{{ client.name }}</span>
+              <Icon :name="client.logoIcon || 'mdi:domain'" size="32" class="text-tech-purple mb-1" />
+              <span class="text-xs sm:text-sm font-bold text-white tracking-wide font-mono truncate max-w-[120px]">{{ client.name }}</span>
             </template>
           </div>
 
           <!-- Bottom Action Hint -->
-          <div class="absolute bottom-2.5 right-3 text-[11px] font-mono text-zinc-500 group-hover:text-white flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all">
+          <div class="absolute bottom-2 sm:bottom-2.5 right-2 sm:right-3 text-[10px] sm:text-[11px] font-mono text-zinc-500 group-hover:text-white flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all">
             <Icon name="mdi:arrow-top-right" size="13" />
           </div>
         </div>
