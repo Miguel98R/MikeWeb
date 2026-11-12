@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { useLanguage } from '~/composables/useLanguage'
 import { useContactModal } from '~/composables/useContactModal'
 
+const route = useRoute()
 const { currentLocale, setLanguage, toggleLanguage, t } = useLanguage()
 const { openContactModal } = useContactModal()
 const isMenuOpen = ref(false)
+
+const isCeoPage = computed(() => route.path.startsWith('/acerca-del-ceo'))
 
 const handleContactClick = () => {
   isMenuOpen.value = false
@@ -23,23 +27,50 @@ const handleContactClick = () => {
       style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);"
     />
 
-    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-tech-black/85 backdrop-blur-md transition-all duration-300">
+    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-tech-black/90 backdrop-blur-md transition-all duration-300">
       <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        <NuxtLink to="/" class="text-xl font-bold tracking-tighter flex items-center gap-2 group">
+        <!-- Brand / Studio Logo -->
+        <NuxtLink to="/" class="text-lg sm:text-xl font-bold tracking-tighter flex items-center gap-2 group">
           <span class="text-tech-purple font-mono group-hover:text-tech-red transition-colors">&lt;</span>
           <span>MikeRosasDev</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-white/[0.06] border border-white/10 text-zinc-400 font-mono font-normal hidden sm:inline-block">Studio</span>
           <span class="text-tech-purple font-mono group-hover:text-tech-red transition-colors">/&gt;</span>
         </NuxtLink>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-tech-gray">
-          <a href="#servicios" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.services }}</a>
-          <a href="#skills" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.skills }}</a>
-          <a href="#experiencia" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.experience }}</a>
-          <a href="#proyectos" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.projects }}</a>
-          <a href="#certificaciones" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.certifications }}</a>
-          <a href="#colaboraciones" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.collaborations }}</a>
+        <nav class="hidden md:flex items-center gap-5 text-sm font-medium text-tech-gray">
+          <!-- Links when on Home (Company view) -->
+          <template v-if="!isCeoPage">
+            <a href="#servicios" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.services }}</a>
+            <a href="#metodologia" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.methodology }}</a>
+            <a href="#colaboraciones" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.collaborations }}</a>
+            <a href="#stack" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.stack }}</a>
+          </template>
+
+          <!-- Links when on Acerca del CEO -->
+          <template v-else>
+            <NuxtLink to="/" class="hover:text-white hover:scale-105 transition-all flex items-center gap-1.5 text-zinc-300">
+              <Icon name="mdi:home-outline" size="16" />
+              <span>{{ t.nav.home }}</span>
+            </NuxtLink>
+            <a href="#experiencia" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.experience }}</a>
+            <a href="#skills" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.skills }}</a>
+            <a href="#certificaciones" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.certificaciones }}</a>
+            <a href="#proyectos" class="hover:text-white hover:scale-105 transition-all">{{ t.nav.projects }}</a>
+          </template>
+
+          <!-- Dedicated Tab Pill: Acerca del CEO -->
+          <NuxtLink
+            to="/acerca-del-ceo"
+            class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-mono transition-all font-semibold"
+            :class="isCeoPage
+              ? 'bg-tech-purple text-white border-tech-purple shadow-[0_0_15px_rgba(139,92,246,0.5)]'
+              : 'bg-white/[0.04] text-zinc-300 border-white/10 hover:border-tech-purple/60 hover:text-white hover:bg-tech-purple/10'"
+          >
+            <Icon name="mdi:account-tie" size="15" :class="isCeoPage ? 'text-white' : 'text-tech-purple'" />
+            <span>{{ t.nav.ceo }}</span>
+          </NuxtLink>
 
           <!-- Language Selector Pill -->
           <div class="flex items-center p-0.5 rounded-full bg-white/[0.04] border border-white/10 font-mono text-xs shadow-inner">
@@ -67,10 +98,10 @@ const handleContactClick = () => {
             </button>
           </div>
 
-          <!-- Contact Modal Trigger -->
+          <!-- Contact / Quote CTA Trigger -->
           <button
             type="button"
-            class="px-3.5 py-1.5 rounded-full bg-tech-purple/10 border border-tech-purple/30 text-tech-purple hover:bg-tech-purple hover:text-white hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all font-mono text-xs cursor-pointer"
+            class="px-4 py-2 rounded-xl bg-tech-purple/15 border border-tech-purple/40 text-tech-purple hover:bg-tech-purple hover:text-white hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all font-mono text-xs font-semibold cursor-pointer"
             @click="openContactModal"
           >
             {{ t.nav.contact }}
@@ -99,13 +130,36 @@ const handleContactClick = () => {
 
       <!-- Mobile Dropdown Menu -->
       <div v-if="isMenuOpen" class="md:hidden bg-tech-black/95 border-b border-white/10 p-6 absolute w-full shadow-2xl backdrop-blur-xl">
-        <div class="flex flex-col gap-4 text-center">
-          <a href="#servicios" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.services }}</a>
-          <a href="#skills" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.skills }}</a>
-          <a href="#experiencia" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.experience }}</a>
-          <a href="#proyectos" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.projects }}</a>
-          <a href="#certificaciones" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.certifications }}</a>
-          <a href="#colaboraciones" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.collaborations }}</a>
+        <div class="flex flex-col gap-3.5 text-center">
+          <template v-if="!isCeoPage">
+            <a href="#servicios" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.services }}</a>
+            <a href="#metodologia" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.methodology }}</a>
+            <a href="#colaboraciones" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.collaborations }}</a>
+            <a href="#stack" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.stack }}</a>
+          </template>
+          <template v-else>
+            <NuxtLink to="/" class="hover:text-white py-1 transition-all flex items-center justify-center gap-2" @click="isMenuOpen = false">
+              <Icon name="mdi:home-outline" size="18" />
+              <span>{{ t.nav.home }}</span>
+            </NuxtLink>
+            <a href="#experiencia" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.experience }}</a>
+            <a href="#skills" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.skills }}</a>
+            <a href="#certificaciones" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.certificaciones }}</a>
+            <a href="#proyectos" class="hover:text-white py-1 transition-all" @click="isMenuOpen = false">{{ t.nav.projects }}</a>
+          </template>
+
+          <!-- Mobile Acerca del CEO Tab -->
+          <NuxtLink
+            to="/acerca-del-ceo"
+            class="py-2.5 rounded-xl border text-xs font-mono font-bold flex items-center justify-center gap-2 my-1"
+            :class="isCeoPage
+              ? 'bg-tech-purple text-white border-tech-purple'
+              : 'bg-white/5 text-zinc-200 border-white/10 hover:border-tech-purple/50'"
+            @click="isMenuOpen = false"
+          >
+            <Icon name="mdi:account-tie" size="16" class="text-tech-purple" />
+            <span>{{ t.nav.ceo }}</span>
+          </NuxtLink>
 
           <!-- Mobile Language Pill in Menu -->
           <div class="flex justify-center my-2">
@@ -131,7 +185,7 @@ const handleContactClick = () => {
 
           <button
             type="button"
-            class="w-full py-2.5 rounded-xl bg-tech-purple/10 border border-tech-purple/30 text-tech-purple hover:bg-tech-purple hover:text-white transition-all font-mono text-xs cursor-pointer"
+            class="w-full py-3 rounded-xl bg-tech-purple text-white font-bold transition-all font-mono text-xs cursor-pointer shadow-lg hover:shadow-tech-purple/50"
             @click="handleContactClick"
           >
             {{ t.nav.contact }}
@@ -151,7 +205,6 @@ const handleContactClick = () => {
 </template>
 
 <style scoped>
-/* Asegura que el scroll no tape los anclajes por culpa del header fijo */
 html {
   scroll-padding-top: 5rem;
 }
